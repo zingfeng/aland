@@ -257,9 +257,13 @@ if (!defined('BASEPATH')) {
                 });
             },
         };
+
         $(document).ready(function () {
             sload.load(['https://www.aland.edu.vn', 'https://static1.aland.edu.vn', 'https://static2.aland.edu.vn']);
         });
+
+        
+
     </script>
 </body>
 </html>

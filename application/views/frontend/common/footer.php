@@ -16,7 +16,7 @@
                 <h3><?php echo $arr_loc[$key]?></h3>
                 <?php foreach($data as $item) { ?>
                 <label><?php echo $item['label']?></label>
-                <p><?php echo $item['name']?> SĐT: <?php echo $item['phone']?></p>
+                    <p><?php echo $item['name']?><a style="color:white" href="tel:<?php echo $item['phone']?>"> SĐT: <?php echo $item['phone']?></a></p>
                 <?php } ?>            
             </div>
             <?php } ?>
