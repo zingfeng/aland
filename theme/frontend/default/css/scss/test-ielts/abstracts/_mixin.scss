@@ -1,0 +1,69 @@
+/*
+0-600px: phone
+600-900px: tablet portrait 
+900 - 1200px: tablet landscape
+[1200 - 1800] is where your normal style apply
+18000px + :big desktop
+*/
+// 1em = 16px
+@mixin respond($breakpoint) {
+    @if $breakpoint==phone {
+        @media (max-width: 37.5em) {
+            //600px
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==tab-port {
+        @media (max-width: 56.25em) {
+            //900px
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==tab-land {
+        @media (max-width: 75em) {
+            //1200px
+            @content
+        }
+
+        ;
+    }
+  
+    @if $breakpoint==big-desktop {
+        @media (min-width: 112.5em) {
+            //1800px
+            @content
+        }
+
+        ;
+    }
+}
+
+
+
+
+// @mixin for-size($size) {
+//       @if $size == phone-only {
+//         @media (max-width: 599px) { @content; }
+//       } @else if $size == tablet-portrait-up {
+//         @media (min-width: 600px) { @content; }
+//       } @else if $size == tablet-portait-only {
+//         @media (min-width: 600px) and (max-width: 899px) { @content; }
+//       } @else if $size == tablet-landscape-up {
+//         @media (min-width: 900px) { @content; }
+//       } @else if $size == tablet-landscape-only {
+//         @media (min-width: 900px) and (max-width: 1199px) { @content; }
+//       } @else if $size == desktop-up {
+//         @media (min-width: 1200px) { @content; }
+//       } @else if $size == desktop-only {
+//         @media (min-width: 1200px) and (max-width: 1799px) { @content; }
+//       } @else if $size == big-desktop-up {
+//         @media (min-width: 1800px) { @content; }
+//       }
+// }
+//      

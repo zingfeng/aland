@@ -263,6 +263,15 @@ function showUserMenu() {
 function showDropdownCommentOption() {
     document.querySelector('.dropdown-comment-option').classList.toggle('open');
 }
+
+function menuResponsive() {
+    var display_now = $('#menu').css('display');
+    if (display_now === 'none'){
+        $('#menu').css('display','block');
+    }else{
+        $('#menu').css('display','none');
+    }
+}
 //end dropdown comment option
 
 // function showButtonMore() {

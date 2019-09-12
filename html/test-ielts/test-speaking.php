@@ -97,16 +97,16 @@
         </div>
     </div>
 </section>
-<footer id="footer-listening" class="fixed-bottom">
+<footer id="footer-test" class="fixed-bottom">
     <div class="container">
-        <div class="row align-item-center">
-            <div class="col-6 audio-player-time-countdown ">
+        <div class="row align-item-center footer-test-speaking">
+            <div class="col-6 audio-player-time-countdown">
                 <!-- thời gian làm bài còn lại -->
-                <div class="time-countdown time-countdown_left">
-                    <span class="time-countdown__icon">
+                <div class="time-countdown-test-speaking time-countdown-test-speaking_left">
+                    <span class="time-countdown-test-speaking__icon">
                         <span class="icon-round-timer-24px"></span>
                     </span>
-                    <span class="time-countdown__time">
+                    <span class="time-countdown-test-speaking__time">
                         39:23
                     </span>
                 </div>

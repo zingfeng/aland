@@ -2,187 +2,154 @@
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 $question = $arrQuestion[0];
 ?>
+<header class="header">
+    <nav class="row navigation-top">
+        <div class="container">
+            <div class="row">
 
-<div style="    height: 100%;position: fixed;top: 0;left: 0;width: 250px;z-index: 1000;background-color: #7ac17d;padding: 10px;display: none;">
-    <div>
-        <button onclick="GetListMp3File()" class="btn btn-info">Touch Me</button>
-    </div>
+                <?php echo $this->load->view('test/common/home');?>
 
-    <div id="controls">
-        <button id="recordButton">Record</button>
-        <button id="pauseButton" disabled>Pause</button>
-        <button id="stopButton" disabled>Stop</button>
-    </div>
-    <div id="formats">Format: start recording to see sample rate</div>
-    <h3>Recordings</h3>
-    <ol id="recordingListready"></ol>
-    <hr>
-    <div>
-        <form id="testing_form" action="<?php echo SITE_URL; ?>/test/speaking_result" method="POST">
-            <input type="hidden" name="test_id" value="<?php echo $test['test_id']?>"/>
-            <input type="hidden" name="log_id" value="<?php echo $log_id?>"/>
-
-            <?php
-            {
-                // Lấy mẫu kết quả answer
-                $answer_sheet = array();
-                foreach ($arrQuestionGroup as $id_question_mom => $Arr_question_child) {
-                    foreach ($Arr_question_child as $id_question_part123 => $Arr_question_part){
-                        // Từng part một
-                        $id_question_mono = $Arr_question_part['question_id'];
-                        $question_answer = $Arr_question_part['question_answer'];
-
-                        $arr_id_answer = array();
-                        for ($m = 0; $m < count($question_answer) ; $m++) {
-                            $mono_1_by_1 = $question_answer[$m];
-                            $id_answer_1_by_1 = $mono_1_by_1['answer_id'];
-                            array_push($arr_id_answer,$id_answer_1_by_1);
-                        }
-                        $answer_sheet[$id_question_mono] = $arr_id_answer;
-                    }
-                }
-                echo '<input type="hidden" name="answer_sheet_form" id="answer_sheet_form" value=\'' .json_encode($answer_sheet).  '\'>';
-            }
-
-            ?>
-            <?php
-            if (isset($arr_fulltest_all_detail)){
-                echo '<input type="hidden" name="fulltest_timestamp" value="' . $arr_fulltest_all_detail['fulltest_timestamp'].  '">';
-                echo '<input type="hidden" name="fulltest_all_step" value=\''. $arr_fulltest_all_detail['fulltest_all_step'] .'\'>';
-                echo '<input type="hidden" name="fulltest_now_step" value="'.$arr_fulltest_all_detail['fulltest_now_step'].'">';
-            }
-            ?>
-
-            <input type="hidden" name="token" value="<?php echo $this->security->generate_token_post(array($test['test_id'],$log_id)); ?>">
-            <input type="hidden" name="type" value="<?php echo $test['type']?>"/>
-            <input type="hidden" name="start_time" value="<?php echo $start_time?>"/>
-            <input type="hidden" name="user_answer" id="user_answer" value=""/>
-
-
-            <div class="col-md-8 col-sm-8 col-xs-12">
-                <?php echo $breadcrumb; ?>
-                <div class="col_box_test">
-                    <h1><?php echo $test['title']?></h1>
-                    <div class="part" id="fulltest_part_head">
-                        <?php
-                        $i = 1;
-                        if (is_array($question)){
-                            $numberQuestion = count($question);
-                        }else{
-                            $numberQuestion = 0;
-                        }
-
-                        for ($i = 1; $i <= $numberQuestion; $i ++){ ?>
-                            <div class="fulltest_part item" data-part="<?php echo $i?>">
-                                <a class="<?php echo $i == 1 ? 'active' : ''?>" href="javascript:;">Question <?php echo $i?></a>
-                            </div>
-                        <?php } ?>
-                        <div class="item" id="test_score" style="display: none;">
-                            <a href="javascript:;">
-                                <strong></strong>
-                                <span>Score</span>
+                <button class="navbar-toggler navigation-top__button-collapse" type="button"
+                        data-toggle="collapse" data-target="#navbarTogglerTop" aria-controls="navbarTogglerTop"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="col-8 navigation-top__menu-collapse" id="navbarTogglerTop">
+                    <div class="select_sever" id="select_sever">
+                    <ul class="menu">
+                        <li class="nav-item">
+                            <a class="nav-link -custom-color-link" href="#" onclick="goback() ">
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
                             </a>
-                        </div>
+                        </li>
+                        <?php if($arrQuestionGroup) { ?>
 
-                    </div>
-                    <div class="clearfix"></div>
-                </div><!-- End -->
+                                <?php
+                                $i = 1; $time = 0;
+//                                var_dump($arrQuestionGroup); exit;
+                                foreach ($arrQuestionGroup[$question['question_id']] as $key => $qgroup) {?>
 
-                <!-- Tài liệu luyện thi toeic -->
-                <?php echo $this->load->get_block('content'); ?>
-            </div>
-            <div>
-                <button type="submit" id="clickSubmit">Nộp bài</button>
-            </div>
-        </form>
-        <div class="col-md-4 col-sm-4 col-xs-12" id="test_col_right" style="position: relative;">
+<!--                                    <a onclick="SelectPart(--><?php //echo $i; ?><!--)" data-section="<?php //echo $qgroup['question_id']; ?>"-->
+<!--                                       id="question_setion_selection_--><?php //echo $qgroup['question_id']; ?><!--"-->
+<!--                                       class="reading_change_section --><?php //if ($i == 1) echo 'active'; ?><!--"-->
+<!--                                       href="javascript:void(0)">--><?php //echo $qgroup['title']; ?><!--</a>-->
 
-            <?php echo $this->load->get_block('right'); ?>
-        </div>
-    </div>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-link -custom-color-link  <?php if ($i == 1) echo '-active'; ?>" href="javascript:void(0)" data-section="<?php echo $qgroup['question_id']; ?>"
+                                           id="question_setion_selection_<?php echo $qgroup['question_id']; ?>"
+                                           onclick="SelectPart(<?php echo $i; ?>,event)"><?php echo $qgroup['title']; ?></a>
+                                    </li>
 
-</div>
+                                    <?php $i ++;
+                                }
+                                $test_time = $question['test_time'] * 60 * 1000;
+                                ?>
 
-<section class="listening-test_head clearfix">
-    <div class="container">
-        <div class="show_test" id="show_test_info" style="display: none;">
-            <div class="book left">
-                <img src="<?php echo $this->config->item("img"); ?>icons/book.png" alt="">
-                <a href="<?php echo $cateDetail['share_url']; ?>"><h4><?php echo $cateDetail['name']; ?></h4></a>
-            </div>
-            <div class="info right">
-                <div class="date">
-                    <!--<p><i class="fa fa-calendar"></i>Ngày đăng: 22/11/2018</p>-->
-                    <p><i class="fa fa-file-text-o"></i>Số lần test: <?php echo $test['total_hit']?></p>
-                    <!--<p><i class="fa fa-file-zip-o"></i>Người tạo: Aland IELTS</p>-->
-                </div>
-                <div class="user">
-                    <div class="content">
-                        <h4><?php echo $test['title']; ?></h4>
-                        <?php if($test['author']) { ?>
-                            <p>Biên soạn bởi <?php echo $test['author']?></p>
                         <?php } ?>
+
+
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link menu-link -custom-color-link" href="#"-->
+<!--                               onclick="onClickTabMenu()">Section 1</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link menu-link -custom-color-link" href="#"-->
+<!--                               onclick="onClickTabMenu()">Section 2</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link menu-link -custom-color-link" href="#"-->
+<!--                               onclick="onClickTabMenu()">Section 3</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link menu-link -custom-color-link" href="#"-->
+<!--                               onclick="onClickTabMenu()">Section 4</a>-->
+<!--                        </li>-->
+                    </ul>
                     </div>
-                    <img class="<?php echo $test['title']; ?>" src="<?php echo getimglink($test['images'],'size1');?>" alt="<?php echo $test['title']; ?>">
                 </div>
+
+                <?php echo $this->load->view('test/common/account');?>
             </div>
+
+    </nav>
+
+    <div class="technical_box" style="display: none">
+        <div>
+            <button onclick="GetListMp3File()" class="btn btn-info">Touch Me</button>
         </div>
-        <a class="img_logo" href="">
-            <img class="logo_web" src="theme/frontend/default/images/graphics/logo.png" alt="Trang chủ" data-was-processed="true">
-        </a>
-        <?php if($arrQuestionGroup) { ?>
-            <div class="select_sever" id="select_sever">
-                <?php
-                $i = 1; $time = 0;
-                foreach ($arrQuestionGroup[$question['question_id']] as $key => $qgroup) {?>
-                    <a onclick="SelectPart(<?php echo $i; ?>)" data-section="<?php echo $qgroup['question_id']; ?>" id="question_setion_selection_<?php echo $qgroup['question_id']; ?>" class="reading_change_section <?php if ($i == 1) echo 'active'; ?>" href="javascript:void(0)"><?php echo $qgroup['title']; ?></a>
-                    <?php $i ++;
-                }
-                $test_time = $question['test_time'] * 60 * 1000;
-                ?>
-            </div>
-        <?php } ?>
-        <div class="option_listening">
-            <div class="timer"><i class="fa fa-clock-o"></i><span id="show_count_down"></span></div>
-            <a class="nop_bai" href="javascript:void(0)" id="submit_answer_result" onclick="ClickSubmit()">Nộp bài</a>
-            <a href="javascript:void(0)" class="show_info_test">Show info test<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+
+        <div id="controls">
+            <button id="recordButton">Record</button>
+            <button id="pauseButton" disabled>Pause</button>
+            <button id="stopButton" disabled>Stop</button>
         </div>
+        <div id="formats">Format: start recording to see sample rate</div>
+        <h3>Recordings</h3>
+        <ol id="recordingListready"></ol>
+    </div>
+</header>
+
+<section class="section-breadcrumb margin-navbar">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="custom-breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+        </nav>
     </div>
 </section>
 
-<section class="listening-test_container speaking-test clearfix">
-    <?php echo $this->load->view('test/common/skill_menu_mobile',array('test' => $test,'type' => 'speaking')); ?>
-    <div class="container warp_slidebar">
-        <?php 
-            if (!$this->input->get('skill')) {
-                echo $this->load->view('test/common/skill_menu',array('test' => $test,'type' => 'speaking')); 
-            }
-        ?>
-        <div class="slidebar_2">
-            <div class="warp_content">
-                <div class="huong_dan">
-                    <a class="title" href="javascript:;" data-toggle="collapse" data-target="#huong_dan"><i class="fa fa-exclamation-circle"></i>Hướng dẫn làm bài</a>
-                    <div id="huong_dan" class="collapse">
-                        <div class="warp">
-                            Windows 7 hiện nay vẫn là một trong những hệ điều hành được sử dụng rộng rãi trong các môi trường làm việc cũng như học tập trên toàn thế giới. Việc sử dụng Win 7 đã trở thành thói quen mặc dù đã có những hệ điều hành mới hơn được phát triển như Win 8 và Win 8.1. Việc sử dụng Win 7 đã trở thành thói quen đã trở thành thói quen mặc dù đã có những hệ điều hành mới hơn được phát triển như Win 8 và Win 8.1. Việcđã trở thành thói quen mặc dù đã có những hệ điều hành mới hơn được phát triển như Win 8 và Win 8.1. Việcđã trở thành thói quen mặc dù đã có những hệ điều hành mới hơn được phát triển như Win 8 và Win 8.1.
-                        </div>
-                    </div>
+<!--    ======================================================================== -->
+<!--    ======================================================================== -->
+<!--    ======================================================================== -->
+<!--    ======================================================================== -->
+
+
+
+
+<section class="test-speaking">
+    <div class="container background-test">
+        <div class="row">
+            <div class="col group-test text-center">
+                <div class="group-test__title">
+<!--                    IELTS Recent Actual Test With Answers (Vol 6)-->
+                    <?php echo $cateDetail['name']; ?>
                 </div>
+                <div class="group-test__subtitle">
+<!--                    LISTENING PRACTICE TEST 1-->
+                    <?php echo $test['title']; ?>
+                </div>
+                <div class="group-test__custom-border-bottom"></div>
+            </div>
+        </div>
+        <div class="user_guide">
+            <a data-toggle="collapse" href="#user_guide_content_speaking" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <div class="user_guide_title">Hướng dẫn làm bài</div>
+            </a>
 
-                <?php
+            <div class="user_guide_content collapse" id="user_guide_content_speaking">
+                Đây là hướng dẫn làm bài
+            </div>
 
-                // $arrQuestionGroup
+        </div>
 
+        <div class="row justify-content-md-center">
+            <div class="col-lg-8 col-xl-7 col-md-10 question">
+            <?php
                 foreach ($arrQuestionGroup as $id_question_mom => $Arr_question_child) {
-                    $stt_part = 1;
-                    foreach ($Arr_question_child as $id_question_part123 => $Arr_question_part){
-                        // Từng part một
-                        $id_question_mono = $Arr_question_part['question_id'];
-                        $question_answer = $Arr_question_part['question_answer'];
+                $stt_part = 1;
+                foreach ($Arr_question_child as $id_question_part123 => $Arr_question_part){
+                // Từng part một
+                $id_question_mono = $Arr_question_part['question_id'];
+                $question_answer = $Arr_question_part['question_answer'];
 
-                        echo '<div class="div_part" id="div_part'.$stt_part.'"><h2>Part '.$stt_part.'</h2><ul class="list_speaking">';
-
-//                            echo '<hr><pre>'.print_r($question_answer).'</pre>'; exit;
+                    if ($stt_part != 2) {
+                    echo '
+                    
+                    <div class="div_part" id="div_part'.$stt_part.'"><div class="row item" >';
+//                                <ul class="list_speaking">';
                         for ($m = 0; $m < count($question_answer) ; $m++) {
 
                             $stt_inside_part = $m + 1;
@@ -198,176 +165,317 @@ $question = $arrQuestion[0];
                             $suggest = $options_live['suggest'];
 
                             ?>
-                            <li>
-                                <label>Question <?php echo $stt_inside_part; ?></label>
+                            <!--                    <label>Question --><?php //echo $stt_inside_part; ?><!--</label>-->
+                            <div class="col-12 col-sm-3"><strong>Question <?php echo $stt_inside_part; ?>:</strong></div>
+                            <div class="col-12 col-sm-9">
 
-                                <div class="speaking_right">
-                                    <h3 class="tapescript" href="">
-                                        <a style="width: 100%;padding: 5px; <?php if ($stt_part == 2) echo ' display:none; '?>" onclick="ShowTapescript(<?php echo $id_answer_1_by_1; ?>)" id="clickTape<?php echo $id_answer_1_by_1; ?>">Bấm để mở Tapescript</a>
-                                        <span id="content_tape<?php echo $id_answer_1_by_1; ?>" <?php if ($stt_part != 2) echo ' style="color: #208b96;" ' ?>><?php echo $content; ?></span>
-                                    </h3>
-                                    <audio controls <?php if ($stt_part == 2) echo ' style="display:none" ' ?>>
+
+                                <div class="show_tape">
+                                    <span id="content_tape<?php echo $id_answer_1_by_1; ?>" <?php if ($stt_part != 2) echo ' style="display: none; " ' ?>><?php echo $content; ?></span>
+                                    <a style="width: 100%;padding: 5px; <?php if ($stt_part == 2) echo ' display:none; '?>"
+                                       onclick="ShowTapescript(<?php echo $id_answer_1_by_1; ?>)" id="clickTape<?php echo $id_answer_1_by_1; ?>">
+                                        Show tape script
+                                        <i class="fa fa-eye" aria-hidden="true" style="float:right"></i>
+                                    </a>
+                                </div>
+
+                                <div class="mp3_OLD">
+                                    <audio controls <?php if ($stt_part == 2) echo ' style="display:none" ' ?> style="width: 100%">
                                         <source src="<?php echo $audio; ?>" type="audio/ogg">
                                         Your browser does not support the audio element.
                                     </audio>
-                                    <div class="suggest_text tapescript"
-                                         style="    color: black;  background-color: rgb(247, 247, 170); margin: 5px 0;
-                                         <?php if ($stt_part !== 2) {echo ' display: none; ';} ?>
-                                                 " id_question="<?php echo $id_answer_1_by_1_1_by_1; ?>"><?php echo $suggest; ?></div>
-                                    <a class="icon_speaking icon_speaking_record" href="javascript:void(0);" id_question="<?php echo $id_answer_1_by_1; ?>" id="a_speaking<?php echo $id_answer_1_by_1; ?>">
-                                        <img src="theme/frontend/default/images/icons/icon-speaking.png" id="img_speaking<?php echo $id_answer_1_by_1; ?>">
-                                        <span id="span_speaking<?php echo $id_answer_1_by_1; ?>">click để làm bài</span>
-                                    </a>
-                                    <a class="icon_speaking icon_speaking_pause" href="javascript:void(0);"  id_question="<?php echo $id_answer_1_by_1; ?>" id="a_speaking_pause<?php echo $id_answer_1_by_1; ?>" style="display: none;">
-                                        <img src="theme/frontend/default/images/icons/icon-speaking.png">
-                                        <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                                        <span id="span_speaking_pause<?php echo $id_answer_1_by_1; ?>">Pause</span>
-                                    </a>
-                                    <a class="icon_speaking icon_speaking_finish" href="javascript:void(0);"  id_question="<?php echo $id_answer_1_by_1; ?>" id="a_speaking_finish<?php echo $id_answer_1_by_1; ?>"  style="display: none;">
-                                        <img src="theme/frontend/default/images/icons/icon-speaking.png">
-                                        <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                                        <span>Finish</span>
-                                    </a>
-                                    <a class="icon_speaking icon_speaking_record_again" href="javascript:void(0);"  id_question="<?php echo $id_answer_1_by_1; ?>" id="a_speaking_record_again<?php echo $id_answer_1_by_1; ?>"  style="display: none;">
-                                        <img src="theme/frontend/default/images/icons/icon-speaking.png">
-                                        <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                                        <span>Record Again</span>
-                                    </a>
-                                    <div class="recordingList"  id="recordingList<?php echo $id_answer_1_by_1; ?>" file_url="" ></div>
-
                                 </div>
-                            </li>
+                                <div class="player audio-player-time-countdown" style="display: none">
+                                    <div class="audio-player">
+                                        <!-- nút play pause file audio -->
+                                        <div class="group-button-audio">
+                                            <a href="" class="group-button-audio__button-play">
+                                                <i class="fa fa-play-circle btn-play-pause" aria-hidden="true"></i>
+                                            </a>
+                                            <div class="group-button-audio__button-pause">
+                                                <!-- <i class="fa fa-pause-circle  btn-play-pause" aria-hidden="true"></i> -->
+                                            </div>
+                                        </div>
+
+                                        <!-- thời gian file audio -->
+                                        <div class="time-play d-flex align-item-center">
+                                            <div class="time-play__time-audio">
+                                                00:00
+                                            </div>
+                                            <div class="time-play__audio-time-line">
+                                                <div class="position-play-dot">
+
+                                                </div>
+                                            </div>
+                                            <!--<div class="time-play__time-left">
+                                                03:43
+                                            </div>-->
+                                        </div>
+
+                                        <!-- chỉnh volume -->
+                                        <div class="volume d-flex align-item-center">
+                                            <a href="" class="volume__icon">
+                                                <i class="fa fa-volume-up" aria-hidden="true"></i>
+                                                <!-- <i class="fa fa-volume-down" aria-hidden="true"></i> -->
+                                                <!-- <i class="fa fa-volume-off" aria-hidden="true"></i> -->
+                                            </a>
+                                            <div class="volume__level"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-3"><strong>Bài làm của bạn:</strong></div>
+                            <div class="col-12 col-sm-9 form-inline"
+                                 id_question="<?php echo $id_answer_1_by_1_1_by_1; ?>"
+                                 style="">
+
+
+                                <a class="icon_speaking icon_speaking_record" href="javascript:void(0);"
+                                   id_question="<?php echo $id_answer_1_by_1; ?>"
+                                   id="a_speaking<?php echo $id_answer_1_by_1; ?>">
+                                    <button class="btn btn-outline-danger form-control btn-speaking">
+                                        <i id="img_speaking<?php echo $id_answer_1_by_1; ?>" class="fa fa-bullhorn" aria-hidden="true"></i>
+                                        <span id="span_speaking<?php echo $id_answer_1_by_1; ?>">Start Record</span>
+                                    </button>
+                                </a>
+
+                                <a class="icon_speaking icon_speaking_pause" href="javascript:void(0);"
+                                   id_question="<?php echo $id_answer_1_by_1; ?>"
+                                   id="a_speaking_pause<?php echo $id_answer_1_by_1; ?>"
+                                   style="display: none;">
+                                    <button class="btn btn-danger form-control btn-speaking">
+                                        <i class="fa fa-pause" aria-hidden="true"></i>
+                                        <span id="span_speaking_pause<?php echo $id_answer_1_by_1; ?>">Pause Record</span>
+                                    </button>
+                                </a>
+
+                                <a class="icon_speaking icon_speaking_finish" href="javascript:void(0);"
+                                   id_question="<?php echo $id_answer_1_by_1; ?>"
+                                   id="a_speaking_finish<?php echo $id_answer_1_by_1; ?>"  style="display: none;">
+                                    <button class="btn btn-outline-info form-control btn-speaking">
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                        <span>Finish Record</span>
+                                    </button>
+                                </a>
+
+                                <a class="icon_speaking icon_speaking_record_again" href="javascript:void(0);"
+                                   id_question="<?php echo $id_answer_1_by_1; ?>"
+                                   id="a_speaking_record_again<?php echo $id_answer_1_by_1; ?>"  style="display: none;">
+
+                                    <button class="btn btn-outline-info form-control btn-speaking">
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                        <span>Record Again</span>
+                                    </button>
+                                </a>
+
+
+                                <div class="recordingList"  id="recordingList<?php echo $id_answer_1_by_1; ?>" file_url="" ></div>
+                            </div>
+
 
                             <?php
-
                         }
 
                         echo '</div>';
+                        echo '</div> ';
                         $stt_part ++;
-                    }
+                    }else{
+                        ?>
+                <div class="div_part" id="div_part<?php echo $stt_part; ?>">
+                                <div class="row">
 
-                }
+                                    <?php
+                                for ($m = 0; $m < count($question_answer) ; $m++) {
 
-                //                    for ($k = 0; $k < count($arrQuestion); $k++) {
-                //                        $mono = $arrQuestion[$k];
-                //                        $id_question = $mono['question_id'];
-                //                        $stt = $k + 1;
-                //                        if (isset($arrQuestionGroup[$id_question])){
-                //                            // Đây là part 1 hoặc part 3
-                //
-                //
-                //
-                //
-                //                            // danh sách trong $arrQuestionGroup
-                //                            $stt_next = 2;
-                //                            foreach ($arrQuestionGroup[$id_question] as $mono_question_next){
-                //                                $question_id_inside = $mono_question_next['question_id'];
-                //                                echo '<li>
-                //                                    <label>Question '.$stt_next.'</label>'.
-                //                                    '<div class="speaking_right">
-                //                            <h3 class="tapescript" href="">
-                //<!--                                <a>Bấm để mở Tapescript</a> -->
-                //                                <span>'.$mono_question_next['detail'].'</span>
-                //                            </h3>
-                //                            <a class="icon_speaking icon_speaking_record" href="javascript:void(0);" id_question="'.$question_id_inside.'" id="a_speaking'.$question_id_inside.'">
-                //                                <img src="theme/frontend/default/images/icons/icon-speaking.png" id="img_speaking'.$question_id_inside.'">
-                //                                <span id="span_speaking'.$question_id_inside.'">click để làm bài</span>
-                //                            </a>
-                //                            <a class="icon_speaking icon_speaking_pause" href="javascript:void(0);"  id_question="'.$question_id_inside.'" id="a_speaking_pause'.$question_id_inside.'" style="display: none;">
-                //                                <img src="theme/frontend/default/images/icons/icon-speaking.png">
-                //                                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                //                                <span id="span_speaking_pause'.$question_id_inside.'">Pause</span>
-                //                            </a>
-                //                            <a class="icon_speaking icon_speaking_finish" href="javascript:void(0);"  id_question="'.$question_id_inside.'" id="a_speaking_finish'.$question_id_inside.'"  style="display: none;">
-                //                                <img src="theme/frontend/default/images/icons/icon-speaking.png">
-                //                                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                //                                <span>Finish</span>
-                //                            </a>
-                //                            <div class="recordingList"  id="recordingList'.$question_id_inside.'" file_url="" ></div>
-                //
-                //                        </div>
-                //                    </li>';
-                //                                $stt_next ++;
-                //
-                //                            }
-                //
-                //                            echo '</ul>';
-                //
-                //                        }else{
-                //                            // Đây là part 2
-                //
-                //                            $test_time = (int)  $mono['test_time'];
-                //                            $test_time_second = $test_time*60;
-                //                            $test_time_text =  $test_time.':00';
-                //                            echo '<h2>Part '.$stt.'</h2>
-                //                <div class="speaking_document">
-                //                    <div class="warp">'.$mono['detail'].'</div>
-                //                    <div class="controler">';
-                //
-                ////                       <div class="td right">
-                ////                            <span>Thời gian chuẩn bị</span>
-                ////                            <div class="timer">
-                ////                                <img src="theme/frontend/default/images/icons/clock.png">
-                ////                                <span>00:60</span>
-                ////                            </div>
-                ////                        </div>
-                ////                        <div class="td">
-                ////                            <span>Thời gian trả lời</span>
-                ////                            <div class="timer">
-                ////                                <img src="theme/frontend/default/images/icons/clock.png">
-                ////                                <span id="time_count_down'.$id_question.'" test_time_second="'.$test_time_second.'">'.$test_time_text.'</span>
-                ////                            </div>
-                ////                        </div>
-                //
-                //                            echo '<p id="p_count_'.$id_question.'" style="text-align: center; font-size: large; display: none;"><span class="">Record</span> - <span  id="span_speaking'.$id_question.'"></p>
-                //                        <a class="icon_speaking icon_speaking_record icon_speaking_part2" href="javascript:void(0);" id_question="'.$id_question.'" id="a_speaking'.$id_question.'">
-                //                            <img src="theme/frontend/default/images/icons/icon-speaking.png"  id="img_speaking'.$id_question.'" >
-                //                            <i class="fa fa-angle-double-up"></i>
-                //                            <span>Click để làm bài</span>
-                //                        </a>
-                //
-                //
-                //                            <a class="icon_speaking icon_speaking_pause" href="javascript:void(0);"  id_question="'.$id_question.'" id="a_speaking_pause'.$id_question.'" style="display: none;">
-                //                                <img src="theme/frontend/default/images/icons/icon-speaking.png">
-                //                                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                //                                <span id="span_speaking_pause'.$id_question.'">Pause</span>
-                //                            </a>
-                //                            <a class="icon_speaking icon_speaking_finish" href="javascript:void(0);"  id_question="'.$id_question.'" id="a_speaking_finish'.$id_question.'"  style="display: none;">
-                //                                <img src="theme/frontend/default/images/icons/icon-speaking.png">
-                //                                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                //                                <span>Finish</span>
-                //                            </a>
-                //                            <div class="recordingList"  id="recordingList'.$id_question.'" file_url="" ></div>
-                //
-                //                    </div>
-                //                </div>
-                //                <div class="speaking_note">
-                //                    <span class="gim"><img src="theme/frontend/default/images/icons/gim.png"></span>
-                //                    <textarea class="input_form input_area" onblur="if(this.value==\'\') this.value=this.defaultValue" onfocus="if(this.value==this.defaultValue) this.value=\'\'" placeholder="Answer..."></textarea>
-                //                </div>';
-                //
-                //                        }
-                //
-                //                    }
+                                    $stt_inside_part = $m + 1;
+                                    $mono_1_by_1 = $question_answer[$m];
 
-                ?>
+                                    $id_question_1_by_1 = $mono_1_by_1['question_id'];
+                                    $id_answer_1_by_1 = $mono_1_by_1['answer_id'];
+                                    $content = $mono_1_by_1['content'];
 
+                                    $options = $mono_1_by_1['options'];
+                                    $options_live = json_decode($options,true);
+                                    $audio = 'uploads/sound/'.$options_live['audio'];
+                                    $suggest = $options_live['suggest'];
+                                    ?>
+                                    <div class="col-12 col-sm-3"><strong>Cue card</strong></div>
+
+                                    <div class="col-12 col-sm-9">
+                                        <div class="cue_card">
+                                            <?php echo $content; ?>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12 col-sm-3"><strong>Notepad</strong></div>
+                                    <div class="col-12 col-sm-9">
+                                        <textarea class="notepad form-control" placeholder="Write your note here"></textarea>
+                                    </div>
+                                    <div class="col-12 col-sm-3"><strong>Bài làm của bạn</strong></div>
+
+                                    <div class="col-12 col-sm-9 form-inline"
+                                         id_question="<?php echo $id_answer_1_by_1_1_by_1; ?>"
+                                         style="">
+
+                                        <a class="icon_speaking icon_speaking_record" href="javascript:void(0);"
+                                           id_question="<?php echo $id_answer_1_by_1; ?>"
+                                           id="a_speaking<?php echo $id_answer_1_by_1; ?>">
+                                            <button class="btn btn-outline-danger form-control btn-speaking">
+                                                <i id="img_speaking<?php echo $id_answer_1_by_1; ?>" class="fa fa-bullhorn" aria-hidden="true"></i>
+                                                <span id="span_speaking<?php echo $id_answer_1_by_1; ?>">Start Record</span>
+                                            </button>
+                                        </a>
+
+                                        <a class="icon_speaking icon_speaking_pause" href="javascript:void(0);"
+                                           id_question="<?php echo $id_answer_1_by_1; ?>"
+                                           id="a_speaking_pause<?php echo $id_answer_1_by_1; ?>"
+                                           style="display: none;">
+                                            <button class="btn btn-danger form-control btn-speaking">
+                                                <i class="fa fa-pause" aria-hidden="true"></i>
+                                                <span id="span_speaking_pause<?php echo $id_answer_1_by_1; ?>">Pause Record</span>
+                                            </button>
+                                        </a>
+
+                                        <a class="icon_speaking icon_speaking_finish" href="javascript:void(0);"
+                                           id_question="<?php echo $id_answer_1_by_1; ?>"
+                                           id="a_speaking_finish<?php echo $id_answer_1_by_1; ?>"  style="display: none;">
+                                            <button class="btn btn-outline-info form-control btn-speaking">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                <span>Finish Record</span>
+                                            </button>
+                                        </a>
+
+                                        <a class="icon_speaking icon_speaking_record_again" href="javascript:void(0);"
+                                           id_question="<?php echo $id_answer_1_by_1; ?>"
+                                           id="a_speaking_record_again<?php echo $id_answer_1_by_1; ?>"  style="display: none;">
+
+                                            <button class="btn btn-outline-info form-control btn-speaking">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                <span>Record Again</span>
+                                            </button>
+                                        </a>
+
+                                        <div class="recordingList"  id="recordingList<?php echo $id_answer_1_by_1; ?>" file_url="" ></div>
+                                    </div>
+
+
+
+                            <?php } ?>
+
+
+
+
+
+                        </div>
+                </div>
+                    <?php $stt_part ++; }
+
+
+                        }
+
+
+                }?>
             </div>
         </div>
+
+
+
+
     </div>
 </section>
-<script src="<?php echo $this->config->item("js"); ?>recorder.js"></script>
-<script src="<?php echo $this->config->item("js"); ?>app.js"></script>
+
+<footer id="footer-listening" class="fixed-bottom">
+    <div class="container">
+        <div class="row align-item-center">
+            <div class="col-6 audio-player-time-countdown ">
+                <!-- thời gian làm bài còn lại -->
+                <div class="time-countdown time-countdown_left">
+                    <span class="time-countdown__icon">
+                        <span class="icon-round-timer-24px"></span>
+                    </span>
+                    <span class="time-countdown__time">
+                        <span id="show_count_down"></span>
+                    </span>
+                </div>
+                <!-- kết thúc thời gian làm bài còn lại -->
+            </div>
+            <div class="col-6 text-right">
+                <button class="btn btn-danger form-control next_section" id="btn_next_part_speaking" onclick="NextSection()">
+                    next section <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<section class="answer_sheet">
+    <form id="testing_form" action="<?php echo SITE_URL; ?>/test/speaking_result" method="POST">
+        <input type="hidden" name="test_id" value="<?php echo $test['test_id']?>"/>
+        <input type="hidden" name="log_id" value="<?php echo $log_id?>"/>
+
+        <?php
+        {
+            // Lấy mẫu kết quả answer
+            $answer_sheet = array();
+            foreach ($arrQuestionGroup as $id_question_mom => $Arr_question_child) {
+                foreach ($Arr_question_child as $id_question_part123 => $Arr_question_part){
+                    // Từng part một
+                    $id_question_mono = $Arr_question_part['question_id'];
+                    $question_answer = $Arr_question_part['question_answer'];
+
+                    $arr_id_answer = array();
+                    for ($m = 0; $m < count($question_answer) ; $m++) {
+                        $mono_1_by_1 = $question_answer[$m];
+                        $id_answer_1_by_1 = $mono_1_by_1['answer_id'];
+                        array_push($arr_id_answer,$id_answer_1_by_1);
+                    }
+                    $answer_sheet[$id_question_mono] = $arr_id_answer;
+                }
+            }
+            echo '<input type="hidden" name="answer_sheet_form" id="answer_sheet_form" value=\'' .json_encode($answer_sheet).  '\'>';
+        }
+
+
+        if (isset($arr_fulltest_all_detail)){
+            echo '<input type="hidden" name="fulltest_timestamp" value="' . $arr_fulltest_all_detail['fulltest_timestamp'].  '">';
+            echo '<input type="hidden" name="fulltest_all_step" value=\''. $arr_fulltest_all_detail['fulltest_all_step'] .'\'>';
+            echo '<input type="hidden" name="fulltest_now_step" value="'.$arr_fulltest_all_detail['fulltest_now_step'].'">';
+        }
+        ?>
+
+        <input type="hidden" name="token" value="<?php echo $this->security->generate_token_post(array($test['test_id'],$log_id)); ?>">
+        <input type="hidden" name="type" value="<?php echo $test['type']?>"/>
+        <input type="hidden" name="start_time" value="<?php echo $start_time?>"/>
+        <input type="hidden" name="user_answer" id="user_answer" value=""/>
+        <button type="submit" id="clickSubmit">Nộp bài</button>
+    </form>
+</section>
+
+<!--<section class="information">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col designed-build text-center">-->
+<!--                Designed and built with all the love in the world by the Imap team-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<script>
+    function goback() {
+        window.history.back();
+    }
+</script>
+
 <script>
     function ClickSubmit(){
         // Get nội dung answer
-        var r = confirm("Bạn có chắc muốn nộp bài ?");
-        if (r == true) {
-            var user_answer = GetListMp3File();
-            $('#user_answer').val(JSON.stringify(user_answer));
-            $('#clickSubmit').click();
-        }
-        return false;
+        var user_answer = GetListMp3File();
+        $('#user_answer').val(JSON.stringify(user_answer));
+
+        $('#clickSubmit').click();
+
     }
 
     $(document).ready(function() {
@@ -431,11 +539,85 @@ $question = $arrQuestion[0];
         console.log('id_question: ' + id_answer);
 
         $('#clickTape' + id_answer).css('display','none');
-        $('#content_tape' + id_answer).css('color','black');
+        $('#content_tape' + id_answer).css('display','inline-block');
     }
 
-    function SelectPart(stt_part) {
+    function SelectPart(stt_part,event) {
+        // Change class btn
+        if (typeof  event !== 'undefined'){
+
+            // click trực tiếp vào btn Part X
+            $('.menu-link').removeClass('-active');
+            var obj = event.target;
+            obj.className = 'nav-link menu-link -custom-color-link  -active';
+
+        }else{
+            $(".menu-link").each(function () {
+                    var html = $(this).html();
+                    for (var i = 1; i <= 3; i++) {
+                    var j = stt_part.toString();
+                    if (html.includes(j)){
+                        $(this).addClass('-active');
+                    }else{
+                        $(this).removeClass('-active');
+                    }
+                }
+            });
+        }
+
+
+        // Change button Next Section
+        switch (stt_part) {
+            case 3:
+                $('#btn_next_part_speaking').html('nộp bài <i class="fa fa-angle-double-right" aria-hidden="true"></i>');
+                break;
+            default: // Nộp bài
+                $('#btn_next_part_speaking').html('next section <i class="fa fa-angle-double-right" aria-hidden="true"></i>');
+        }
+
+
         $('.div_part').css('display','none');
         $('#div_part'+stt_part).css('display','block');
+    }
+
+    function NextSection() {
+        var now_part = getNowPartSelect();
+        console.log("now_part");
+        console.log(now_part);
+
+        switch (now_part) {
+            case '1':
+                SelectPart(2);
+                $('#btn_next_part_speaking').html('next section <i class="fa fa-angle-double-right" aria-hidden="true"></i>');
+                break;
+            case '2':
+                SelectPart(3);
+                $('#btn_next_part_speaking').html('Nộp bài <i class="fa fa-angle-double-right" aria-hidden="true"></i>');
+                break;
+            default: // Nộp bài
+                ClickSubmit();
+        }
+
+    }
+
+    function getNowPartSelect() {
+        var res = '';
+        $(".menu-link").each(function () {
+            if ($(this).hasClass("-active")){
+                var html = $(this).html();
+                console.log("html- getNowPartSelect");
+                console.log(html);
+
+                for (var i = 1; i <= 3; i++) {
+                    var j = i.toString();
+                    console.log("j");
+                    console.log(j);
+                    if (html.includes(j)){
+                        res = j;
+                    }
+                }
+            }
+        });
+        return res;
     }
 </script>

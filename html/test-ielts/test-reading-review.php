@@ -12,8 +12,8 @@
                 <div class="group-test__custom-border-bottom"></div>
             </div>
         </div>
-        <div class="row no-gutters">
-            <div id="col1" class="col col_gutter read">
+        <div class="row">
+            <div id="col1" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 margin-top read">
                 <h2 class="title">READING PASSAGE 1</h2>
                 <div class="description">You should spend about 20 minutes on Questions 1-13, which are based on Reading
                     Passage 1 below.</div>
@@ -55,7 +55,7 @@
                     the context of global concern about large numbers of children engaged in child labour.
                 </div>
             </div>
-            <div id="col2" class="col col_gutter answer">
+            <div id="col2" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 margin-top answer">
                 <div class="question_title">Question 1 - 7</div>
                 <p>Do the following statements agree with the information given in Reading Passage 1? In boxes 1-7 on
                     your answer sheet, write</p>
@@ -160,32 +160,56 @@
 
 
 
-<footer id="footer-listening" class="fixed-bottom">
+<footer id="footer-test" class="fixed-bottom">
     <div class="container">
-        <div class="row align-item-center">
-            <div class="col-2">
+        <!-- view tablet desktop -->
+        <div class="row align-item-center footer-reading-view-desktop-tablet">
+            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4">
                 <button class="btn btn-outline-primary form-control" onclick="showQuestionsList()">
                     Bảng câu hỏi
                 </button>
             </div>
-            <div class="col-8 audio-player-time-countdown align-item-center">
+            <div class="col-xl-8 col-lg-8 col-md-6 col-sm-4 text-center">
                 <!-- thời gian làm bài còn lại -->
-                <div class="time-countdown align-item-center">
-                    <span class="time-countdown__icon">
+                <div class="time-countdown-test-reading-view-desktop-mobile align-item-center">
+                    <span class="time-countdown-test-reading-view-desktop-mobile__icon">
                         <span class="icon-round-timer-24px"></span>
                     </span>
-                    <span class="time-countdown__time">
+                    <span class="time-countdown-test-reading-view-desktop-mobile__time">
                         39:23
                     </span>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4">
                 <button class="btn btn-danger form-control">
                     Submit
                 </button>
             </div>
         </div>
 
+        <!-- view mobile -->
+        <div class="row align-item-center footer-reading-view-mobile">
+            <div class="col-2">
+                <button class="btn btn-outline-primary btn-sm" onclick="showQuestionsList()">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                </button>           
+            </div>
+            <div class="col-6 align-item-center text-center">
+            <div class="time-countdown-test-reading-view-mobile align-item-center">
+                    <span class="time-countdown-test-reading-view-mobile__icon">
+                        <span class="icon-round-timer-24px"></span>
+                    </span>
+                    <span class="time-countdown-test-reading-view-mobile__time">
+                        39:23
+                    </span>                   
+                </div>               
+            </div>
+            <div class="col-4">
+            <button class="btn btn-danger btn-sm w-100">
+                        Submit
+                </button>
+            </div>
+        </div>
     </div>
 </footer>
 

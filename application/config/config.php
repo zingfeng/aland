@@ -132,7 +132,7 @@ if ($_SERVER['REQUEST_SCHEME'] == 'https') {
 	$protocol_ = 'http';
 }
 
-$config['base_url'] = 'https://' . $_SERVER['HTTP_HOST'];
+$config['base_url'] = $protocol_ . '://' . $_SERVER['HTTP_HOST'];
 /*
 |--------------------------------------------------------------------------
 | Index File

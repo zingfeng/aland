@@ -127,9 +127,6 @@ class Test extends CI_Controller{
         $this->load->layout('test/class_list',$data);
     }
     public function detail($test_id,$type){
-
-//      var_dump($type);
-
         /////////// CHECK PERMISSION ////////
         $test_id = (int) $test_id;
         $this->load->config("data");
@@ -196,7 +193,6 @@ class Test extends CI_Controller{
         //////////////////////////////
 
         if (! $this->input->get('skill')) {
-
             // Lấy thêm thông tin bài test
             if ($this->input->post('fulltest_timestamp')) {
                 // Timestamp Exist
@@ -212,16 +208,12 @@ class Test extends CI_Controller{
                     'fulltest_all_step' => serialize($fulltest_all_step),
                     'fulltest_now_step' => $fulltest_now_step,
                 );
-//                var_dump($arr_fulltest_all_detail);exit;
-
             } else {
 //                // generate fulltest timestamp
                 $fulltest_all_step = array();
-//                var_dump($arr_list_test_type);
                 foreach ($arr_list_test_type as $type_fcking) {
                     $fulltest_all_step[] = str_replace('/test/', '/test/' . trim(strtolower($type_fcking)) . '/', $testDetail['share_url']);
                 }
-//                var_dump($fulltest_all_step); exit();
                 $arr_fulltest_all_detail = array(
                     'fulltest_timestamp' => time(),
                     'fulltest_all_step' => serialize($fulltest_all_step),
@@ -240,7 +232,6 @@ class Test extends CI_Controller{
         //////////////////////////////
         //////////////////////////////
 
-
         /////// SEO //////
         $this->load->setData('title',$testDetail['title'] .' -' .$type);
         $this->load->setData('meta',array(
@@ -254,12 +245,7 @@ class Test extends CI_Controller{
                 'og:url' => current_url())
         );
 
-//        var_dump($type);
-//        echo '<pre>';
-//        print_r($data);
-//        echo '</pre>'; exit;
-
-        return $this->load->layout('test/'.$type,$data,FALSE,'layout_test'); 
+        return $this->load->layout('test/'.$type,$data,FALSE,'layout_test2');  
     }
     public function writing_result() {
         $this->load->model('test_model','test');
@@ -603,7 +589,7 @@ class Test extends CI_Controller{
                 'og:description' => $testDetail['description'],
                 'og:url' => current_url())
         );
-        return $this->load->layout('test/'.$type.'_review',$data,FALSE, 'layout_test');
+        return $this->load->layout('test/'.$type.'_review',$data,FALSE, 'layout_test2');
     } 
     public function result() {
         $this->load->model('test_model','test');

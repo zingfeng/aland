@@ -16,7 +16,7 @@ section#questions-list {
 
     height: 0px;
     transition: height .5s;
-    max-height: 300px;
+    max-height: 600px;
 
     .title-button-hide-questions-list {
         padding: 15px 0 5px 0;
@@ -70,8 +70,24 @@ section#questions-list {
 
     &.-active {
         height: 210px;
-        transition: height .5s;
 
+        transition: height .5s;
+        @include respond (tab-land) {
+            height: 230px;
+        }
+
+        @include respond (tab-port) {
+            height: 230px;
+
+        }
+
+        @include respond (phone) {
+            height: 360px;
+        }
+
+        @include respond (big-desktop) {
+            height: 210px;
+        }
     }
 }
 }

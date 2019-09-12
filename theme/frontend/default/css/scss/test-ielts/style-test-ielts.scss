@@ -6,17 +6,29 @@
 @import "base/base";
 @import "base/typography";
 
+@import "layout/header-layout";
+@import "layout/breadcrumb-layout";
+@import "layout/footer-test-layout";
+@import "layout/footer-test-reading-layout";
+@import "layout/footer-test-listening-layout";
+@import "layout/footer-test-speaking-layout";
+@import "layout/footer-test-writing-layout";
+
 @import "pages/test-listening";
 @import "pages/test-listening-review";
-@import "pages/test-reading";
+@import "pages/test-speaking";
 @import "pages/test-reading-review";
-@import "pages/test-writing-result";
+@import "pages/test-writing-result"; 
+@import "pages/test-writing";
 
 @import "components/breadcrum";
 @import "components/button";
 @import "components/question-list";
 @import "components/card";
 @import "components/table";
+// @import "components/background-test";
 
 //icon
-@import "../icomoon";
+@import "../icomoon"; 
+
+  

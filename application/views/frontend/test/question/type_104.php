@@ -27,12 +27,12 @@ if($rows) {
 				<div class="clearfix user_answer_result">
 					<?php 
 					if(!$result) { ?>
-					<label>
-						<input type="checkbox" value="<?php echo $arrAlpha[$key]; ?>" type="text" name="answer[<?php echo $questionAnswer['answer_id']; ?>][<?php echo $jk; ?>]" class="question_check">
-						<span style="font-weight: normal; margin-left: 15px;">
-							<?php echo $textAnswer; ?>
-						</span>
-					</label>
+						<label>
+							<input type="checkbox" value="<?php echo $arrAlpha[$key]; ?>" type="text" name="answer[<?php echo $questionAnswer['answer_id']; ?>][<?php echo $jk; ?>]" class="question_check">
+							<span style="font-weight: normal; margin-left: 15px;">
+								<?php echo $textAnswer; ?>
+							</span>
+						</label>
 					<?php } else { 
 						$classDom = ''; $margin_text = '20';
 						if (in_array($arrAlpha[$key], $arrResult) ) {

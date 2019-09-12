@@ -1,0 +1,167 @@
+.header {
+
+    .navigation-top {
+        align-items: center;
+        // padding: $padding-2 0;
+        background-color: $white-1;
+        box-shadow: 0 0 16px 0 #D7D7D7;
+
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+
+
+        &__img-brand {
+            display: flex;
+            justify-content: space-between;
+
+            .logo-company {
+                width: 100px;
+                height: auto;
+            }
+        }
+
+        .navbar-toggler {
+            @include respond (phone) {
+                margin-right: $margin-3;
+            }
+        }
+
+        &__menu {
+
+            .menu {
+
+                .menu-link {
+                    color: $black-2;
+                    padding: 5px 15px;
+                    &:hover {
+                        background-color: $light-red-1;
+                        border-radius: 4px;
+                        color: $white-1;
+                    } 
+                    &.-active {
+                        background-color: $light-red-1;
+                        border-radius: 4px;
+                        color: $white-1;
+                    }
+                }
+
+                .button-go-back__link {
+                    .fa-sign-out {
+                        transform: rotate(180deg);
+                        -ms-transform: rotate(180deg); /* IE 9 */
+                        -webkit-transform: rotate(180deg);
+                    }
+                }
+
+                .account-information {
+                    display: none;
+
+                    @include respond (tab-land) {
+                        display: none;
+                    }
+        
+                    @include respond (tab-port) {
+                        display: block;
+                    }
+        
+                    @include respond (phone) {
+                        display: block;
+                    }
+        
+                    @include respond (big-desktop) {
+                        display: none;
+                    }
+                }
+            }
+
+        }
+     
+        &__user {
+            display: flex;
+            align-items: center;
+
+            @include respond (tab-land) {
+                display: flex;
+            }
+
+            @include respond (tab-port) {
+                display: none;
+            }
+
+            @include respond (phone) {
+                display: none;
+            }
+
+            @include respond (big-desktop) {
+                display: flex;
+            }
+
+            .avatar {
+                // padding: 10px;
+                border-radius: 50%;
+                margin-right: 10px;
+                // color: $white-1;
+                width: 32px;
+                height: 32px;
+                object-fit: cover;
+                object-position: center;
+
+                &.-color-random-1 {
+                    background-color: $color-random-1;
+                }
+
+                &.-color-random-2 {
+                    background-color: $color-random-2;
+                }
+
+                &.-color-random-3 {
+                    background-color: $color-random-3;
+                }
+
+                &.-color-random-4 {
+                    background-color: $color-random-4;
+                }
+
+                &.-color-random-5 {
+                    background-color: $color-random-5;
+                }
+
+                &.-color-random-6 {
+                    background-color: $color-random-6;
+                }
+
+                &.-color-random-7 {
+                    background-color: $color-random-7;
+                }
+
+                &.-color-random-8 {
+                    background-color: $color-random-8;
+                }
+
+                &.-color-random-9 {
+                    background-color: $color-random-9;
+                }
+            }
+        }
+
+        .navbar {
+
+            .navbar-toggler {
+                
+                background-color: transparent;
+                border: 1px solid $dark-blue-1;
+                
+                .fa-bars {
+                    color: $dark-blue-1;
+                }
+            }
+        }
+
+
+    }
+
+}

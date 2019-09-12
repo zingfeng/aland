@@ -95,7 +95,7 @@
 		            <div class="ideal-vocabulary">
 		                <div class="ideal">
 		                    <div class="ideal-vocabulary__title">
-		                        Idea
+		                        Ideal
 		                    </div>
 		                    <div class="ideal-vocabulary__content">
 		                        <?php echo $options['idea']; ?>

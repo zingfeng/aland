@@ -1,0 +1,66 @@
+// -------------------------------
+//Start test writing result
+section.test-writing-result {
+
+    .information {
+        padding: 0 $padding-2;
+
+        &__title {
+            font-size: $h4;
+            font-weight: bold;
+            margin-top: $margin-4;
+        }
+
+        &__view {
+            color: $black-2;
+        }
+
+        &__border-bottom {
+            border-bottom: 1px solid $black-3;
+            margin: $margin-2 0;
+        }
+
+        &__text-notification {
+            margin-top: $margin-5;
+            // font-size: $h4;
+            font-weight: bold;
+
+        }
+
+        &__button-action {
+            margin-top: $margin-7;
+
+            .custom-button {
+                width: 336px;
+
+                @include respond (tab-land) {
+                    width: 336px;
+                }
+
+                @include respond (tab-port) {
+                    width: 336px;
+                }
+
+                @include respond (phone) {
+                    width: 270px;
+                }
+
+                @include respond (big-desktop) {
+                    width: 336px;
+                }
+            }
+
+            .button-02 {
+                margin-top: $margin-4;
+            }
+        }
+
+        &__sub-text-button {
+            font-size: $h7;
+            margin-top: $margin-2;
+            color: $dark-blue-2;
+        }
+    }
+}
+
+//End test writing result

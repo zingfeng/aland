@@ -22,17 +22,17 @@
                     <a href="" class="questions-number -not-done-yet">
                         40
                     </a>
-                    
+                     
                 </div>
             </div>
         </section>
         <!-- kết thúc bảng câu hỏi -->
 
     </main>
-    <script src="../js/bootstrap4/jquery-3.3.1.slim.min.js"></script>
-    <script src="../js/bootstrap4/popper.min.js"></script>
-    <script src="../js/bootstrap4/bootstrap.min.js"></script>
-    <script src="../js/test-ielts.js"></script>
+    <script src="html/js/bootstrap4/jquery-3.3.1.slim.min.js"></script>
+    <script src="html/js/bootstrap4/popper.min.js"></script>
+    <script src="html/js/bootstrap4/bootstrap.min.js"></script>
+    <script src="html/js/test-ielts.js"></script>
 </body>
 
 </html>

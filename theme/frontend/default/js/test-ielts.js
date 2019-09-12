@@ -14,3 +14,4 @@ function onClickShowNotepad(dom,id) {
 	$(dom).hide();
 	$("#show_note_pad_" + id).show(500);
 }
+
