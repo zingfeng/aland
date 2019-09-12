@@ -8,30 +8,35 @@ $csrf = array(
     <nav class="row navigation-top">
         <div class="container"> 
             <div class="row">
-                <?php echo $this->load->view('test/common/home');?>
-                <div class="col-8 navigation-top__menu-collapse" id="navbarTogglerTop">
-                    <ul class="menu">
-                        <li class="nav-item">
-                            <a class="nav-link -custom-color-link" href="#">
-                                <i class="fa fa-sign-out" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <?php
-                        $i = 1; $test_time = 0;
-                        //$test_time = 0;
-                        foreach ($arrQuestion as $key => $question) { ?>
-                            <?php $nextSetion = $arrQuestion[$key+1]?>
-                            <li class="nav-item">
-                                <a data-section="<?php echo $question['question_id']; ?>" data-index="<?php echo $i-1; ?>" id="question_setion_selection_<?php echo $question['question_id']; ?>" class="reading_change_section nav-link menu-link -custom-color-link <?php echo $i == 1 ? '-active' : '' ?>" href="javascript:;">
-                                    <?php echo $question['title']; ?>
-                                </a>
-                            </li>
-                            <?php $i++;
-                            $test_time += $question['test_time'] * 60 * 1000;
-                        } ?>
-                    </ul> 
+                <div class="col pl-0 pr-0">
+                    <nav class="navbar navbar-expand-lg ">
+                        <?php echo $this->load->view('test/common/home');?> 
+                        
+                        <div class="collapse navbar-collapse navigation-top__menu" id="navbarText">
+                            <ul class="navbar-nav mr-auto menu">
+                                <li class="nav-item">
+                                    <a class="nav-link menu-link button-go-back__link" href="#">
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <?php
+                                $i = 1; $time = 0;
+                                //$test_time = 0;
+                                foreach ($arrQuestion as $key => $question) { ?>
+                                    <?php $nextSetion = $arrQuestion[$key+1]?>
+                                    <li class="nav-item">
+                                        <a data-section="<?php echo $question['question_id']; ?>" data-index="<?php echo $i-1; ?>" id="question_setion_selection_<?php echo $question['question_id']; ?>" class="reading_change_section nav-link menu-link -custom-color-link <?php echo $i == 1 ? '-active' : '' ?>" href="javascript:;">
+                                            <?php echo $question['title']; ?>
+                                        </a>
+                                    </li>
+                                <?php $i++;
+                                    $test_time += $question['test_time'] * 60 * 1000;
+                                } ?>
+                            </ul>
+                            <?php echo $this->load->view('test/common/account');?>
+                        </div>
+                    </nav>
                 </div>
-                <?php echo $this->load->view('test/common/account');?>
             </div>
         </nav>
     </div>
@@ -105,9 +110,10 @@ $csrf = array(
     </div>
 </section>
 
-<footer id="footer-listening" class="fixed-bottom">
+<footer id="footer-test" class="fixed-bottom">
     <div class="container">
-        <div class="row align-item-center">
+        <!-- view tablet desktop -->
+        <div class="row align-item-center footer-reading-view-desktop-tablet">
             <div class="col-2">
                 <button class="btn btn-outline-primary form-control" onclick="showQuestionsList()">
                     Bảng câu hỏi
@@ -119,7 +125,7 @@ $csrf = array(
                     <span class="time-countdown__icon">
                         <span class="icon-round-timer-24px"></span>
                     </span>
-                    <span class="time-countdown__time" id="show_count_down"></span>
+                    <span class="time-countdown__time show_count_down"></span>
                 </div>
                 <!-- kết thúc thời gian làm bài còn lại -->
             </div>
@@ -130,8 +136,33 @@ $csrf = array(
                     <?php } ?>
                 <?php }?>
             </div>
-            
         </div>
+        <!-- End view tablet desktop -->
+
+        <!-- view mobile -->
+        <div class="row align-item-center footer-reading-view-mobile">
+            <div class="col-2">
+                <button class="btn btn-outline-primary btn-sm" onclick="showQuestionsList()">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                </button>           
+            </div>
+            <div class="col-6 align-item-center text-center">
+                <div class="time-countdown-test-reading-view-mobile align-item-center">
+                    <span class="time-countdown-test-reading-view-mobile__icon">
+                        <span class="icon-round-timer-24px"></span>
+                    </span>
+                    <span class="time-countdown-test-reading-view-mobile__time show_count_down"></span>                   
+                </div>               
+            </div>
+            <div class="col-4 passage-control">
+                <?php foreach ($arrQuestion as $i => $question) {?>
+                    <?php if ($nextSection = $arrQuestion[$i + 1]) {?>
+                        <button class="btn btn-danger btn-sm w-100 reading_change_section" data-section="<?php echo $nextSection['question_id']; ?>" data-index="<?php echo $i+1?>" data-ci=<?php echo $i?> <?php echo $i != 0 ? 'style="display:none"' : ''?>><?php echo $nextSection['title']; ?>&nbsp;&nbsp;<i class="fa fa-chevron-circle-right"></i></button>
+                    <?php } ?>
+                <?php }?>
+            </div>
+        </div>
+        <!-- End view mobile -->
 
     </div>
 </footer>
@@ -218,14 +249,14 @@ $csrf = array(
         }
 
         var fiveSeconds = new Date().getTime() + parseInt(<?php echo (int) $test_time; ?>);
-        $('#show_count_down').countdown(fiveSeconds, {elapse: true})
+        $('.show_count_down').countdown(fiveSeconds, {elapse: true})
             .on('update.countdown', function(event) {
-                var this_countdown = $('#show_count_down');
+                var this_countdown = $('.show_count_down');
                 if (event.elapsed) {
                     // $this.html('Hết thời gian làm bài');
                     return liftOff();
                 } else {
-                    this_countdown.html(event.strftime('%H : %M : %S'));
+                    this_countdown.html(event.strftime('%M : %S'));
                 }
             });
 

@@ -41,12 +41,12 @@
                                 <div class="collapse navbar-collapse navigation-top__menu" id="navbarText">
                                     <ul class="navbar-nav mr-auto menu">
                                         <li class="nav-item">
-                                            <a class="nav-link menu-link button-go-back__link" href="#">
+                                            <a class="nav-link menu-link button-go-back__link " href="#">
                                                 <i class="fa fa-sign-out" aria-hidden="true"></i>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link menu-link" href="#">Section 1</a>
+                                            <a class="nav-link menu-link -active" href="#">Section 1</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link menu-link" href="#">Section 2</a>

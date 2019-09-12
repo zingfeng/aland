@@ -175,24 +175,20 @@ $test_time = 12000;
         </div>
         <!-- end footer view tablet desktop -->
 
-
         <!-- start footer view mobile -->
         <div class="row footer-view-mobile">
-            <div class="col audio-player-view-mobile">
-            <button class="btn btn-outline-primary btn-sm button-show-answer-view-mobile"
-                    onclick="showQuestionsList()">
-                    <i class="fa fa-check" aria-hidden="true"></i>
+            <div class="col-4 audio-player-view-mobile">
+                <button class="btn btn-outline-primary btn-sm button-show-answer-view-mobile" onclick="showQuestionsList()">
+                    Câu hỏi
                 </button>
-                <div class="audio-player-view-mobile__time-play time-play">
-                    <?php //echo $this->load->view('common/player'); ?>
-                </div>
+            </div>
+            <div class="col-4  audio-player-view-mobile">
                 <div class="audio-player-view-mobile__time-countdown time-countdown-mobile">
-                    <span class="time-countdown-mobile__icon">
-                        <span class="icon-round-timer-24px"></span>
-                    </span>
+                    <span class="icon-round-timer-24px"></span> 
                     <span class="time-countdown-mobile__time show_count_down"></span>
                 </div>
-
+            </div>
+            <div class="col-4">
                 <div class="passage-control">
                     <?php foreach ($arrQuestion as $i => $question) {?>
                         <?php if ($nextSection = $arrQuestion[$i + 1]) {?>
@@ -203,6 +199,12 @@ $test_time = 12000;
                     <?php }?>
                 </div>
             </div>
+        </div>
+
+        <div class="row footer-view-mobile -custom-margin-top">
+            <!-- file audio -->
+            <?php echo $this->load->view('common/player'); ?>
+            <!-- kết thúc file audio -->
         </div>
         <!-- end footer view mobile -->
 

@@ -280,7 +280,10 @@ footer#footer-test .group-button__next-finish-section-view-ipad {
     footer#footer-test .group-button__next-finish-section-view-ipad {
       display: none; } }
 footer#footer-test .footer-view-mobile {
-  display: none; }
+  display: none;
+  align-items: center; }
+  footer#footer-test .footer-view-mobile.-custom-margin-top {
+    margin-top: 15px; }
   @media (max-width: 75em) {
     footer#footer-test .footer-view-mobile {
       display: none; } }
@@ -293,51 +296,51 @@ footer#footer-test .footer-view-mobile {
   @media (min-width: 112.5em) {
     footer#footer-test .footer-view-mobile {
       display: none; } }
-  footer#footer-test .footer-view-mobile .audio-player-view-mobile {
+  footer#footer-test .footer-view-mobile .group-button__button-play-pause {
+    color: #F24962; }
+    footer#footer-test .footer-view-mobile .group-button__button-play-pause .btn-play-pause {
+      font-size: 40px; }
+  footer#footer-test .footer-view-mobile .time-play {
+    display: flex;
+    align-items: center; }
+    footer#footer-test .footer-view-mobile .time-play__time-audio {
+      font-size: 14px;
+      margin-right: 10px; }
+    footer#footer-test .footer-view-mobile .time-play__audio-time-line {
+      position: relative;
+      height: 3px;
+      border-radius: 6px;
+      background-color: #E8E9EE;
+      width: 100%; }
+      footer#footer-test .footer-view-mobile .time-play__audio-time-line::before {
+        content: '';
+        position: absolute;
+        width: 40%;
+        height: 3px;
+        border-radius: 6px;
+        background-color: #F24962; }
+      footer#footer-test .footer-view-mobile .time-play__audio-time-line::after {
+        content: '';
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #FFFFFF;
+        border: 2px solid #F24962;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 42%; }
+  footer#footer-test .footer-view-mobile .audio-player-view-mobile .time-countdown-mobile {
+    color: #F24962;
     display: flex;
     align-items: center;
     justify-content: space-between; }
-    footer#footer-test .footer-view-mobile .audio-player-view-mobile .group-button__button-play-pause {
-      color: #F24962; }
-      footer#footer-test .footer-view-mobile .audio-player-view-mobile .group-button__button-play-pause .btn-play-pause {
-        font-size: 30px; }
-    footer#footer-test .footer-view-mobile .audio-player-view-mobile .time-play {
-      display: flex;
-      align-items: center; }
-      footer#footer-test .footer-view-mobile .audio-player-view-mobile .time-play__time-audio {
-        font-size: 12px;
-        margin-right: 10px; }
-      footer#footer-test .footer-view-mobile .audio-player-view-mobile .time-play__audio-time-line {
-        position: relative;
-        height: 3px;
-        border-radius: 6px;
-        background-color: #E8E9EE;
-        width: 80px; }
-        footer#footer-test .footer-view-mobile .audio-player-view-mobile .time-play__audio-time-line::before {
-          content: '';
-          position: absolute;
-          width: 40px;
-          height: 3px;
-          border-radius: 6px;
-          background-color: #F24962; }
-        footer#footer-test .footer-view-mobile .audio-player-view-mobile .time-play__audio-time-line::after {
-          content: '';
-          width: 12px;
-          height: 12px;
-          border-radius: 50%;
-          background-color: #FFFFFF;
-          border: 2px solid #F24962;
-          position: absolute;
-          transform: translate(-50%, -50%);
-          top: 50%;
-          left: 42%; }
-    footer#footer-test .footer-view-mobile .audio-player-view-mobile .time-countdown-mobile {
-      color: #F24962; }
-      footer#footer-test .footer-view-mobile .audio-player-view-mobile .time-countdown-mobile__icon {
-        font-size: 14px; }
-      footer#footer-test .footer-view-mobile .audio-player-view-mobile .time-countdown-mobile__time {
-        font-size: 14px;
-        font-weight: bold; }
+    footer#footer-test .footer-view-mobile .audio-player-view-mobile .time-countdown-mobile__icon {
+      font-size: 18px;
+      margin-right: 5px; }
+    footer#footer-test .footer-view-mobile .audio-player-view-mobile .time-countdown-mobile__time {
+      font-size: 22px;
+      font-weight: bold; }
 
 .audio-player-time-countdown {
   display: flex;
@@ -1329,7 +1332,7 @@ section#questions-list {
           height: 230px; } }
       @media (max-width: 37.5em) {
         section#questions-list .background-questions-list.-active {
-          height: 360px; } }
+          height: 430px; } }
       @media (min-width: 112.5em) {
         section#questions-list .background-questions-list.-active {
           height: 210px; } }
