@@ -409,7 +409,7 @@ $(document).ready(function() {
                 // push vào
                 var mono_select = [];
                 mono_select['value'] = json.id;
-                mono_select['text'] = json.label + ': ' + json.name +' SDT:' + json.phone;
+                mono_select['text'] = json.label + ': ' + json.name +' SĐT:' + json.phone;
                 mono_select['disabled'] = '';
                 mono_select['style'] = '';
                 arr_data[id_loc].push(mono_select);
