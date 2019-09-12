@@ -181,6 +181,7 @@ $this->load->config('data');
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo $this->lang->line("setting_seo_title"); ?></label>
 							<div class="col-md-9 col-sm-9 col-xs-12">
+                                <p>Hướng dẫn: <br>Tên cơ sở hiển thị trong form như sau: <b>Nhãn</b> : + <b>Tên</b> +' SĐT:' + <b>Điện thoại</b> </p>
 								<?php 
 								$arrBranch = json_decode($row['branch'],TRUE);
 								$j = 0;
@@ -205,7 +206,12 @@ $this->load->config('data');
 								<div class="item form-inline" style="margin-bottom: 10px;">
 									<input type="text" name="branch[<?php echo $i; ?>][id]" value="" placeholder="Id" class="form-control">
 									<input type="text" name="branch[<?php echo $i; ?>][label]" value="" placeholder="Nhãn" class="form-control">
-									<input type="text" name="branch[<?php echo $i; ?>][name]" value="" placeholder="Tên" class="form-control">
+
+                                    <input type="text" name="branch[<?php echo $j; ?>][address]" value="" placeholder="Địa chỉ" class="form-control">
+                                    <input type="text" name="branch[<?php echo $j; ?>][iframe_map]" value="" placeholder="Link Google Map" class="form-control">
+                                    <input type="text" name="branch[<?php echo $j; ?>][time_open]" value="" placeholder="Thời gian mở cửa - ; để xuống dòng" class="form-control">
+
+                                    <input type="text" name="branch[<?php echo $i; ?>][name]" value="" placeholder="Tên" class="form-control">
 									<input type="text" name="branch[<?php echo $i; ?>][phone]" value="" placeholder="Điện thoại" class="form-control">
 									<select name="branch[<?php echo $i; ?>][loc]" class="form-control">
 										<option value="1">Hà Nội</option>
