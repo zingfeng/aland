@@ -25,7 +25,7 @@
         <link rel="stylesheet" href="html/css/style-test-ielts.css" media="all" />
         <style type="text/css">
             /* Only in showing */
-            /*.tilte_explain_question{
+            .tilte_explain_question{
                 display: none !important;
             }
             .content_explain_question{
@@ -68,7 +68,7 @@
             }
             .div_part{
                 margin-bottom: 100px;
-            }*/
+            }
         </style>
 </head>
 <body>

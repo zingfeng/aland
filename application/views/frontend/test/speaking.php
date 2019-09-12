@@ -2,75 +2,52 @@
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 $question = $arrQuestion[0];
 ?>
+
 <header class="header">
     <nav class="row navigation-top">
         <div class="container">
             <div class="row">
+                <div class="col pl-0 pr-0">
+                    <nav class="navbar navbar-expand-lg ">
+                        <?php echo $this->load->view('test/common/home');?>
 
-                <?php echo $this->load->view('test/common/home');?>
+                        <div class="collapse navbar-collapse navigation-top__menu" id="navbarText">
+                            <ul class="navbar-nav mr-auto menu">
+                                <li class="nav-item">
+                                    <a  onclick="goback() " class="nav-link menu-link button-go-back__link" href="#">
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <?php if($arrQuestionGroup) { ?>
 
-                <button class="navbar-toggler navigation-top__button-collapse" type="button"
-                        data-toggle="collapse" data-target="#navbarTogglerTop" aria-controls="navbarTogglerTop"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="col-8 navigation-top__menu-collapse" id="navbarTogglerTop">
-                    <div class="select_sever" id="select_sever">
-                    <ul class="menu">
-                        <li class="nav-item">
-                            <a class="nav-link -custom-color-link" href="#" onclick="goback() ">
-                                <i class="fa fa-sign-out" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <?php if($arrQuestionGroup) { ?>
-
-                                <?php
-                                $i = 1; $time = 0;
+                                    <?php
+                                    $i = 1; $time = 0;
 //                                var_dump($arrQuestionGroup); exit;
-                                foreach ($arrQuestionGroup[$question['question_id']] as $key => $qgroup) {?>
+                                    foreach ($arrQuestionGroup[$question['question_id']] as $key => $qgroup) {?>
 
-<!--                                    <a onclick="SelectPart(--><?php //echo $i; ?><!--)" data-section="<?php //echo $qgroup['question_id']; ?>"-->
-<!--                                       id="question_setion_selection_--><?php //echo $qgroup['question_id']; ?><!--"-->
-<!--                                       class="reading_change_section --><?php //if ($i == 1) echo 'active'; ?><!--"-->
-<!--                                       href="javascript:void(0)">--><?php //echo $qgroup['title']; ?><!--</a>-->
+                                        <!--                                    <a onclick="SelectPart(--><?php //echo $i; ?><!--)" data-section="<?php //echo $qgroup['question_id']; ?>"-->
+                                        <!--                                       id="question_setion_selection_--><?php //echo $qgroup['question_id']; ?><!--"-->
+                                        <!--                                       class="reading_change_section --><?php //if ($i == 1) echo 'active'; ?><!--"-->
+                                        <!--                                       href="javascript:void(0)">--><?php //echo $qgroup['title']; ?><!--</a>-->
 
-                                    <li class="nav-item">
-                                        <a class="nav-link menu-link -custom-color-link  <?php if ($i == 1) echo '-active'; ?>" href="javascript:void(0)" data-section="<?php echo $qgroup['question_id']; ?>"
-                                           id="question_setion_selection_<?php echo $qgroup['question_id']; ?>"
-                                           onclick="SelectPart(<?php echo $i; ?>,event)"><?php echo $qgroup['title']; ?></a>
-                                    </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link menu-link -custom-color-link  <?php if ($i == 1) echo '-active'; ?>" href="javascript:void(0)" data-section="<?php echo $qgroup['question_id']; ?>"
+                                               id="question_setion_selection_<?php echo $qgroup['question_id']; ?>"
+                                               onclick="SelectPart(<?php echo $i; ?>,event)"><?php echo $qgroup['title']; ?></a>
+                                        </li>
 
-                                    <?php $i ++;
-                                }
-                                $test_time = $question['test_time'] * 60 * 1000;
-                                ?>
+                                        <?php $i ++;
+                                    }
+                                    $test_time = $question['test_time'] * 60 * 1000;
+                                    ?>
 
-                        <?php } ?>
-
-
-<!--                        <li class="nav-item">-->
-<!--                            <a class="nav-link menu-link -custom-color-link" href="#"-->
-<!--                               onclick="onClickTabMenu()">Section 1</a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a class="nav-link menu-link -custom-color-link" href="#"-->
-<!--                               onclick="onClickTabMenu()">Section 2</a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a class="nav-link menu-link -custom-color-link" href="#"-->
-<!--                               onclick="onClickTabMenu()">Section 3</a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a class="nav-link menu-link -custom-color-link" href="#"-->
-<!--                               onclick="onClickTabMenu()">Section 4</a>-->
-<!--                        </li>-->
-                    </ul>
-                    </div>
+                                <?php } ?>
+                            </ul>
+                            <?php echo $this->load->view('test/common/account');?>
+                        </div>
+                    </nav>
                 </div>
-
-                <?php echo $this->load->view('test/common/account');?>
             </div>
-
     </nav>
 
     <div class="technical_box" style="display: none">
@@ -88,6 +65,7 @@ $question = $arrQuestion[0];
         <ol id="recordingListready"></ol>
     </div>
 </header>
+
 
 <section class="section-breadcrumb margin-navbar">
     <div class="container">
@@ -148,7 +126,7 @@ $question = $arrQuestion[0];
                     if ($stt_part != 2) {
                     echo '
                     
-                    <div class="div_part" id="div_part'.$stt_part.'"><div class="row item" >';
+                    <div class="div_part" id="div_part'.$stt_part.'"><div class="row_ item_" >';
 //                                <ul class="list_speaking">';
                         for ($m = 0; $m < count($question_answer) ; $m++) {
 
@@ -166,6 +144,7 @@ $question = $arrQuestion[0];
 
                             ?>
                             <!--                    <label>Question --><?php //echo $stt_inside_part; ?><!--</label>-->
+                            <div class="row item" >
                             <div class="col-12 col-sm-3"><strong>Question <?php echo $stt_inside_part; ?>:</strong></div>
                             <div class="col-12 col-sm-9">
 
@@ -272,7 +251,7 @@ $question = $arrQuestion[0];
                                 <div class="recordingList"  id="recordingList<?php echo $id_answer_1_by_1; ?>" file_url="" ></div>
                             </div>
 
-
+                            </div>
                             <?php
                         }
 
@@ -311,52 +290,54 @@ $question = $arrQuestion[0];
                                     <div class="col-12 col-sm-9">
                                         <textarea class="notepad form-control" placeholder="Write your note here"></textarea>
                                     </div>
-                                    <div class="col-12 col-sm-3"><strong>Bài làm của bạn</strong></div>
 
-                                    <div class="col-12 col-sm-9 form-inline"
-                                         id_question="<?php echo $id_answer_1_by_1_1_by_1; ?>"
-                                         style="">
+                                        <div class="col-12 col-sm-3" style="padding-top: 25px" ><strong>Bài làm của bạn</strong></div>
 
-                                        <a class="icon_speaking icon_speaking_record" href="javascript:void(0);"
-                                           id_question="<?php echo $id_answer_1_by_1; ?>"
-                                           id="a_speaking<?php echo $id_answer_1_by_1; ?>">
-                                            <button class="btn btn-outline-danger form-control btn-speaking">
-                                                <i id="img_speaking<?php echo $id_answer_1_by_1; ?>" class="fa fa-bullhorn" aria-hidden="true"></i>
-                                                <span id="span_speaking<?php echo $id_answer_1_by_1; ?>">Start Record</span>
-                                            </button>
-                                        </a>
+                                        <div class="col-12 col-sm-9 form-inline"
+                                             id_question="<?php echo $id_answer_1_by_1_1_by_1; ?>"
+                                             style="padding-top: 25px">
 
-                                        <a class="icon_speaking icon_speaking_pause" href="javascript:void(0);"
-                                           id_question="<?php echo $id_answer_1_by_1; ?>"
-                                           id="a_speaking_pause<?php echo $id_answer_1_by_1; ?>"
-                                           style="display: none;">
-                                            <button class="btn btn-danger form-control btn-speaking">
-                                                <i class="fa fa-pause" aria-hidden="true"></i>
-                                                <span id="span_speaking_pause<?php echo $id_answer_1_by_1; ?>">Pause Record</span>
-                                            </button>
-                                        </a>
+                                            <a class="icon_speaking icon_speaking_record" href="javascript:void(0);"
+                                               id_question="<?php echo $id_answer_1_by_1; ?>"
+                                               id="a_speaking<?php echo $id_answer_1_by_1; ?>">
+                                                <button class="btn btn-outline-danger form-control btn-speaking">
+                                                    <i id="img_speaking<?php echo $id_answer_1_by_1; ?>" class="fa fa-bullhorn" aria-hidden="true"></i>
+                                                    <span id="span_speaking<?php echo $id_answer_1_by_1; ?>">Start Record</span>
+                                                </button>
+                                            </a>
 
-                                        <a class="icon_speaking icon_speaking_finish" href="javascript:void(0);"
-                                           id_question="<?php echo $id_answer_1_by_1; ?>"
-                                           id="a_speaking_finish<?php echo $id_answer_1_by_1; ?>"  style="display: none;">
-                                            <button class="btn btn-outline-info form-control btn-speaking">
-                                                <i class="fa fa-check" aria-hidden="true"></i>
-                                                <span>Finish Record</span>
-                                            </button>
-                                        </a>
+                                            <a class="icon_speaking icon_speaking_pause" href="javascript:void(0);"
+                                               id_question="<?php echo $id_answer_1_by_1; ?>"
+                                               id="a_speaking_pause<?php echo $id_answer_1_by_1; ?>"
+                                               style="display: none;">
+                                                <button class="btn btn-danger form-control btn-speaking">
+                                                    <i class="fa fa-pause" aria-hidden="true"></i>
+                                                    <span id="span_speaking_pause<?php echo $id_answer_1_by_1; ?>">Pause Record</span>
+                                                </button>
+                                            </a>
 
-                                        <a class="icon_speaking icon_speaking_record_again" href="javascript:void(0);"
-                                           id_question="<?php echo $id_answer_1_by_1; ?>"
-                                           id="a_speaking_record_again<?php echo $id_answer_1_by_1; ?>"  style="display: none;">
+                                            <a class="icon_speaking icon_speaking_finish" href="javascript:void(0);"
+                                               id_question="<?php echo $id_answer_1_by_1; ?>"
+                                               id="a_speaking_finish<?php echo $id_answer_1_by_1; ?>"  style="display: none;">
+                                                <button class="btn btn-outline-info form-control btn-speaking">
+                                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                                    <span>Finish Record</span>
+                                                </button>
+                                            </a>
 
-                                            <button class="btn btn-outline-info form-control btn-speaking">
-                                                <i class="fa fa-check" aria-hidden="true"></i>
-                                                <span>Record Again</span>
-                                            </button>
-                                        </a>
+                                            <a class="icon_speaking icon_speaking_record_again" href="javascript:void(0);"
+                                               id_question="<?php echo $id_answer_1_by_1; ?>"
+                                               id="a_speaking_record_again<?php echo $id_answer_1_by_1; ?>"  style="display: none;">
 
-                                        <div class="recordingList"  id="recordingList<?php echo $id_answer_1_by_1; ?>" file_url="" ></div>
-                                    </div>
+                                                <button class="btn btn-outline-info form-control btn-speaking">
+                                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                                    <span>Record Again</span>
+                                                </button>
+                                            </a>
+
+                                            <div class="recordingList"  id="recordingList<?php echo $id_answer_1_by_1; ?>" file_url="" ></div>
+                                        </div>
+
 
 
 
@@ -384,7 +365,7 @@ $question = $arrQuestion[0];
     </div>
 </section>
 
-<footer id="footer-listening" class="fixed-bottom">
+<footer id="footer-test" class="fixed-bottom">
     <div class="container">
         <div class="row align-item-center">
             <div class="col-6 audio-player-time-countdown ">
@@ -448,19 +429,20 @@ $question = $arrQuestion[0];
         <input type="hidden" name="type" value="<?php echo $test['type']?>"/>
         <input type="hidden" name="start_time" value="<?php echo $start_time?>"/>
         <input type="hidden" name="user_answer" id="user_answer" value=""/>
-        <button type="submit" id="clickSubmit">Nộp bài</button>
+        <button type="submit" id="clickSubmit" style="display:none">Nộp bài</button>
     </form>
 </section>
 
-<!--<section class="information">-->
-<!--    <div class="container">-->
-<!--        <div class="row">-->
-<!--            <div class="col designed-build text-center">-->
+<section class="information">
+    <div class="container">
+        <div class="row">
+            <div class="col designed-build text-center">
 <!--                Designed and built with all the love in the world by the Imap team-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <script>
     function goback() {
