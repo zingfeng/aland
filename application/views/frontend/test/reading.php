@@ -76,12 +76,14 @@ $csrf = array(
             foreach ($arrQuestion as $qkey => $question) {
                 ?>
                 <div class="row no-gutters question_section_content" id="question_section_<?php echo $question['question_id']; ?>" <?php echo ($number_question != 1) ? 'style="display: none"' : '' ?>>
+                   
                     <div id="colA<?php echo $qkey; ?>" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 read margin-top" style="max-width: none !important;">
                         <h2 class="title"><?php echo $question['title']; ?></h2>
                         <div class="read_content">
                             <?php echo $question['detail']; ?>
                         </div>
                     </div>
+                    
                     <div id="colB<?php echo $qkey; ?>" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 answer margin-top" style="max-width: none !important;">
                         <?php foreach ($arrQuestionGroup[$question['question_id']] as $key => $qgroup) { ?>
                             <div class="question bg_warp mb30">
@@ -118,6 +120,7 @@ $csrf = array(
                     Bảng câu hỏi
                 </button>
             </div>
+           
             <div class="col-xl-7 col-lg-7 col-md-6 col-sm-4 text-center">
                 <!-- thời gian làm bài còn lại -->
                 <div class="time-countdown-test-reading-view-desktop-mobile align-item-center">
@@ -128,6 +131,7 @@ $csrf = array(
                 </div>
                 <!-- kết thúc thời gian làm bài còn lại -->
             </div>
+            
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 passage-control">
                 <?php foreach ($arrQuestion as $i => $question) {?>
                     <?php if ($nextSection = $arrQuestion[$i + 1]) {?>
@@ -142,11 +146,13 @@ $csrf = array(
 
         <!-- view mobile -->
         <div class="row align-item-center footer-reading-view-mobile">
+            
             <div class="col-1">
                 <button class="btn btn-outline-primary btn-sm" onclick="showQuestionsList()">
                 <i class="fa fa-check" aria-hidden="true"></i>
                 </button>           
             </div>
+     
             <div class="col-5 align-item-center text-center">
             <div class="time-countdown-test-reading-view-mobile align-item-center">
                     <span class="time-countdown-test-reading-view-mobile__icon">
@@ -155,6 +161,7 @@ $csrf = array(
                     <span class="time-countdown-test-reading-view-mobile__time show_count_down"></span>                   
                 </div>               
             </div>
+           
             <div class="col-6 passage-control">
                 <?php foreach ($arrQuestion as $i => $question) {?>
                     <?php if ($nextSection = $arrQuestion[$i + 1]) {?>
