@@ -79,14 +79,17 @@ $csrf = array(
                     
                     <?php $userAnswer = json_decode($arrLogDetail['answer_list'],TRUE); 
                 		foreach ($arrQuestionGroup[$question['question_id']] as $key => $qgroup) { ?>
-                        <div class="col-7 ">
+                        <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
                             <div class="questions">
                                 <div class="questions__title" style="border: none;">
                                     <?php echo $qgroup['title']; ?>
                                 </div>
+                                <?php if(isset($question['tapescript']) &&($question['tapescript'] !='')) { ?>
+                                    <a href="javascript:;" style="float: right;" data-question="<?php echo $question['question_id']?>" class="showhide_tabscript">Show tapescript</a>
+                                <?php } ?>
                             </div>
                             <?php if(isset($question['tapescript']) &&($question['tapescript'] !='')) { ?>
-                            <div class="tape-script">
+                            <div class="tape-script" id="tape-script-<?php echo $question['question_id']?>" style="display: none;">
 			                    <div class="collapse show" id="tape-script-content">
 			                        <div class="card card-body collapse__custom-collapse-card-body">
 			                           <?php echo $question['tapescript']?>
@@ -97,15 +100,15 @@ $csrf = array(
                             <p><?php echo $qgroup['detail']; ?></p>
 
                         </div>
-                        <div class="col-5">
+                        <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
                             <div class="row group-button">
-                                <div class="col-xl-6 col-lg-6 col-md-12 custom-col">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 custom-col">
                                     <button type="button" class="listening audio_start_time group-button__button-listen btn btn-outline-primary form-control" data-audio-time="<?php echo $qgroup['audio_start_time']?>">
                                         Listen From Here
                                     </button>
                                 </div>
-                                <div class="col-xl-6 col-lg-6 col-md-12 custom-col">
-                                    <button type="button" class=" =group-button__button-show-notepad btn btn-outline-primary form-control" onclick="onClickShowNotepad(this,<?php echo $key?>)">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 custom-col">
+                                    <button type="button" class="group-button__button-show-notepad btn btn-outline-primary form-control" onclick="onClickShowNotepad(this,<?php echo $key?>)">
                                         Show Notepad
                                         <!-- viet hoa chu cai dau -->
                                     </button>
@@ -181,21 +184,18 @@ $csrf = array(
 
         <!-- start footer view mobile -->
         <div class="row footer-view-mobile">
-            <div class="col audio-player-view-mobile">
-            <button class="btn btn-outline-primary btn-sm button-show-answer-view-mobile"
-                    onclick="showQuestionsList()">
-                    <i class="fa fa-check" aria-hidden="true"></i>
+            <div class="col-4 audio-player-view-mobile">
+                <button class="btn btn-outline-primary btn-sm button-show-answer-view-mobile" onclick="showQuestionsList()">
+                    Câu hỏi
                 </button>
-                <div class="audio-player-view-mobile__time-play time-play">
-                    <?php //echo $this->load->view('common/player'); ?>
-                </div>
+            </div>
+            <div class="col-4  audio-player-view-mobile">
                 <div class="audio-player-view-mobile__time-countdown time-countdown-mobile">
-                    <span class="time-countdown-mobile__icon">
-                        <span class="icon-round-timer-24px"></span>
-                    </span>
+                    <span class="icon-round-timer-24px"></span> 
                     <span class="time-countdown-mobile__time show_count_down"></span>
                 </div>
-
+            </div>
+            <div class="col-4">
                 <div class="passage-control">
                     <?php foreach ($arrQuestion as $i => $question) {?>
                         <?php if ($nextSection = $arrQuestion[$i + 1]) {?>
@@ -204,6 +204,12 @@ $csrf = array(
                     <?php }?>
                 </div>
             </div>
+        </div>
+
+        <div class="row footer-view-mobile -custom-margin-top">
+            <!-- file audio -->
+            <?php echo $this->load->view('common/player'); ?>
+            <!-- kết thúc file audio -->
         </div>
         <!-- end footer view mobile -->
     </div>
@@ -348,6 +354,19 @@ $csrf = array(
             var audio = document.getElementById("jp_audio_0");
             audio.play();
             audio.currentTime = $(this).data("audio-time"); // jumps to audio time
+        });
+
+        //Show | hide tabscript
+        $(".showhide_tabscript").bind("click",function(){
+            var question = $(this).data('question');
+            if($('#tape-script-'+question).is(":visible")){
+                $('#tape-script-'+question).hide();
+                $(this).html('Show tapescript');
+            }else{
+                $('#tape-script-'+question).show();
+                $(this).html('Hide tapescript');
+            }
+
         });
 
     });

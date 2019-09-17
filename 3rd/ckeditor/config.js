@@ -28,7 +28,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
 	config.removePlugins = 'elementspath,about';
-    config.extraPlugins = 'uploadimage,html5audio';
+    config.extraPlugins = 'uploadimage,youtubebootstrap,html5audio';
    	
    	config.toolbar_simple = [
     	[ 'Source', '-', 'Bold', 'Italic', 'BulletedList' ]

@@ -81,10 +81,10 @@ $test_time = 12000;
                         <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
                             <div class="questions">
                                 <div class="row">
-                                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 questions__title">
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 questions__title">
                                         <?php echo $qgroup['title']; ?>
                                     </div>
-                                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 questions__subtitle">
+                                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 questions__subtitle">
                                         <div class="guide-questions">
                                             <p><?php echo $qgroup['detail']; ?></p>
                                         </div>

@@ -76,13 +76,13 @@ $csrf = array(
             foreach ($arrQuestion as $qkey => $question) {
                 ?>
                 <div class="row no-gutters question_section_content" id="question_section_<?php echo $question['question_id']; ?>" <?php echo ($number_question != 1) ? 'style="display: none"' : '' ?>>
-                    <div id="col1" class="col col_gutter read">
+                    <div id="col1" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 read margin-top">
                         <h2 class="title"><?php echo $question['title']; ?></h2>
                         <div class="read_content">
                             <?php echo $question['detail']; ?>
                         </div>
                     </div>
-                    <div id="col2" class="col col_gutter answer">
+                    <div id="col2" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 answer margin-top">
                         <?php foreach ($arrQuestionGroup[$question['question_id']] as $key => $qgroup) { ?>
                             <div class="question bg_warp mb30">
                                 <h3><?php echo $qgroup['title']; ?></h3>
