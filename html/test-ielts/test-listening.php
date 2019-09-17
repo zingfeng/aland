@@ -12,30 +12,26 @@
                 <div class="group-test__custom-border-bottom"></div>
             </div>
         </div>
-        <div class="row">
+
+        <!-- Start button listen/show note -->
+        <div class="row header-test">
             <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
-                <div class="questions">
-                    <div class="row">
-                        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 questions__title">
-                            Question 1 - 7
+                <div class="row  questions">
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 questions__title">
+                        Question 1 - 7
+                    </div>
+                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 questions__subtitle">
+                        <div class="requied">
+                            (Complete the notes below)
                         </div>
-                        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 questions__subtitle">
-                            <div class="requied">
-                                (Complete the notes below)
-                            </div>
-                            <div class="guide-questions">
-                                Write <strong>ONE WORD AND/OR A NUMBER</strong> for each answer.
-                            </div>
+                        <div class="guide-questions">
+                            Write <strong>ONE WORD AND/OR A NUMBER</strong> for each answer.
                         </div>
                     </div>
                 </div>
-                <figure class="exam-questions">
-                    <!-- <img src="" alt=""> -->
-
-                </figure>
             </div>
-
             <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
+
                 <div class="row group-button">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 custom-col">
                         <button class="group-button__button-listen btn btn-outline-primary form-control">
@@ -50,10 +46,61 @@
                             <!-- viet hoa chu cai dau -->
                         </button>
                     </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- End button listen/show note -->
+
+
+
+
+        <div class="row">
+            <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
+                <!-- <div class="questions">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 questions__title">
+                            Question 1 - 7
+                        </div>
+                        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 questions__subtitle">
+                            <div class="requied">
+                                Complete the notes below
+                            </div>
+                            <div class="guide-questions">
+                                Write <strong>ONE WORD AND/OR A NUMBER</strong> for each answer.
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <figure class="exam-questions">
+                    <!-- <img src="" alt=""> -->
+
+                </figure>
+            </div>
+
+            <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
+                <!-- <div class="row group-button">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 custom-col">
+                        <button class="group-button__button-listen btn btn-outline-primary form-control">
+                            Listen From Here
+                        </button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 custom-col">
+                        <button class="group-button__button-show-notepad btn btn-outline-primary form-control"
+                            onclick="onClickShowNotepad(this,1)">
+                            Show Notepad
+                        </button>
+                    </div>
                     <div class="col-sm-12 custom-col form-textarea-notepad" id="show_note_pad_1" style="display: none;">
                         <textarea name="" placeholder="" rows="4" class="form-control"></textarea>
                     </div>
-                </div>
+                </div> -->
+
+
                 <div class="row form-answer">
                     <table class="table">
                         <tbody>
@@ -315,9 +362,8 @@
         <!-- start footer view mobile -->
         <div class="row footer-view-mobile">
             <div class="col-4 audio-player-view-mobile">
-        
-            <button class="btn btn-sm btn-outline-primary form-control"
-                    onclick="showQuestionsList()">
+
+                <button class="btn btn-sm btn-outline-primary form-control" onclick="showQuestionsList()">
                     Câu hỏi
                 </button>
                 <!-- <button class="btn btn-outline-primary btn-sm button-show-answer-view-mobile"
@@ -328,11 +374,11 @@
             </div>
             <div class="col-4  audio-player-view-mobile">
                 <div class="audio-player-view-mobile__time-countdown time-countdown-mobile">
-                        <span class="icon-round-timer-24px"></span> 
-                        <span class="time-countdown-mobile__time">
+                    <span class="icon-round-timer-24px"></span>
+                    <span class="time-countdown-mobile__time">
                         39:23
                     </span>
-                 
+
                 </div>
             </div>
 
@@ -344,33 +390,33 @@
                 <button class="btn btn-sm btn-danger form-control">
                     Section 2
                 </button>
-           
+
             </div>
         </div>
 
         <div class="row footer-view-mobile -custom-margin-top">
-                <div class="col-2  group-button">
-                    <a href="" class="group-button__button-play-pause">
-                        <i class="fa fa-play-circle btn-play-pause" aria-hidden="true"></i>
-                    </a>
-                    <!-- <a href="" class="group-button__button-play-pause"> -->
-                    <!-- <i class="fa fa-pause-circle  btn-play-pause" aria-hidden="true"></i> -->
-                    <!-- </a> -->
-                </div>           
+            <div class="col-2  group-button">
+                <a href="" class="group-button__button-play-pause">
+                    <i class="fa fa-play-circle btn-play-pause" aria-hidden="true"></i>
+                </a>
+                <!-- <a href="" class="group-button__button-play-pause"> -->
+                <!-- <i class="fa fa-pause-circle  btn-play-pause" aria-hidden="true"></i> -->
+                <!-- </a> -->
+            </div>
 
             <div class="col-10 time-play">
-                    <div class="time-play__time-audio">
-                        00:00
-                    </div>
-                    <div class="time-play__audio-time-line">
-                        <div class="position-play-dot">
+                <div class="time-play__time-audio">
+                    00:00
+                </div>
+                <div class="time-play__audio-time-line">
+                    <div class="position-play-dot">
 
-                        </div>
                     </div>
                 </div>
+            </div>
         </div>
 
-        
+
         <!-- end footer view mobile -->
 
 

@@ -27,8 +27,22 @@
         }
 
         .questions {
-            // display: flex;
-            margin: $margin-6 0;
+
+            @include respond (tab-land) {
+                // margin: $margin-7 $margin-12;
+            }
+
+            @include respond (tab-port) {
+                margin: 0 -30px;
+            }
+
+            @include respond (phone) {
+                // margin: $margin-3 $margin-12;
+            }
+
+            @include respond (big-desktop) {
+                // margin: $margin-7 $margin-12;
+            }
 
             &.-custom-margin {
                 @include respond (tab-land) {
@@ -54,18 +68,24 @@
                 color: $light-red-1;
 
                 padding-right: $padding-4;
+                padding-left: 0;
                 border-right: 1px solid $black-3;
 
                 @include respond (tab-land) {
                     border-right: 1px solid $black-3;
+                    padding-left: 15px;
                 }
 
                 @include respond (tab-port) {
                     border-right: none;
+                    padding-left: 15px;
+
                 }
 
                 @include respond (phone) {
                     border-right: none;
+                    padding-left: 15px;
+
                 }
 
                 @include respond (big-desktop) {
@@ -74,7 +94,8 @@
             }
 
             &__subtitle {
-                padding-left: $padding-4;
+                padding-left: $padding-3;
+                padding-right: 0;
             }
         }
 
@@ -89,6 +110,7 @@
             width: 100%;
             height: 530px;
             margin-bottom: 100px;
+            margin-top: 15px;
 
             @include respond (tab-land) {
                 margin-bottom: 100px;
@@ -109,24 +131,21 @@
         }
 
         .group-button {
-            // display: flex;
-            justify-content: space-between;
-            margin: $margin-7 $margin-12;
 
             @include respond (tab-land) {
-                margin: $margin-7 $margin-12;
+                // margin: $margin-7 $margin-12;
             }
 
             @include respond (tab-port) {
-                margin: $margin-3 $margin-12;
+                margin: 0px -25px 0px -25px;
             }
 
             @include respond (phone) {
-                margin: $margin-3 $margin-12;
+                // margin: $margin-3 $margin-12;
             }
 
             @include respond (big-desktop) {
-                margin: $margin-7 $margin-12;
+                // margin: $margin-7 $margin-12;
             }
 
             .custom-col {
@@ -141,6 +160,25 @@
                 textarea {
                     background: #F3F3F3;
                 }
+            }  
+             
+            &__button-listen {
+                // margin-top: 15px;
+                @include respond (tab-land) {
+                    margin-top: 0;
+                }
+
+                @include respond (tab-port) {
+                    margin-top: 15px;
+                }
+
+                @include respond (phone) {
+                    margin-top: $margin-3;
+                }
+
+                @include respond (big-desktop) {
+                    margin-top: 0;
+                }
             }
 
             &__button-show-notepad {
@@ -151,7 +189,7 @@
                 }
 
                 @include respond (tab-port) {
-                    margin-top: 0;
+                    margin-top: 15px;
                 }
 
                 @include respond (phone) {
@@ -190,6 +228,28 @@
                 }
             }
         }
+
+        //button listen/show note
+        .header-test {
+            margin: 30px 0;
+
+            @include respond (tab-land) {
+                // margin: $margin-7 $margin-12;
+            }
+
+            @include respond (tab-port) {
+                margin: 15px 0 0px 0; 
+            }
+
+            @include respond (phone) {
+                margin: 15px 0 0px 0;
+            }
+
+            @include respond (big-desktop) {
+                // margin: $margin-7 $margin-12;
+            }
+        }
+
     }
 }
 

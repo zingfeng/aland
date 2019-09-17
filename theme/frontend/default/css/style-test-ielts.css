@@ -585,47 +585,54 @@ footer#footer-test .footer-test-writing .time-countdown-test-writing {
     .test-listening .background-test .group-test__custom-border-bottom {
       border-bottom: 1px solid #D1D1D1;
       height: 1px; }
-    .test-listening .background-test .questions {
-      margin: 30px 0; }
+    @media (max-width: 56.25em) {
+      .test-listening .background-test .questions {
+        margin: 0 -30px; } }
+    @media (max-width: 75em) {
+      .test-listening .background-test .questions.-custom-margin {
+        margin: 30px 0; } }
+    @media (max-width: 56.25em) {
+      .test-listening .background-test .questions.-custom-margin {
+        margin: 0; } }
+    @media (max-width: 37.5em) {
+      .test-listening .background-test .questions.-custom-margin {
+        margin: 0; } }
+    @media (min-width: 112.5em) {
+      .test-listening .background-test .questions.-custom-margin {
+        margin: 30px 0; } }
+    .test-listening .background-test .questions__title {
+      font-size: 30px;
+      font-weight: bold;
+      color: #F24962;
+      padding-right: 20px;
+      padding-left: 0;
+      border-right: 1px solid #D1D1D1; }
       @media (max-width: 75em) {
-        .test-listening .background-test .questions.-custom-margin {
-          margin: 30px 0; } }
+        .test-listening .background-test .questions__title {
+          border-right: 1px solid #D1D1D1;
+          padding-left: 15px; } }
       @media (max-width: 56.25em) {
-        .test-listening .background-test .questions.-custom-margin {
-          margin: 0; } }
+        .test-listening .background-test .questions__title {
+          border-right: none;
+          padding-left: 15px; } }
       @media (max-width: 37.5em) {
-        .test-listening .background-test .questions.-custom-margin {
-          margin: 0; } }
+        .test-listening .background-test .questions__title {
+          border-right: none;
+          padding-left: 15px; } }
       @media (min-width: 112.5em) {
-        .test-listening .background-test .questions.-custom-margin {
-          margin: 30px 0; } }
-      .test-listening .background-test .questions__title {
-        font-size: 30px;
-        font-weight: bold;
-        color: #F24962;
-        padding-right: 20px;
-        border-right: 1px solid #D1D1D1; }
-        @media (max-width: 75em) {
-          .test-listening .background-test .questions__title {
-            border-right: 1px solid #D1D1D1; } }
-        @media (max-width: 56.25em) {
-          .test-listening .background-test .questions__title {
-            border-right: none; } }
-        @media (max-width: 37.5em) {
-          .test-listening .background-test .questions__title {
-            border-right: none; } }
-        @media (min-width: 112.5em) {
-          .test-listening .background-test .questions__title {
-            border-right: 1px solid #D1D1D1; } }
-      .test-listening .background-test .questions__subtitle {
-        padding-left: 20px; }
+        .test-listening .background-test .questions__title {
+          border-right: 1px solid #D1D1D1; } }
+    .test-listening .background-test .questions__subtitle {
+      padding-left: 15px;
+      padding-right: 0; }
     .test-listening .background-test #tape-script .card {
       color: red; }
     .test-listening .background-test .exam-questions {
       background-color: #F1F1F1;
       width: 100%;
       height: 530px;
-      margin-bottom: 100px; }
+      margin-bottom: 100px;
+      margin-top: 15px; }
       @media (max-width: 75em) {
         .test-listening .background-test .exam-questions {
           margin-bottom: 100px; } }
@@ -638,42 +645,42 @@ footer#footer-test .footer-test-writing .time-countdown-test-writing {
       @media (min-width: 112.5em) {
         .test-listening .background-test .exam-questions {
           margin-bottom: 100px; } }
-    .test-listening .background-test .group-button {
-      justify-content: space-between;
-      margin: 35px -10px; }
+    @media (max-width: 56.25em) {
+      .test-listening .background-test .group-button {
+        margin: 0px -25px 0px -25px; } }
+    .test-listening .background-test .group-button .custom-col {
+      padding: 0 10px; }
+    .test-listening .background-test .group-button .form-textarea-notepad {
+      color: #333;
+      margin-top: 35px; }
+      .test-listening .background-test .group-button .form-textarea-notepad textarea {
+        background: #F3F3F3; }
+    @media (max-width: 75em) {
+      .test-listening .background-test .group-button__button-listen {
+        margin-top: 0; } }
+    @media (max-width: 56.25em) {
+      .test-listening .background-test .group-button__button-listen {
+        margin-top: 15px; } }
+    @media (max-width: 37.5em) {
+      .test-listening .background-test .group-button__button-listen {
+        margin-top: 15px; } }
+    @media (min-width: 112.5em) {
+      .test-listening .background-test .group-button__button-listen {
+        margin-top: 0; } }
+    .test-listening .background-test .group-button__button-show-notepad {
+      margin-top: 0; }
       @media (max-width: 75em) {
-        .test-listening .background-test .group-button {
-          margin: 35px -10px; } }
+        .test-listening .background-test .group-button__button-show-notepad {
+          margin-top: 0; } }
       @media (max-width: 56.25em) {
-        .test-listening .background-test .group-button {
-          margin: 15px -10px; } }
+        .test-listening .background-test .group-button__button-show-notepad {
+          margin-top: 15px; } }
       @media (max-width: 37.5em) {
-        .test-listening .background-test .group-button {
-          margin: 15px -10px; } }
+        .test-listening .background-test .group-button__button-show-notepad {
+          margin-top: 15px; } }
       @media (min-width: 112.5em) {
-        .test-listening .background-test .group-button {
-          margin: 35px -10px; } }
-      .test-listening .background-test .group-button .custom-col {
-        padding: 0 10px; }
-      .test-listening .background-test .group-button .form-textarea-notepad {
-        color: #333;
-        margin-top: 35px; }
-        .test-listening .background-test .group-button .form-textarea-notepad textarea {
-          background: #F3F3F3; }
-      .test-listening .background-test .group-button__button-show-notepad {
-        margin-top: 0; }
-        @media (max-width: 75em) {
-          .test-listening .background-test .group-button__button-show-notepad {
-            margin-top: 0; } }
-        @media (max-width: 56.25em) {
-          .test-listening .background-test .group-button__button-show-notepad {
-            margin-top: 0; } }
-        @media (max-width: 37.5em) {
-          .test-listening .background-test .group-button__button-show-notepad {
-            margin-top: 15px; } }
-        @media (min-width: 112.5em) {
-          .test-listening .background-test .group-button__button-show-notepad {
-            margin-top: 0; } }
+        .test-listening .background-test .group-button__button-show-notepad {
+          margin-top: 0; } }
     .test-listening .background-test .form-answer__number-answer {
       width: 40px;
       height: 40px;
@@ -687,6 +694,14 @@ footer#footer-test .footer-test-writing .time-countdown-test-writing {
       margin-bottom: 35px; }
     .test-listening .background-test .form-answer .input-answer.-custom-padding-left {
       padding-left: 0; }
+    .test-listening .background-test .header-test {
+      margin: 30px 0; }
+      @media (max-width: 56.25em) {
+        .test-listening .background-test .header-test {
+          margin: 15px 0 0px 0; } }
+      @media (max-width: 37.5em) {
+        .test-listening .background-test .header-test {
+          margin: 15px 0 0px 0; } }
 
 section.information .designed-build {
   margin-bottom: 120px;

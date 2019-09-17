@@ -245,6 +245,8 @@ class Test extends CI_Controller{
                 'og:url' => current_url())
         );
 
+        $this->config->set_item("breadcrumb",array(array('name' => $cateDetail['name'],'link' => $cateDetail['share_url']),array("name" => $testDetail['title'])));
+
         return $this->load->layout('test/'.$type,$data,FALSE,'layout_test');  
     }
     public function writing_result() {
@@ -589,6 +591,9 @@ class Test extends CI_Controller{
                 'og:description' => $testDetail['description'],
                 'og:url' => current_url())
         );
+
+        $this->config->set_item("breadcrumb",array(array('name' => $cateDetail['name'],'link' => $cateDetail['share_url']),array("name" => $testDetail['title']))); 
+
         return $this->load->layout('test/'.$type.'_review',$data,FALSE, 'layout_test');
     } 
     public function result() {

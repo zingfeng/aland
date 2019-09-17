@@ -75,53 +75,65 @@ $csrf = array(
                 $number_question = 1;
                 foreach ($arrQuestion as $qkey => $question) {
             ?>
-                <div class="row question_section_content" id="question_section_<?php echo $question['question_id']; ?>" <?php echo $number_question != 1 ? 'style="display: none"' : ''?> >
+                <div class="question_section_content" id="question_section_<?php echo $question['question_id']; ?>" <?php echo $number_question != 1 ? 'style="display: none"' : ''?> >
                     
                     <?php $userAnswer = json_decode($arrLogDetail['answer_list'],TRUE); 
                 		foreach ($arrQuestionGroup[$question['question_id']] as $key => $qgroup) { ?>
-                        <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
-                            <div class="questions">
-                                <div class="questions__title" style="border: none;">
-                                    <?php echo $qgroup['title']; ?>
+                        <!-- Start button listen/show note -->
+                        <div class="row header-test" style="margin-bottom: 0px">
+                            <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
+                                <div class="row  questions">
+                                    <div class="questions__title" style="border: none">
+                                        <?php echo $qgroup['title']; ?>
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
+                                <div class="row group-button">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 custom-col">
+                                        <button type="button" class="listening audio_start_time group-button__button-listen btn btn-outline-primary form-control" data-audio-time="<?php echo $qgroup['audio_start_time']?>">
+                                            Listen From Here
+                                        </button>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 custom-col">
+                                        <?php if(isset($question['tapescript']) &&($question['tapescript'] !='')) { ?>
+                                        <button type="button" class="group-button__button-show-notepad btn btn-outline-primary form-control showhide_tabscript" data-question="<?php echo $qgroup['question_id']?>">
+                                            Show tapescript
+                                        </button>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End button listen/show note -->
+                        <div class="row">
+                            <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
                                 <?php if(isset($question['tapescript']) &&($question['tapescript'] !='')) { ?>
-                                    <a href="javascript:;" style="float: right;" data-question="<?php echo $question['question_id']?>" class="showhide_tabscript">Show tapescript</a>
-                                <?php } ?>
-                            </div>
-                            <?php if(isset($question['tapescript']) &&($question['tapescript'] !='')) { ?>
-                            <div class="tape-script" id="tape-script-<?php echo $question['question_id']?>" style="display: none;">
-			                    <div class="collapse show" id="tape-script-content">
-			                        <div class="card card-body collapse__custom-collapse-card-body">
-			                           <?php echo $question['tapescript']?>
-			                        </div>
-			                    </div>
-			                </div>
-			            	<?php } ?>
-                            <p><?php echo $qgroup['detail']; ?></p>
+                                <p>
+                                    <div class="tape-script" id="tape-script-<?php echo $qgroup['question_id']?>" style="clear: both; display: none;">
+        			                    <div class="collapse show" id="tape-script-content">
+        			                        <div class="card card-body collapse__custom-collapse-card-body">
+        			                           <?php echo $question['tapescript']?>
+        			                        </div>
+        			                    </div>
+        			                </div>
+                                </p>
+    			            	<?php } ?>
+                                <p><?php echo $qgroup['detail']; ?></p>
 
-                        </div>
-                        <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
-                            <div class="row group-button">
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 custom-col">
-                                    <button type="button" class="listening audio_start_time group-button__button-listen btn btn-outline-primary form-control" data-audio-time="<?php echo $qgroup['audio_start_time']?>">
-                                        Listen From Here
-                                    </button>
+                            </div>
+                            <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
+                                <div class="row group-button">
+                                    <div class="col-sm-12 custom-col form-textarea-notepad" id="show_note_pad_<?php echo $key?>" style="display: none;">
+                                        <textarea name="" placeholder="" rows="4" class="form-control"></textarea>
+                                    </div>
                                 </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 custom-col">
-                                    <button type="button" class="group-button__button-show-notepad btn btn-outline-primary form-control" onclick="onClickShowNotepad(this,<?php echo $key?>)">
-                                        Show Notepad
-                                        <!-- viet hoa chu cai dau -->
-                                    </button>
-                                </div>
-                                <div class="col-sm-12 custom-col form-textarea-notepad" id="show_note_pad_<?php echo $key?>" style="display: none;">
-                                    <textarea name="" placeholder="" rows="4" class="form-control"></textarea>
+                                <div class="row form-answer">
+                                    <?php echo $this->load->view("test/question/type_".$qgroup['type'],array('rows' => $qgroup['question_answer'],'number' => $number_question,'userAnswer' => $userAnswer,'answerResult' => $arrAnswerResult)); ?>
                                 </div>
                             </div>
-                            <div class="row form-answer">
-                                <?php echo $this->load->view("test/question/type_".$qgroup['type'],array('rows' => $qgroup['question_answer'],'number' => $number_question,'userAnswer' => $userAnswer,'answerResult' => $arrAnswerResult)); ?>
-                            </div>
+                            <?php $number_question += $qgroup['number_question'];?>
                         </div>
-                        <?php $number_question += $qgroup['number_question'];?>
                     <?php } ?>
                 </div>
                 <?php $arrNumberCheck[$question['question_id']] = $number_question; ?>
@@ -366,7 +378,6 @@ $csrf = array(
                 $('#tape-script-'+question).show();
                 $(this).html('Hide tapescript');
             }
-
         });
 
     });

@@ -76,44 +76,50 @@ $test_time = 12000;
                 $number_question = 1;
                 foreach ($arrQuestion as $qkey => $question) {
             ?>
-                <div class="row question_section_content" id="question_section_<?php echo $question['question_id']; ?>" <?php echo $number_question != 1 ? 'style="display: none"' : ''?> >
+                <div class="question_section_content" id="question_section_<?php echo $question['question_id']; ?>" <?php echo $number_question != 1 ? 'style="display: none"' : ''?> >
                     <?php foreach ($arrQuestionGroup[$question['question_id']] as $key => $qgroup) { ?>
-                        <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
-                            <div class="questions">
-                                <div class="row">
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 questions__title">
+                        <!-- Start button listen/show note -->
+                        <div class="row header-test" style="margin-bottom: 0px">
+                            <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
+                                <div class="row  questions">
+                                    <div class="questions__title" style="border: none">
                                         <?php echo $qgroup['title']; ?>
                                     </div>
-                                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 questions__subtitle">
-                                        <div class="guide-questions">
-                                            <p><?php echo $qgroup['detail']; ?></p>
-                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
+                                <div class="row group-button">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 custom-col">
+                                        <button type="button" class="listening audio_start_time group-button__button-listen btn btn-outline-primary form-control" data-audio-time="<?php echo $qgroup['audio_start_time']?>">
+                                            Listen From Here
+                                        </button>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 custom-col hide-on-mobile">
+                                        <button type="button" class="group-button__button-show-notepad btn btn-outline-primary form-control" onclick="onClickShowNotepad(this,<?php echo $key?>)">
+                                            Show Notepad
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
-                            <div class="row group-button">
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 custom-col">
-                                    <button type="button" class="listening audio_start_time group-button__button-listen btn btn-outline-primary form-control" data-audio-time="<?php echo $qgroup['audio_start_time']?>">
-                                        Listen From Here
-                                    </button>
+                        <!-- End button listen/show note -->
+
+                        <div class="row">
+                            <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
+                                <p><?php echo $qgroup['detail']; ?></p>
+                            </div>
+                            <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
+                                <div class="row group-button">
+                                    <div class="col-sm-12 custom-col form-textarea-notepad" id="show_note_pad_<?php echo $key?>" style="display: none;">
+                                        <textarea name="" placeholder="" rows="4" class="form-control"></textarea>
+                                    </div>
                                 </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 custom-col">
-                                    <button type="button" class="group-button__button-show-notepad btn btn-outline-primary form-control" onclick="onClickShowNotepad(this,<?php echo $key?>)">
-                                        Show Notepad
-                                        <!-- viet hoa chu cai dau -->
-                                    </button>
-                                </div>
-                                <div class="col-sm-12 custom-col form-textarea-notepad" id="show_note_pad_<?php echo $key?>" style="display: none;">
-                                    <textarea name="" placeholder="" rows="4" class="form-control"></textarea>
+                                <div class="row form-answer">
+                                    <?php echo $this->load->view("test/question/type_" . $qgroup['type'], array('rows' => $qgroup['question_answer'], 'number' => $number_question)); ?>
                                 </div>
                             </div>
-                            <div class="row form-answer">
-                                <?php echo $this->load->view("test/question/type_" . $qgroup['type'], array('rows' => $qgroup['question_answer'], 'number' => $number_question)); ?>
-                            </div>
+                            <?php $number_question += $qgroup['number_question'];?>
                         </div>
-                        <?php $number_question += $qgroup['number_question'];?>
                     <?php } ?>
                 </div>
                 <?php $arrNumberCheck[$question['question_id']] = $number_question; ?>
@@ -210,8 +216,6 @@ $test_time = 12000;
 
     </div>
 </footer>
-
-
 
 <!-- ------------------bảng câu hỏi----------------- -->
 <section id="questions-list">
@@ -353,3 +357,11 @@ $test_time = 12000;
 
     });
 </script>
+
+<style type="text/css">
+    @media (max-width: 37.5em){
+        .hide-on-mobile{
+            display: none;
+        }
+    }
+</style>

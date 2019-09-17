@@ -319,17 +319,17 @@ $csrf = array(
 
 
     /* JS Goes Here */
-    if ($(document).width() > 768) {
-        Split(['#col1', '#col2'], {
-            elementStyle: (dimension, size, gutterSize) => ({
-                'flex-basis': `calc(${size}% - ${gutterSize}px)`,
-            }),
-            gutterStyle: (dimension, gutterSize) => ({
-                'flex-basis':  `5px`,
-            }),
-            minSize: 500
-        });
-    }
+    // if ($(document).width() > 768) {
+    //     Split(['#col1', '#col2'], {
+    //         elementStyle: (dimension, size, gutterSize) => ({
+    //             'flex-basis': `calc(${size}% - ${gutterSize}px)`,
+    //         }),
+    //         gutterStyle: (dimension, gutterSize) => ({
+    //             'flex-basis':  `5px`,
+    //         }),
+    //         minSize: 500
+    //     });
+    // }
 </script>
 
 <style type="text/css">
