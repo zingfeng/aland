@@ -76,13 +76,13 @@ $csrf = array(
             foreach ($arrQuestion as $qkey => $question) {
                 ?>
                 <div class="row no-gutters question_section_content" id="question_section_<?php echo $question['question_id']; ?>" <?php echo ($number_question != 1) ? 'style="display: none"' : '' ?>>
-                    <div id="colA<?php echo $qkey; ?>" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 read margin-top">
+                    <div id="colA<?php echo $qkey; ?>" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 read margin-top" style="max-width: none !important;">
                         <h2 class="title"><?php echo $question['title']; ?></h2>
                         <div class="read_content">
                             <?php echo $question['detail']; ?>
                         </div>
                     </div>
-                    <div id="colB<?php echo $qkey; ?>" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 answer margin-top">
+                    <div id="colB<?php echo $qkey; ?>" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 answer margin-top" style="max-width: none !important;">
                         <?php foreach ($arrQuestionGroup[$question['question_id']] as $key => $qgroup) { ?>
                             <div class="question bg_warp mb30">
                                 <h3><?php echo $qgroup['title']; ?></h3>
@@ -348,5 +348,9 @@ $csrf = array(
     }
     .gutter-horizontal{
         margin: 0 12px;
+    }
+    .read_content{
+        padding: 8px;
+        background: #f1f1f1;
     }
 </style>

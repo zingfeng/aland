@@ -80,6 +80,12 @@
                 border: 1px solid #4c6d94;
             }
 
+            .-false .fa:before{
+                color: red;
+            }
+            .-true .fa:before{
+                color: #1890FF;
+            }
 
         </style>
     </head>
