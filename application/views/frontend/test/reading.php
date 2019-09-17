@@ -8,30 +8,35 @@ $csrf = array(
     <nav class="row navigation-top">
         <div class="container"> 
             <div class="row">
-                <?php echo $this->load->view('test/common/home');?>
-                <div class="col-8 navigation-top__menu-collapse" id="navbarTogglerTop">
-                    <ul class="menu">
-                        <li class="nav-item">
-                            <a class="nav-link -custom-color-link" href="#">
-                                <i class="fa fa-sign-out" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <?php
-                        $i = 1; $test_time = 0;
-                        //$test_time = 0;
-                        foreach ($arrQuestion as $key => $question) { ?>
-                            <?php $nextSetion = $arrQuestion[$key+1]?>
-                            <li class="nav-item">
-                                <a data-section="<?php echo $question['question_id']; ?>" data-index="<?php echo $i-1; ?>" id="question_setion_selection_<?php echo $question['question_id']; ?>" class="reading_change_section nav-link menu-link -custom-color-link <?php echo $i == 1 ? '-active' : '' ?>" href="javascript:;">
-                                    <?php echo $question['title']; ?>
-                                </a>
-                            </li>
-                            <?php $i++;
-                            $test_time += $question['test_time'] * 60 * 1000;
-                        } ?>
-                    </ul> 
+                <div class="col pl-0 pr-0">
+                    <nav class="navbar navbar-expand-lg ">
+                        <?php echo $this->load->view('test/common/home');?> 
+                        
+                        <div class="collapse navbar-collapse navigation-top__menu" id="navbarText">
+                            <ul class="navbar-nav mr-auto menu">
+                                <li class="nav-item">
+                                    <a class="nav-link menu-link button-go-back__link" href="#">
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <?php
+                                $i = 1; $time = 0;
+                                //$test_time = 0;
+                                foreach ($arrQuestion as $key => $question) { ?>
+                                    <?php $nextSetion = $arrQuestion[$key+1]?>
+                                    <li class="nav-item">
+                                        <a data-section="<?php echo $question['question_id']; ?>" data-index="<?php echo $i-1; ?>" id="question_setion_selection_<?php echo $question['question_id']; ?>" class="reading_change_section nav-link menu-link -custom-color-link <?php echo $i == 1 ? '-active' : '' ?>" href="javascript:;">
+                                            <?php echo $question['title']; ?>
+                                        </a>
+                                    </li>
+                                <?php $i++;
+                                    $test_time += $question['test_time'] * 60 * 1000;
+                                } ?>
+                            </ul>
+                            <?php echo $this->load->view('test/common/account');?>
+                        </div>
+                    </nav>
                 </div>
-                <?php echo $this->load->view('test/common/account');?>
             </div>
         </nav>
     </div>
@@ -71,13 +76,13 @@ $csrf = array(
             foreach ($arrQuestion as $qkey => $question) {
                 ?>
                 <div class="row no-gutters question_section_content" id="question_section_<?php echo $question['question_id']; ?>" <?php echo ($number_question != 1) ? 'style="display: none"' : '' ?>>
-                    <div id="col1" class="col col_gutter read">
+                    <div id="colA<?php echo $qkey; ?>" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 read margin-top">
                         <h2 class="title"><?php echo $question['title']; ?></h2>
                         <div class="read_content">
                             <?php echo $question['detail']; ?>
                         </div>
                     </div>
-                    <div id="col2" class="col col_gutter answer">
+                    <div id="colB<?php echo $qkey; ?>" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 answer margin-top">
                         <?php foreach ($arrQuestionGroup[$question['question_id']] as $key => $qgroup) { ?>
                             <div class="question bg_warp mb30">
                                 <h3><?php echo $qgroup['title']; ?></h3>
@@ -104,36 +109,63 @@ $csrf = array(
     </div>
 </section>
 
-<footer id="footer-listening" class="fixed-bottom">
+<footer id="footer-test" class="fixed-bottom">
     <div class="container">
-        <div class="row align-item-center">
-            <div class="col-2">
+        <!-- view tablet desktop -->
+        <div class="row align-item-center footer-reading-view-desktop-tablet">
+            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4">
                 <button class="btn btn-outline-primary form-control" onclick="showQuestionsList()">
                     Bảng câu hỏi
                 </button>
             </div>
-            <div class="col-8 audio-player-time-countdown align-item-center">
+            <div class="col-xl-7 col-lg-7 col-md-6 col-sm-4 text-center">
                 <!-- thời gian làm bài còn lại -->
-                <div class="time-countdown align-item-center">
-                    <span class="time-countdown__icon">
+                <div class="time-countdown-test-reading-view-desktop-mobile align-item-center">
+                    <span class="time-countdown-test-reading-view-desktop-mobile__icon">
                         <span class="icon-round-timer-24px"></span>
                     </span>
-                    <span class="time-countdown__time" id="show_count_down"></span>
+                    <span class="time-countdown-test-reading-view-desktop-mobile__time show_count_down"></span>
                 </div>
                 <!-- kết thúc thời gian làm bài còn lại -->
             </div>
-            <div class="col-2 passage-control">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 passage-control">
                 <?php foreach ($arrQuestion as $i => $question) {?>
                     <?php if ($nextSection = $arrQuestion[$i + 1]) {?>
                         <button class="btn btn-danger form-control reading_change_section" data-section="<?php echo $nextSection['question_id']; ?>" data-index="<?php echo $i+1?>" data-ci=<?php echo $i?> <?php echo $i != 0 ? 'style="display:none"' : ''?>><?php echo $nextSection['title']; ?>&nbsp;&nbsp;<i class="fa fa-chevron-circle-right"></i></button>
                     <?php } else { ?>
-                        <button data-ci="<?php echo $i?>" class="btn btn-danger form-control" type="submit" id="submit_answer_result" style="display: none">Nộp bài</button> 
+                        <button data-ci="<?php echo $i?>" class="btn btn-danger form-control submit_answer_result" type="submit"  style="display: none">Nộp bài</button> 
                     <?php } ?>
                 <?php }?>
             </div>
-            
         </div>
+        <!-- End view tablet desktop -->
 
+        <!-- view mobile -->
+        <div class="row align-item-center footer-reading-view-mobile">
+            <div class="col-1">
+                <button class="btn btn-outline-primary btn-sm" onclick="showQuestionsList()">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                </button>           
+            </div>
+            <div class="col-5 align-item-center text-center">
+            <div class="time-countdown-test-reading-view-mobile align-item-center">
+                    <span class="time-countdown-test-reading-view-mobile__icon">
+                        <span class="icon-round-timer-24px"></span>
+                    </span>
+                    <span class="time-countdown-test-reading-view-mobile__time show_count_down"></span>                   
+                </div>               
+            </div>
+            <div class="col-6 passage-control">
+                <?php foreach ($arrQuestion as $i => $question) {?>
+                    <?php if ($nextSection = $arrQuestion[$i + 1]) {?>
+                        <button class="btn btn-danger btn-sm w-100 reading_change_section" data-section="<?php echo $nextSection['question_id']; ?>" data-index="<?php echo $i+1?>" data-ci=<?php echo $i?> <?php echo $i != 0 ? 'style="display:none"' : ''?>><?php echo $nextSection['title']; ?>&nbsp;&nbsp;<i class="fa fa-chevron-circle-right"></i></button>
+                    <?php } else { ?>
+                        <button data-ci="<?php echo $i?>" class="btn btn-danger btn-sm w-100 submit_answer_result" type="submit"style="display: none">Nộp bài</button> 
+                    <?php } ?>
+                <?php }?>
+            </div>
+        </div>
+        <!-- End view mobile -->
     </div>
 </footer>
 
@@ -141,10 +173,10 @@ $csrf = array(
 <section id="questions-list">
     <div class="container background-questions-list">
         <div class="row justify-content-between title-button-hide-questions-list">
-            <div class="col-2  title-button-hide-questions-list__title">
+            <div class="col-6  title-button-hide-questions-list__title">
                 Bảng câu hỏi
             </div>
-            <div class="col-2 text-right">
+            <div class="col-6 text-right">
                 <a class="button-hide-questions-list" onclick="hideQuestionsList()">
                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
                 </a>
@@ -205,14 +237,14 @@ $csrf = array(
         }
 
         var fiveSeconds = new Date().getTime() + parseInt(<?php echo (int) $test_time; ?>);
-        $('#show_count_down').countdown(fiveSeconds, {elapse: true})
+        $('.show_count_down').countdown(fiveSeconds, {elapse: true})
             .on('update.countdown', function(event) {
-                var this_countdown = $('#show_count_down');
+                var this_countdown = $('.show_count_down');
                 if (event.elapsed) {
                     // $this.html('Hết thời gian làm bài');
                     return liftOff();
                 } else {
-                    this_countdown.html(event.strftime('%H : %M : %S'));
+                    this_countdown.html(event.strftime('%M : %S'));
                 }
             });
 
@@ -237,7 +269,7 @@ $csrf = array(
             }); */
 
         /// submit
-        $("#submit_answer_result").bind("click",function(e){
+        $(".submit_answer_result").bind("click",function(e){
             e.preventDefault(); // avoid to execute the actual submit of the form.
             e.stopPropagation();
 
@@ -288,14 +320,33 @@ $csrf = array(
 
     /* JS Goes Here */
     if ($(document).width() > 768) {
-        Split(['#col1', '#col2'], {
+        <?php
+        foreach ($arrQuestion as $qkey => $question){ ?>
+        Split(['#colA<?php echo $qkey;  ?>', '#colB<?php echo $qkey;  ?>'], {
             elementStyle: (dimension, size, gutterSize) => ({
-                'flex-basis': `calc(${size}% - ${gutterSize}px)`,
+                'flex-basis': `calc(${size}% - ${gutterSize + 20}px)`,
             }),
             gutterStyle: (dimension, gutterSize) => ({
-                'flex-basis':  `5px`,
+                'flex-basis':  `10px`,
             }),
-            minSize: 500
+            minSize: [250,250]
         });
+        <?php }?>
+
+
     }
 </script>
+
+<style type="text/css">
+    /* Only in showing */
+    .tilte_explain_question{
+        display: none !important;
+    }
+    .content_explain_question{
+        background-color: transparent !important;
+        padding: 0 !important;
+    }
+    .gutter-horizontal{
+        margin: 0 12px;
+    }
+</style>

@@ -245,7 +245,7 @@ class Test extends CI_Controller{
                 'og:url' => current_url())
         );
 
-        return $this->load->layout('test/'.$type,$data,FALSE,'layout_test2');  
+        return $this->load->layout('test/'.$type,$data,FALSE,'layout_test');  
     }
     public function writing_result() {
         $this->load->model('test_model','test');
@@ -589,7 +589,7 @@ class Test extends CI_Controller{
                 'og:description' => $testDetail['description'],
                 'og:url' => current_url())
         );
-        return $this->load->layout('test/'.$type.'_review',$data,FALSE, 'layout_test2');
+        return $this->load->layout('test/'.$type.'_review',$data,FALSE, 'layout_test');
     } 
     public function result() {
         $this->load->model('test_model','test');
@@ -780,7 +780,7 @@ class Test extends CI_Controller{
         $this->config->set_item("breadcrumb",array(array("name" => 'Kết quả fulltest')));
 
         //Send mail
-        $html = $this->load->view('test/mail/result_fulltest',array('fullname' => strip_tags($userData['fullname'])),TRUE);
+        $html = $this->load->view('test/mail/send_request',array('fullname' => strip_tags($userData['fullname'])),TRUE);
         send_mail(strip_tags($userData['email']),'[Aland IELTS] Xác nhận hoàn thành fulltest ',$html);
 
         return $this->load->layout('test/result_fulltest', $data);
@@ -1102,7 +1102,7 @@ class Test extends CI_Controller{
 //        echo '</pre>';
 //        exit;
 //        return $this->load->layout('test/speaking',$data,FALSE,'layout_test'); // cũ
-        return $this->load->layout('test/speaking2',$data,FALSE,'layout_test2');
+        return $this->load->layout('test/speaking2',$data,FALSE,'layout_test');
     }
 
 }

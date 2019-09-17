@@ -120,6 +120,11 @@ footer#footer-test {
     //view mobile 
     .footer-view-mobile {
         display: none;
+        align-items: center;
+
+        &.-custom-margin-top {
+            margin-top: $margin-3;
+        }
 
         @include respond (tab-land) {
             display: none;
@@ -138,77 +143,84 @@ footer#footer-test {
             display: none;
         }
 
-        .audio-player-view-mobile {
+        .group-button {
+
+            &__button-play-pause {
+
+                color: $light-red-1;
+
+                .btn-play-pause {
+                    font-size: $h2;
+                }
+            }
+
+        }
+
+        
+        .time-play {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            &__time-audio {
+                font-size: 14px;
+                // margin-left: $margin-2;
+                margin-right: $margin-2;
+            }
 
-            .group-button {
+            &__audio-time-line {
+                position: relative;
+                height: 3px;
+                border-radius: 6px;
+                background-color: $dark-blue-4;
+                width: 100%;
 
-                &__button-play-pause {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 40%;
+                    height: 3px;
+                    border-radius: 6px;
+                    background-color: $light-red-1;
 
-                    color: $light-red-1;
-
-                    .btn-play-pause {
-                        font-size: $h3;
-                    }
                 }
 
+                &::after {
+                    content: '';
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background-color: $white-1;
+                    border: 2px solid $light-red-1;
+
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                    top: 50%;
+                    left: 42%;
+                }
             }
+        }
+
+
+        .audio-player-view-mobile {
+            
+
+         
             
            
 
-            .time-play {
-                display: flex;
-                align-items: center;
-                &__time-audio {
-                    font-size: 12px;
-                    // margin-left: $margin-2;
-                    margin-right: $margin-2;
-                }
-
-                &__audio-time-line {
-                    position: relative;
-                    height: 3px;
-                    border-radius: 6px;
-                    background-color: $dark-blue-4;
-                    width: 80px;
-
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        width: 40px;
-                        height: 3px;
-                        border-radius: 6px;
-                        background-color: $light-red-1;
-
-                    }
-
-                    &::after {
-                        content: '';
-                        width: 12px;
-                        height: 12px;
-                        border-radius: 50%;
-                        background-color: $white-1;
-                        border: 2px solid $light-red-1;
-
-                        position: absolute;
-                        transform: translate(-50%, -50%);
-                        top: 50%;
-                        left: 42%;
-                    }
-                }
-            }
-
             .time-countdown-mobile {
                     color: $light-red-1;
-                    // margin-right: $margin-2;
+                    display: flex;
+                    align-items: center;
+            justify-content: space-between;
+
+                   
                 &__icon {
-                    font-size: 14px;
+                    font-size: 18px;
+                    margin-right: $margin-1;
                 }
 
                 &__time {
-                    font-size: 14px;
+                    font-size: 22px;
                     font-weight: bold;
                 }
             }
@@ -221,6 +233,8 @@ footer#footer-test {
 
         }
     }
+
+    // end view mobile
 
 }
 

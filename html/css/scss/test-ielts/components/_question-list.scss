@@ -82,7 +82,7 @@ section#questions-list {
         }
 
         @include respond (phone) {
-            height: 360px;
+            height: 430px;
         }
 
         @include respond (big-desktop) {

@@ -74,37 +74,32 @@
                 margin-bottom: 100px;
             }
 
-            strong.check-review-test-listening{
-                padding: 5px 9px;
-                border-radius: 15px;
-                border: 1px solid #4c6d94;
-            }
-
 
         </style>
-    </head>
+</head>
 <body>
 
-<main id="main">
-    <?php echo $content_for_layout; ?>
-</main>
-<script src="<?php echo $this->config->item("lib"); ?>/jplayer/js/jquery.jplayer.min.js"></script>
-<script type="text/javascript" src="<?php echo $this->config->item("lib"); ?>/jplayer/js/jplayer.playlist.min.js"></script>
+    <main id="main">
+        <?php echo $content_for_layout; ?>
+    </main>
+    <script src="<?php echo $this->config->item("lib"); ?>/jplayer/js/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="<?php echo $this->config->item("lib"); ?>/jplayer/js/jplayer.playlist.min.js"></script>
 
 <!--    <script src="--><?php //echo $this->config->item("js"); ?><!--bootstrap4/jquery-3.3.1.slim.min.js"></script> jquery slim ko có ajax-->
-<script src="<?php echo $this->config->item("js"); ?>bootstrap4/popper.min.js"></script>
-<script src="<?php echo $this->config->item("js"); ?>bootstrap4/bootstrap.min.js"></script>
-<script src="<?php echo $this->config->item("js"); ?>jquery.scrollbar.min.js"></script>
-<script src="<?php echo $this->config->item("js"); ?>jquery.countdown.min.js"></script>
-<script src="<?php echo $this->config->item("js"); ?>colResizable-1.6.min.js"></script>
-<script src="<?php echo $this->config->item("js"); ?>owl.carousel.min.js"></script>
-<script src="<?php echo $this->config->item("js"); ?>test-ielts.js"></script>
-<script src="<?php echo $this->config->item("js"); ?>recorder.js"></script>
-<script src="<?php echo $this->config->item("js"); ?>app.js"></script>
-<script src="<?php echo $this->config->item("js"); ?>common.js"></script>
-<script src="<?php echo $this->config->item("js"); ?>test.js"></script>
+    <script src="<?php echo $this->config->item("js"); ?>bootstrap4/popper.min.js"></script>
+    <script src="<?php echo $this->config->item("js"); ?>bootstrap4/bootstrap.min.js"></script>
+    <script src="<?php echo $this->config->item("js"); ?>jquery.scrollbar.min.js"></script>
+    <script src="<?php echo $this->config->item("js"); ?>jquery.countdown.min.js"></script>
+    <script src="<?php echo $this->config->item("js"); ?>colResizable-1.6.min.js"></script>
+    <script src="<?php echo $this->config->item("js"); ?>owl.carousel.min.js"></script>
+    <script src="<?php echo $this->config->item("js"); ?>test-ielts.js"></script>
+    <script src="<?php echo $this->config->item("js"); ?>recorder.js"></script>
+    <script src="<?php echo $this->config->item("js"); ?>app.js"></script>
+    <script src="<?php echo $this->config->item("js"); ?>common.js"></script>
+    <script src="<?php echo $this->config->item("js"); ?>test.js"></script>
 </body>
 
 </html>
+
 
 

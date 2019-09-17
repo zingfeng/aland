@@ -492,7 +492,8 @@ $question = $arrQuestion[0];
                     // $this.html('Hết thời gian làm bài');
                     return liftOff();
                 } else {
-                    this_countdown.html(event.strftime('%H : %M : %S'));
+                    this_countdown.html(event.strftime('%M : %S'));
+                    // this_countdown.html(event.strftime('%H : %M : %S'));
                 }
             });
         ////////// NEXT & PREV //////////

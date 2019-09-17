@@ -235,7 +235,6 @@
 
 <footer id="footer-test" class="fixed-bottom">
     <div class="container">
-
         <!-- footer view tablet desktop -->
         <div class="row align-item-center footer-tablet-desktop">
             <div class="col-xl-2 col-lg-2 col-md-1 col-sm-1 group-button">
@@ -315,21 +314,51 @@
 
         <!-- start footer view mobile -->
         <div class="row footer-view-mobile">
-            <div class="col audio-player-view-mobile">
-            <button class="btn btn-outline-primary btn-sm button-show-answer-view-mobile"
+            <div class="col-4 audio-player-view-mobile">
+        
+            <button class="btn btn-sm btn-outline-primary form-control"
+                    onclick="showQuestionsList()">
+                    Câu hỏi
+                </button>
+                <!-- <button class="btn btn-outline-primary btn-sm button-show-answer-view-mobile"
                     onclick="showQuestionsList()">
                     <i class="fa fa-check" aria-hidden="true"></i>
-                </button>    
+                </button> -->
 
-                <div class="audio-player-view-mobile__button-play group-button">
+            </div>
+            <div class="col-4  audio-player-view-mobile">
+                <div class="audio-player-view-mobile__time-countdown time-countdown-mobile">
+                        <span class="icon-round-timer-24px"></span> 
+                        <span class="time-countdown-mobile__time">
+                        39:23
+                    </span>
+                 
+                </div>
+            </div>
+
+            <div class="col-4">
+                <!-- <button class="btn btn-danger btn-sm button-next-finish-section-view-mobile">
+                    submit
+                </button> -->
+
+                <button class="btn btn-sm btn-danger form-control">
+                    Section 2
+                </button>
+           
+            </div>
+        </div>
+
+        <div class="row footer-view-mobile -custom-margin-top">
+                <div class="col-2  group-button">
                     <a href="" class="group-button__button-play-pause">
                         <i class="fa fa-play-circle btn-play-pause" aria-hidden="true"></i>
                     </a>
                     <!-- <a href="" class="group-button__button-play-pause"> -->
-                        <!-- <i class="fa fa-pause-circle  btn-play-pause" aria-hidden="true"></i> -->
+                    <!-- <i class="fa fa-pause-circle  btn-play-pause" aria-hidden="true"></i> -->
                     <!-- </a> -->
-                </div>
-                <div class="audio-player-view-mobile__time-play time-play">
+                </div>           
+
+            <div class="col-10 time-play">
                     <div class="time-play__time-audio">
                         00:00
                     </div>
@@ -339,25 +368,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="audio-player-view-mobile__time-countdown time-countdown-mobile">
-                    <span class="time-countdown-mobile__icon">
-                        <span class="icon-round-timer-24px"></span>
-                    </span>
-                    <span class="time-countdown-mobile__time">
-                        39:23
-                    </span>
-                </div>
-
-                <button class="btn btn-danger btn-sm button-next-finish-section-view-mobile">
-                    submit
-                </button>
-                <!-- <div class="audio-player-view-mobile__button-more-option">
-                    <a href="">
-                    <span class="icon-baseline-more_horiz-24px-1"></span>
-                    </a>
-                </div> -->
-            </div>
         </div>
+
+        
         <!-- end footer view mobile -->
 
 

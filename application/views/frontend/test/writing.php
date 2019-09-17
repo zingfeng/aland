@@ -5,26 +5,31 @@
     <nav class="row navigation-top">
         <div class="container"> 
             <div class="row">
-                <?php echo $this->load->view('test/common/home');?>
-                <div class="col-8 navigation-top__menu-collapse" id="navbarTogglerTop">
-                    <ul class="menu">
-                        <li class="nav-item">
-                            <a class="nav-link -custom-color-link" href="#">
-                                <i class="fa fa-sign-out" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <?php $i = 1; $test_time = 0;
-                        foreach ($arrQuestionGroup[$question['question_id']] as $key => $qgroup) {?>
-                            <?php $nextSetion = $arrQuestion[$key+1]?>
-                            <li class="nav-item">
-                                <a data-index="<?php echo $i-1; ?>" data-section="<?php echo $qgroup['question_id']; ?>" id="question_setion_selection_<?php echo $qgroup['question_id']; ?>" class="reading_change_section nav-link menu-link -custom-color-link <?php if ($i == 1) echo '-active'; ?>" href="javascript:void(0)"><?php echo $qgroup['title']; ?></a>
-                            </li>
-                        <?php $i++;
-                            $test_time += $question['test_time'] * 60 * 1000;
-                        } ?>
-                    </ul> 
+                <div class="col pl-0 pr-0">
+                    <nav class="navbar navbar-expand-lg ">
+                        <?php echo $this->load->view('test/common/home');?> 
+                        
+                        <div class="collapse navbar-collapse navigation-top__menu" id="navbarText">
+                            <ul class="navbar-nav mr-auto menu">
+                                <li class="nav-item">
+                                    <a class="nav-link menu-link button-go-back__link" href="#">
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <?php $i = 1; $test_time = 0;
+                                    foreach ($arrQuestionGroup[$question['question_id']] as $key => $qgroup) {?>
+                                        <?php $nextSetion = $arrQuestion[$key+1]?>
+                                        <li class="nav-item">
+                                            <a data-index="<?php echo $i-1; ?>" data-section="<?php echo $qgroup['question_id']; ?>" id="question_setion_selection_<?php echo $qgroup['question_id']; ?>" class="reading_change_section nav-link menu-link -custom-color-link <?php if ($i == 1) echo '-active'; ?>" href="javascript:void(0)"><?php echo $qgroup['title']; ?></a>
+                                        </li>
+                                <?php $i++;
+                                    $test_time += $question['test_time'] * 60 * 1000;
+                                } ?>
+                            </ul>
+                            <?php echo $this->load->view('test/common/account');?>
+                        </div>
+                    </nav>
                 </div>
-                <?php echo $this->load->view('test/common/account');?>
             </div>
         </nav>
     </div>
@@ -71,13 +76,13 @@
                       }
             ?>
             <div class="row warp_content question_section_content" id="question_section_<?php echo $qgroup['question_id']; ?>" <?php if ($number_question != 1) echo 'style="display: none"'; ?>>
-                <div class="col-6 question">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 question">
                     <h2 class="question_title"><?php echo $qgroup['title']; ?></h2>
                     <div class="question_content">
                         <?php echo $qgroup['question_answer'][0]['content']; ?>
                     </div>
                 </div>
-                <div class="col-6 answer">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 answer">
                     <div class="answer_title">
                         Bài làm của bạn
                         <span class="answer_count_word"><font id="test_writing_count_word_<?php echo $qgroup['question_id']; ?>" style="color:#0a77ec">0</font>/<?php echo $max_length_text; ?> Words</span>
@@ -101,16 +106,17 @@
         </div>
     </div>
 </section>
-<footer id="footer-listening" class="fixed-bottom">
+<footer id="footer-test" class="fixed-bottom">
     <div class="container">
-        <div class="row align-item-center">
+        <!-- view tablet desktop -->
+        <div class="row align-item-center footer-reading-view-desktop-tablet">
             <div class="col-6 audio-player-time-countdown ">
                 <!-- thời gian làm bài còn lại -->
                 <div class="time-countdown time-countdown_left">
                     <span class="time-countdown__icon">
                         <span class="icon-round-timer-24px"></span>
                     </span>
-                    <span class="time-countdown__time" id="show_count_down"></span>
+                    <span class="time-countdown__time show_count_down"></span>
                 </div>
                 <!-- kết thúc thời gian làm bài còn lại -->
             </div>
@@ -119,12 +125,33 @@
                     <?php if ($nextSection = $arrQuestionGroup[$question['question_id']][$key + 1]) {?>
                         <button class="btn btn-danger form-control next_section reading_change_section" data-section="<?php echo $nextSection['question_id']; ?>" data-index="<?php echo $i+1?>" data-ci=<?php echo $i?> <?php echo $i != 0 ? 'style="display:none"' : ''?>><?php echo $nextSection['title']; ?>&nbsp;&nbsp;<i class="fa fa-chevron-circle-right"></i></button>
                     <?php } else { ?>
-                        <button data-ci="<?php echo $i?>" class="btn btn-danger form-control next_section" type="submit" id="submit_answer_result" style="display: none">Nộp bài</button> 
+                        <button data-ci="<?php echo $i?>" class="btn btn-danger form-control next_section submit_answer_result" type="submit" style="display: none">Nộp bài</button> 
                     <?php } ?>
                 <?php $i++; }?>
             </div>
         </div>
 
+        <!-- view mobile -->
+        <div class="row align-item-center footer-reading-view-mobile">
+            <div class="col-8 align-item-center text-center">
+                <div class="time-countdown-test-reading-view-mobile align-item-center">
+                    <span class="time-countdown-test-reading-view-mobile__icon">
+                        <span class="icon-round-timer-24px"></span>
+                    </span>
+                    <span class="time-countdown-test-reading-view-mobile__time show_count_down"></span>                   
+                </div>               
+            </div>
+            <div class="col-4 text-right passage-control">
+                <?php $i = 0; foreach ($arrQuestionGroup[$question['question_id']] as $key => $qgroup) { ?>
+                    <?php if ($nextSection = $arrQuestionGroup[$question['question_id']][$key + 1]) {?>
+                        <button class="btn btn-danger form-control next_section reading_change_section" data-section="<?php echo $nextSection['question_id']; ?>" data-index="<?php echo $i+1?>" data-ci=<?php echo $i?> <?php echo $i != 0 ? 'style="display:none"' : ''?>><?php echo $nextSection['title']; ?>&nbsp;&nbsp;<i class="fa fa-chevron-circle-right"></i></button>
+                    <?php } else { ?>
+                        <button data-ci="<?php echo $i?>" class="btn btn-danger form-control next_section submit_answer_result" type="submit" style="display: none">Nộp bài</button> 
+                    <?php } ?>
+                <?php $i++; }?>
+            </div>
+        </div>
+        <!-- End view mobile -->
     </div>
 </footer>
 
@@ -162,9 +189,9 @@
         }
 
         var fiveSeconds = new Date().getTime() + parseInt(<?php echo (int) $test_time; ?>);
-        $('#show_count_down').countdown(fiveSeconds, {elapse: true})
+        $('.show_count_down').countdown(fiveSeconds, {elapse: true})
         .on('update.countdown', function(event) {
-            var this_countdown = $('#show_count_down');
+            var this_countdown = $('.show_count_down');
             if (event.elapsed) {
                 // $this.html('Hết thời gian làm bài');
                 return liftOff();
@@ -188,7 +215,7 @@
         });
 
         /// submit 
-        $("#submit_answer_result").bind("click",function(){
+        $(".submit_answer_result").bind("click",function(){
           var r = confirm("Bạn có chắc muốn nộp bài ?");
           if (r == true) {
             $("#test_form").submit();
