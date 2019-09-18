@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class Test extends CI_Controller{
+class Test2 extends CI_Controller{
 
     function __construct(){
 		parent::__construct();
@@ -245,9 +245,7 @@ class Test extends CI_Controller{
                 'og:url' => current_url())
         );
 
-        $this->config->set_item("breadcrumb",array(array('name' => $cateDetail['name'],'link' => $cateDetail['share_url']),array("name" => $testDetail['title'])));
-
-        return $this->load->layout('test/'.$type,$data,FALSE,'layout_test');  
+        return $this->load->layout('test2/'.$type,$data,FALSE,'layout_test2');
     }
     public function writing_result() {
         $this->load->model('test_model','test');
@@ -490,9 +488,11 @@ class Test extends CI_Controller{
         }
 
         //
-        redirect('/test/send_request/'.$test_log_id.'/'.$this->security->generate_token_post($test_log_id),'auto',301);
+//        redirect('/test/send_request/'.$test_log_id.'/'.$this->security->generate_token_post($test_log_id),'auto',301);
 
 //        return $this->load->layout('test/result_speaking',$data);
+        return $this->load->layout('test2/result_speaking',$data,FALSE,'layout_test2');
+
     }
 
     public function review_result($log_id, $result) {
@@ -591,10 +591,7 @@ class Test extends CI_Controller{
                 'og:description' => $testDetail['description'],
                 'og:url' => current_url())
         );
-
-        $this->config->set_item("breadcrumb",array(array('name' => $cateDetail['name'],'link' => $cateDetail['share_url']),array("name" => $testDetail['title']))); 
-
-        return $this->load->layout('test/'.$type.'_review',$data,FALSE, 'layout_test');
+        return $this->load->layout('test/'.$type.'_review',$data,FALSE, 'layout_test2');
     } 
     public function result() {
         $this->load->model('test_model','test');
@@ -785,7 +782,7 @@ class Test extends CI_Controller{
         $this->config->set_item("breadcrumb",array(array("name" => 'Kết quả fulltest')));
 
         //Send mail
-        $html = $this->load->view('test/mail/send_request',array('fullname' => strip_tags($userData['fullname'])),TRUE);
+        $html = $this->load->view('test/mail/result_fulltest',array('fullname' => strip_tags($userData['fullname'])),TRUE);
         send_mail(strip_tags($userData['email']),'[Aland IELTS] Xác nhận hoàn thành fulltest ',$html);
 
         return $this->load->layout('test/result_fulltest', $data);
@@ -1107,7 +1104,7 @@ class Test extends CI_Controller{
 //        echo '</pre>';
 //        exit;
 //        return $this->load->layout('test/speaking',$data,FALSE,'layout_test'); // cũ
-        return $this->load->layout('test/speaking2',$data,FALSE,'layout_test');
+        return $this->load->layout('test/speaking2',$data,FALSE,'layout_test2');
     }
 
 }

@@ -73,6 +73,7 @@
             .div_part{
                 margin-bottom: 100px;
             }
+
             strong.check-review-test-listening{
                 padding: 5px 9px;
                 border-radius: 15px;

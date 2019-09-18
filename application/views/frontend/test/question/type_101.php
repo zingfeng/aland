@@ -5,7 +5,7 @@ foreach ($rows as $key => $questionAnswer) {
 	$userAnswer = $userAnswer[$questionAnswer['answer_id']];
 	if ($questionAnswer['content']) {
 	?>
-	<div class="question_content">
+	<div class="question_content 101" style="padding: 8px;">
 		<?php echo $questionAnswer['content']; ?>	
 	</div>
 	<?php } ?>

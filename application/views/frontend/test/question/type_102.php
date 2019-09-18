@@ -6,7 +6,7 @@ if($rows) {
 		//var_dump($userAnswer); die;
 		if ($questionAnswer['content']) {
 		?>
-		<div class="question_content">
+		<div class="question_content 102">
 			<?php echo $questionAnswer['content']; ?>	
 		</div>
 		<?php } ?>

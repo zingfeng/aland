@@ -141,12 +141,12 @@ $csrf = array(
 
         <!-- view mobile -->
         <div class="row align-item-center footer-reading-view-mobile">
-            <div class="col-2">
+            <div class="col-1">
                 <button class="btn btn-outline-primary btn-sm" onclick="showQuestionsList()">
                 <i class="fa fa-check" aria-hidden="true"></i>
                 </button>           
             </div>
-            <div class="col-6 align-item-center text-center">
+            <div class="col-5 align-item-center text-center">
                 <div class="time-countdown-test-reading-view-mobile align-item-center">
                     <span class="time-countdown-test-reading-view-mobile__icon">
                         <span class="icon-round-timer-24px"></span>
@@ -154,7 +154,7 @@ $csrf = array(
                     <span class="time-countdown-test-reading-view-mobile__time show_count_down"></span>                   
                 </div>               
             </div>
-            <div class="col-4 passage-control">
+            <div class="col-6 passage-control">
                 <?php foreach ($arrQuestion as $i => $question) {?>
                     <?php if ($nextSection = $arrQuestion[$i + 1]) {?>
                         <button class="btn btn-danger btn-sm w-100 reading_change_section" data-section="<?php echo $nextSection['question_id']; ?>" data-index="<?php echo $i+1?>" data-ci=<?php echo $i?> <?php echo $i != 0 ? 'style="display:none"' : ''?>><?php echo $nextSection['title']; ?>&nbsp;&nbsp;<i class="fa fa-chevron-circle-right"></i></button>

@@ -76,13 +76,15 @@ $csrf = array(
             foreach ($arrQuestion as $qkey => $question) {
                 ?>
                 <div class="row no-gutters question_section_content" id="question_section_<?php echo $question['question_id']; ?>" <?php echo ($number_question != 1) ? 'style="display: none"' : '' ?>>
-                    <div id="col1" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 read margin-top">
+                   
+                    <div id="colA<?php echo $qkey; ?>" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 read margin-top" style="max-width: none !important;">
                         <h2 class="title"><?php echo $question['title']; ?></h2>
                         <div class="read_content">
                             <?php echo $question['detail']; ?>
                         </div>
                     </div>
-                    <div id="col2" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 answer margin-top">
+                    
+                    <div id="colB<?php echo $qkey; ?>" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 answer margin-top" style="max-width: none !important;">
                         <?php foreach ($arrQuestionGroup[$question['question_id']] as $key => $qgroup) { ?>
                             <div class="question bg_warp mb30">
                                 <h3><?php echo $qgroup['title']; ?></h3>
@@ -118,7 +120,8 @@ $csrf = array(
                     Bảng câu hỏi
                 </button>
             </div>
-            <div class="col-xl-8 col-lg-8 col-md-6 col-sm-4 text-center">
+           
+            <div class="col-xl-7 col-lg-7 col-md-6 col-sm-4 text-center">
                 <!-- thời gian làm bài còn lại -->
                 <div class="time-countdown-test-reading-view-desktop-mobile align-item-center">
                     <span class="time-countdown-test-reading-view-desktop-mobile__icon">
@@ -128,7 +131,8 @@ $csrf = array(
                 </div>
                 <!-- kết thúc thời gian làm bài còn lại -->
             </div>
-            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 passage-control">
+            
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 passage-control">
                 <?php foreach ($arrQuestion as $i => $question) {?>
                     <?php if ($nextSection = $arrQuestion[$i + 1]) {?>
                         <button class="btn btn-danger form-control reading_change_section" data-section="<?php echo $nextSection['question_id']; ?>" data-index="<?php echo $i+1?>" data-ci=<?php echo $i?> <?php echo $i != 0 ? 'style="display:none"' : ''?>><?php echo $nextSection['title']; ?>&nbsp;&nbsp;<i class="fa fa-chevron-circle-right"></i></button>
@@ -142,12 +146,14 @@ $csrf = array(
 
         <!-- view mobile -->
         <div class="row align-item-center footer-reading-view-mobile">
-            <div class="col-2">
+            
+            <div class="col-1">
                 <button class="btn btn-outline-primary btn-sm" onclick="showQuestionsList()">
                 <i class="fa fa-check" aria-hidden="true"></i>
                 </button>           
             </div>
-            <div class="col-6 align-item-center text-center">
+     
+            <div class="col-5 align-item-center text-center">
             <div class="time-countdown-test-reading-view-mobile align-item-center">
                     <span class="time-countdown-test-reading-view-mobile__icon">
                         <span class="icon-round-timer-24px"></span>
@@ -155,7 +161,8 @@ $csrf = array(
                     <span class="time-countdown-test-reading-view-mobile__time show_count_down"></span>                   
                 </div>               
             </div>
-            <div class="col-4 passage-control">
+           
+            <div class="col-6 passage-control">
                 <?php foreach ($arrQuestion as $i => $question) {?>
                     <?php if ($nextSection = $arrQuestion[$i + 1]) {?>
                         <button class="btn btn-danger btn-sm w-100 reading_change_section" data-section="<?php echo $nextSection['question_id']; ?>" data-index="<?php echo $i+1?>" data-ci=<?php echo $i?> <?php echo $i != 0 ? 'style="display:none"' : ''?>><?php echo $nextSection['title']; ?>&nbsp;&nbsp;<i class="fa fa-chevron-circle-right"></i></button>
@@ -319,17 +326,22 @@ $csrf = array(
 
 
     /* JS Goes Here */
-    // if ($(document).width() > 768) {
-    //     Split(['#col1', '#col2'], {
-    //         elementStyle: (dimension, size, gutterSize) => ({
-    //             'flex-basis': `calc(${size}% - ${gutterSize}px)`,
-    //         }),
-    //         gutterStyle: (dimension, gutterSize) => ({
-    //             'flex-basis':  `5px`,
-    //         }),
-    //         minSize: 500
-    //     });
-    // }
+    if ($(document).width() > 768) {
+        <?php
+        foreach ($arrQuestion as $qkey => $question){ ?>
+        Split(['#colA<?php echo $qkey;  ?>', '#colB<?php echo $qkey;  ?>'], {
+            elementStyle: (dimension, size, gutterSize) => ({
+                'flex-basis': `calc(${size}% - ${gutterSize + 20}px)`,
+            }),
+            gutterStyle: (dimension, gutterSize) => ({
+                'flex-basis':  `10px`,
+            }),
+            minSize: [250,250]
+        });
+        <?php }?>
+
+
+    }
 </script>
 
 <style type="text/css">
@@ -340,5 +352,12 @@ $csrf = array(
     .content_explain_question{
         background-color: transparent !important;
         padding: 0 !important;
+    }
+    .gutter-horizontal{
+        margin: 0 12px;
+    }
+    .read_content{
+        padding: 8px;
+        background: #f1f1f1;
     }
 </style>

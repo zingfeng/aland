@@ -53,43 +53,47 @@ function startRecording() {
     	https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
 	*/
 
-	navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
-		console.log("getUserMedia() success, stream created, initializing Recorder.js ...");
 
-		/*
-			create an audio context after getUserMedia is called
-			sampleRate might change after getUserMedia is called, like it does on macOS when recording through AirPods
-			the sampleRate defaults to the one set in your OS for your playback device
+		navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
+			console.log("getUserMedia() success, stream created, initializing Recorder.js ...");
 
-		*/
-		audioContext = new AudioContext();
+			/*
+                create an audio context after getUserMedia is called
+                sampleRate might change after getUserMedia is called, like it does on macOS when recording through AirPods
+                the sampleRate defaults to the one set in your OS for your playback device
 
-		//update the format 
-		document.getElementById("formats").innerHTML="Format: 1 channel pcm @ "+audioContext.sampleRate/1000+"kHz"
+            */
+			audioContext = new AudioContext();
 
-		/*  assign to gumStream for later use  */
-		gumStream = stream;
-		
-		/* use the stream */
-		input = audioContext.createMediaStreamSource(stream);
+			//update the format
+			document.getElementById("formats").innerHTML="Format: 1 channel pcm @ "+audioContext.sampleRate/1000+"kHz"
 
-		/* 
-			Create the Recorder object and configure to record mono sound (1 channel)
-			Recording 2 channels  will double the file size
-		*/
-		rec = new Recorder(input,{numChannels:1})
+			/*  assign to gumStream for later use  */
+			gumStream = stream;
 
-		//start the recording process
-		rec.record();
+			/* use the stream */
+			input = audioContext.createMediaStreamSource(stream);
 
-		console.log("Recording started");
+			/*
+                Create the Recorder object and configure to record mono sound (1 channel)
+                Recording 2 channels  will double the file size
+            */
+			rec = new Recorder(input,{numChannels:1})
 
-	}).catch(function(err) {
-	  	//enable the record button if getUserMedia() fails
-    	recordButton.disabled = false;
-    	stopButton.disabled = true;
-    	pauseButton.disabled = true
-	});
+			//start the recording process
+			rec.record();
+
+			console.log("Recording started");
+
+		}).catch(function(err) {
+			//enable the record button if getUserMedia() fails
+			recordButton.disabled = false;
+			stopButton.disabled = true;
+			pauseButton.disabled = true
+		});
+
+
+
 }
 
 function pauseRecording(){
@@ -131,6 +135,9 @@ function stopRecording() {
 }
 
 function setTimeCurrent() {
+	console.log("rec");
+	console.log(rec);
+
 	var time =  Math.round(rec.context.currentTime); // Second
 	var second = time % 60;
 	var min = (time-second)/60;

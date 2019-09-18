@@ -13,10 +13,10 @@
         <link rel="shortcut icon" type="image/x-icon" href="https://www.aland.edu.vn/theme/frontend/default/images/favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=vietnamese" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
-        <link rel="stylesheet" href="<?php echo $this->config->item("css"); ?>fontAwesome/css/font-awesome.min.css" media="all">
-        <link rel="stylesheet" href="<?php echo $this->config->item("css"); ?>bootstrap4/bootstrap.min.css" media="all">
-        <link rel="stylesheet" href="<?php echo $this->config->item("lib"); ?>jplayer/css/jplayer-flat-audio-theme.css">
-        <link rel="stylesheet" href="<?php echo $this->config->item("css"); ?>style-test-ielts.css" media="all">
+        <link rel="stylesheet" href="<?php echo $this->config->item("css"); ?>/fontAwesome/css/font-awesome.min.css" media="all">
+        <link rel="stylesheet" href="<?php echo $this->config->item("css"); ?>/bootstrap4/bootstrap.min.css" media="all">
+        <link rel="stylesheet" href="<?php echo $this->config->item("lib"); ?>/jplayer/css/jplayer-flat-audio-theme.css">
+        <link rel="stylesheet" href="<?php echo $this->config->item("css"); ?>/style-test-ielts.css" media="all">
         <script type="text/javascript">
             SITE_URL = 'https://www.aland.edu.vn';
         </script>
@@ -43,8 +43,10 @@
             .btn-speaking{
                 margin: 5px;
             }
+
             .recordingList{
                 border-left: 5px solid transparent;
+                /*border-left: 5px solid #f24962;*/
                 padding: 10px;
                 margin-left: 20px;
             }
@@ -56,6 +58,7 @@
                 border: 1px solid #707070;
                 margin-bottom: 30px;
             }
+
             .notepad{
                 background: #FBFBFB;
                 padding: 10px;
@@ -66,9 +69,12 @@
                 min-height: 300px;
                 resize: both;
             }
+
             .div_part{
                 margin-bottom: 100px;
             }
+
+
         </style>
 </head>
 <body>
@@ -94,5 +100,6 @@
 </body>
 
 </html>
+
 
 

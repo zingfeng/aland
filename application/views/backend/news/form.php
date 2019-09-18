@@ -518,7 +518,12 @@ $(document).ready(function() {
             var email_div = '<div class="form-group"><input class="form-control" type="text" name="email" placeholder="Email"></div>';
             var date_of_birth = '<div class="form-group"><input  placeholder="Ngày sinh"  type="text" onfocus="(this.type=\'date\')"   class="form-control"  name="dateofbirth" style="width: 100%;"></div>';
             var url_now = '<div class="form-group hidden" style="display: none"><input id="url_form_target" class="form-control" type="text" name="url"  placeholder="Url" value=""></div>';
-            var btn_submit = '<div style="text-align:center"><button class="btn btn-warning btn_send" type="submit" id="tuvan_submit" style="width: 100%;background-color: orange; color: white;">Gửi</button></div>';
+
+            var btn_submit = '<div style="text-align:center"><button class="btn btn-warning btn_send btn_submit_dang_ky_tu_van" type="submit" id="tuvan_submit" style="width: 100%;background-color: orange; color: white;">Gửi</button></div>';
+            var btn_submit_test = '<div style="text-align:center"><button class="btn btn-warning btn_send btn_submit_dang_ky_test" type="submit" id="tuvan_submit" style="width: 100%;background-color: orange; color: white;">Gửi</button></div>';
+            var btn_submit_ofline = '<div style="text-align:center"><button class="btn btn-warning btn_send btn_submit_dang_ky_tham_gia_offline" type="submit" id="tuvan_submit" style="width: 100%;background-color: orange; color: white;">Gửi</button></div>';
+            var btn_submit_nhan_tai_lieu = '<div style="text-align:center"><button class="btn btn-warning btn_send btn_submit_dang_ky_nhan_tai_lieu" type="submit" id="tuvan_submit" style="width: 100%;background-color: orange; color: white;">Gửi</button></div>';
+
 
             var select_co_so_test = text_select_box1;
             var select_co_so_nhan_tu_van = text_select_box2;
@@ -550,7 +555,7 @@ $(document).ready(function() {
                             '<h3 class="text-uppercase" style="color: #1a80d1;">Mẫu đăng ký thông tin nhận test</h3> ' +
                             '<form style="" id="test_contact_form" method="POST" action="' +site_url+ '/contact/tuvan?type=test_contact_form">'+
                             '<div class="form-group"><input name="form_type" value="form_dang_ky_test" class="form-control" type="text" required="" style="display: none; height: 0;"></div>' +
-                            name_div + phone_div + email_div + date_of_birth + select_co_so_test + url_now +  btn_submit +
+                            name_div + phone_div + email_div + date_of_birth + select_co_so_test + url_now +  btn_submit_test +
                             '</form>' +
                             '</div>' +
                             '</div>'
@@ -579,7 +584,7 @@ $(document).ready(function() {
                             '<h3 class="text-uppercase"  style="color: #1a80d1;">Mẫu đăng ký tham gia Offline</h3> ' +
                             '<form style="" id="event_offline_form" method="POST" action="' +site_url+ '/contact/tuvan?type=event_offline_form">' +
                             '<input name="form_type" value="form_dang_ky_offline" class="form-control" type="text" required="" style="display: none">' +
-                            name_div + phone_div + email_div + date_of_birth + select_co_so_event_offline + url_now + btn_submit +
+                            name_div + phone_div + email_div + date_of_birth + select_co_so_event_offline + url_now + btn_submit_ofline +
                             '</form>' +
                             '</div>' +
                             '</div>',
@@ -593,7 +598,7 @@ $(document).ready(function() {
                             '<h3 class="text-uppercase"  style="color: #1a80d1;" >Mẫu đăng ký nhận tài liệu</h3> ' +
                             '<form style="" id="document_earn_form" method="POST" action="' +site_url+ '/contact/tuvan?type=document_earn_form">' +
                             '<input name="form_type" value="form_dang_ky_tai_lieu" class="form-control" type="text" required="" style="display: none">' +
-                            name_div + phone_div + email_div + date_of_birth + select_living_area + url_now + btn_submit +
+                            name_div + phone_div + email_div + date_of_birth + select_living_area + url_now + btn_submit_nhan_tai_lieu +
                             '</form>' +
                             '</div>' +
                             '</div>',

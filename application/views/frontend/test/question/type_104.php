@@ -5,7 +5,7 @@ if($rows) {
 		
 		if ($questionAnswer['content']) {
 		?>
-		<div class="question_content">
+		<div class="question_content 104">
 			<?php echo $questionAnswer['content']; ?>	
 		</div>
 		<?php } ?>
@@ -13,7 +13,7 @@ if($rows) {
 		<?php 
 		$jk = 0;
 		$arrAlpha = range('A', 'Z');
-		if ($answerResult) {
+		if ( $answerResult) {
 			$result = $answerResult[$questionAnswer['answer_id']];
 			$userAnswer = $userAnswer[$questionAnswer['answer_id']];
 			//var_dump($result,$userAnswer);
