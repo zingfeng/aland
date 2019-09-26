@@ -123,14 +123,14 @@ echo $this->load->get_block('trending'); ?>
                       'type' => 1,
                       'target_id' => $class_id,
                     );
-                    echo generateHtmlCommentBlock($data_content);
+//                    echo generateHtmlCommentBlock($data_content);
                 ?>
 
-<!--                <div class="block-comment-face"> -->
-<!--                    <div class="fb-comments" data-order-by="reverse_time" data-href="--><?php //echo SITE_URL.$classDetail['share_url']?><!--" data-numposts="5" width="100%"></div>-->
-<!--                    <div class="fb-share-button" data-href="--><?php //echo SITE_URL.$classDetail['share_url']?><!--" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=--><?php //echo SITE_URL.$classDetail['share_url']?><!--" class="fb-xfbml-parse-ignore"></a></div>-->
-<!--                    <div class="fb-like" data-href="--><?php //echo SITE_URL.$classDetail['share_url']?><!--" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>-->
-<!--                </div>-->
+                <div class="block-comment-face" style="width: 100% !important;">
+                    <div class="fb-comments" data-order-by="reverse_time" data-href="<?php echo SITE_URL.$classDetail['share_url']?>" data-numposts="5" width="100%"></div>
+                    <div class="fb-share-button" data-href="<?php echo SITE_URL.$classDetail['share_url']?>" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo SITE_URL.$classDetail['share_url']?>" class="fb-xfbml-parse-ignore"></a></div>
+                    <div class="fb-like" data-href="<?php echo SITE_URL.$classDetail['share_url']?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+                </div>
               </div>                                      
             </div>
         </div>

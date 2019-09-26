@@ -105,8 +105,11 @@ $test_time = 12000;
                         <!-- End button listen/show note -->
 
                         <div class="row">
-                            <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
-                                <p><?php echo $qgroup['detail']; ?></p>
+                            <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 listening_content" >
+                                <div style="padding: 8px;    background: #f1f1f1;">
+                                    <p><?php echo $qgroup['detail']; ?></p>
+
+                                </div>
                             </div>
                             <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
                                 <div class="row group-button">
