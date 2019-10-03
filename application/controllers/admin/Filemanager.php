@@ -554,6 +554,8 @@ class Filemanager extends CI_Controller {
 		if (!$json['error']) {
 			$json['success'] = $this->lang->line('fmag_text_uploaded');
 		}
+
+
 		$this->output->set_output(json_encode($json));
 	}
 
@@ -658,6 +660,7 @@ window.parent.CKEDITOR.tools.callFunction("'.$number.'","' . $url .'", "");
 			'width'         => $maxsize,
 			'height'       => $maxsize
 		);
+
 		if ($imageInfo['image_width'] > $imageInfo['image_height']) {
 			$config['master_dim'] = 'width';
 		}
@@ -667,7 +670,7 @@ window.parent.CKEDITOR.tools.callFunction("'.$number.'","' . $url .'", "");
 		$this->image_lib->clear();
 		$this->image_lib->initialize($config);
 		$this->image_lib->resize();
-	}
+    }
 
 
 
