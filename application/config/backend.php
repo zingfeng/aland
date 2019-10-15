@@ -205,7 +205,7 @@ $config['admin_role'] = array(
             ),
             3 => array(// xoa user, phan quyen user, tao role
                 'name' => 'Administrator',
-                'permission' => array('delete')
+                'permission' => array('delete','export_user')
             )
         )
     ),
@@ -266,7 +266,7 @@ $config['admin_role'] = array(
             ),
             2 => array(// Xoa, sua, copy, danh sach
                 'name' => 'Giáo viên',
-                'permission' => array('topic_index', 'topic_add', 'topic_edit', 'class_add', 'class_edit','class_point','class_score','users_index', 'users_add','users_delete')
+                'permission' => array('topic_index', 'topic_add', 'topic_edit', 'class_add', 'class_edit','class_point','class_score','users_index', 'users_add','users_delete','publish')
             ),
             3 => array(// xoa bai, tao folder
                 'name' => 'Administrator',

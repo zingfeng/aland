@@ -946,8 +946,6 @@ class Users extends CI_Controller{
 
     public function changeImage()
     {
-
-
         $profile = $this->permission->getIdentity();
         if ($profile){
 
