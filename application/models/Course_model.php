@@ -30,7 +30,7 @@ class Course_model extends CI_Model {
             $this->db->where('cu.user_id',$params['user_id']);
             $this->db->join('course_to_user as cu','cu.course_id = c.course_id');
         }
-        $this->db->order_by('publish_time', DESC);
+        $this->db->order_by('publish_time', 'DESC');
         if($params['limit'] == 1) { 
             $query = $this->db->get('course as c');
             return $query->row_array();
