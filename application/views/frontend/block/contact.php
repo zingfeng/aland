@@ -27,14 +27,14 @@ $csrf = array(
 		<input type="email" name="email" placeholder="Email" class="form-control">
 	  </div>
 	  <div class="form-group">
-		<select class="form-control" name="coso">
+		<select class="form-control" id="coso_block" name="coso">
 			<option value="0">Chọn cơ sở</option>
 			<?php foreach ($arrBranch as $key => $branch) {?>
 			<option value="<?php echo $branch['id']; ?>"><?php echo $branch['label']; ?></option>
 			<?php }?>
 		</select>
 	  </div>
-	  <input class="form_csrf" type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+	  <input class="form_csrf" type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" />
 	  <button id="contact_form_support" type="button" class="btn btn-default">Đăng ký tư vấn</button>
 	</form>
 <script type="text/javascript">
@@ -42,6 +42,17 @@ $csrf = array(
 		e.preventDefault(); // avoid to execute the actual submit of the form.
 	    var form = $("#contact_form_support_form");
 	    form.find(".error").remove();
+
+        var coso =  $('#coso_block option:selected').val();
+
+        console.log("coso");
+        console.log(coso);
+        
+	    if ( ( coso === "0") || (coso === 0)){
+	        alert('Bạn cần chọn cơ sở phù hợp trước khi gửi thông tin ! ')
+	        return null;
+        }
+
 	    var url = form.attr('action');
 	    $.ajax({
 	           type: "POST",

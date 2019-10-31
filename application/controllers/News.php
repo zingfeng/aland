@@ -17,6 +17,7 @@ class News extends CI_Controller{
     public function support() {
         $this->load->layout('news/support');
     }
+
     public function preview($id, $token) {
         if (!$this->security->verify_token_post($id,$token)) {
             show_404();

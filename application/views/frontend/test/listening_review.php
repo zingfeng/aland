@@ -44,7 +44,7 @@ $csrf = array(
 
 <?php echo $this->load->view('test/common/breadcrumb');?> 
 
-<section class="test-listening listening-test_container">
+<section class="test-listening listening-test_container"  id="id-listening-test-container">
     <div class="container background-test">
         <div class="row">
             <div class="col group-test text-center">
@@ -123,7 +123,7 @@ $csrf = array(
 
                             </div>
                             <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
-                                <div class="row group-button">
+                                <div class="row group-button" style=    "margin-top: 0; margin-bottom: 0;">
                                     <div class="col-sm-12 custom-col form-textarea-notepad" id="show_note_pad_<?php echo $key?>" style="display: none;">
                                         <textarea name="" placeholder="" rows="4" class="form-control"></textarea>
                                     </div>
@@ -229,7 +229,7 @@ $csrf = array(
 
 <!-- ------------------bảng câu hỏi----------------- -->
 <section id="questions-list">
-    <div class="container background-questions-list">
+    <div class="container background-questions-list"  id="questions-list-inner">
         <div class="row justify-content-between title-button-hide-questions-list">
             <div class="col-6  title-button-hide-questions-list__title">
                 Bảng câu hỏi

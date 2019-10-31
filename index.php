@@ -36,7 +36,7 @@
  * @since	Version 1.0.0
  * @filesource
  */
-
+//phpinfo();
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT

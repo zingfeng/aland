@@ -241,5 +241,59 @@ class Users extends CI_Controller {
         }
         return $this->output->set_output(json_encode(array('status' => 'success','data' => $data,'option' => $option)));
 	}
+
+	public function export_user(){
+        $filename = 'User-Aland.xlsx';
+
+        if ( isset($_REQUEST['export']) &&($_REQUEST['export'] == '1')){
+            $rows = $this->_get_list_user(array('limit' => 1000));
+
+            $this->load->library('PHPExcel');
+            $objPHPExcel = new PHPExcel();
+            $i = 1;
+            $baseRow = 2;
+            foreach($rows as $key => $row){
+                $count = $baseRow + $key;
+                if($i == 1){
+                    $objPHPExcel->getActiveSheet(0)
+                        ->setCellValue('A'.$i, "Họ tên")
+                        ->setCellValue('B'.$i, "Email")
+                        ->setCellValue('C'.$i, "Địa chỉ")
+                        ->setCellValue('D'.$i, "Ngày sinh")
+                        ->setCellValue('E'.$i, "Điện thoại")
+                        ->setCellValue('F'.$i, "Thời gian tạo");
+                }
+                $objPHPExcel->getActiveSheet()->insertNewRowBefore($count,1);
+                $objPHPExcel->getActiveSheet(0)
+                    ->setCellValue('A'.$count, $row['fullname'])
+                    ->setCellValue('B'.$count, $row['email'])
+                    ->setCellValue('C'.$count, $row['address'])
+                    ->setCellValue('D'.$count, $row['birthday'])
+                    ->setCellValue('E'.$count, $row['phone'])
+                    ->setCellValue('F'.$count, date('d/m/Y H:i:s',$row['create_time']))
+                ;
+                $i++;
+            }
+            $objPHPExcel->getActiveSheet()->setTitle($filename);
+            $objPHPExcel->setActiveSheetIndex(0);
+            $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachement; filename="' . $filename . '"');
+            ob_end_clean();
+            return $objWriter->save('php://output');exit();
+        }
+    }
+
+    private function _get_list_user($options){
+	    $limit = (!$options['limit']) ? $this->config->item("limit_item") : $options['limit'];
+        $this->db->limit($limit);
+        $this->db->select('*');
+        $this->db->order_by("user_id", "desc");
+        $query = $this->db->get('users');
+        $arr_res = $query->result_array();
+        return $arr_res;
+    }
+
+
 }
 ?>

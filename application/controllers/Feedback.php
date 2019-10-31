@@ -4,7 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Feedback extends CI_Controller
 {
     // Dashboard
-    public function index(){
+    public function index3(){
+        phpinfo();
+
+        exit;
         $this->guard();
         // md bootstrap
         // Quản lý danh sách lớp
