@@ -58,6 +58,21 @@ $profile = $this->permission->getIdentity();
                 </ul>
             </li>
             <?php } ?>
+            <?php if ($this->permission->has_level_user('test_cambridge')) { ?>
+            <li><a><i class="fa fa-question-circle"></i> Bài test cambridge<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <?php if ($this->permission->check_permission_backend(array('function' => 'add','class' => 'test_cambridge'))) { ?>
+                    <li><a href="<?php echo SITE_URL; ?>/test_cambridge/add">Thêm bài test cambridge</a>
+                    <?php } ?>
+                    </li>
+                    <?php if ($this->permission->check_permission_backend(array('function' => 'index','class' => 'test_cambridge'))) { ?>
+                    <li>
+                        <a href="<?php echo SITE_URL; ?>/test_cambridge/index">Danh sách bài test cambridge</a>
+                    </li>
+                    <?php } ?>
+                </ul>
+            </li>
+            <?php } ?>
             <?php if ($this->permission->has_level_user('course')) { ?>
             <li><a><i class="fa fa-book"></i> Khóa học <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
