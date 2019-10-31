@@ -58,16 +58,26 @@ $profile = $this->permission->getIdentity();
                 </ul>
             </li>
             <?php } ?>
-            <?php if ($this->permission->has_level_user('test_cambridge')) { ?>
+            <?php if ($this->permission->has_level_user('testcambridge')) { ?>
             <li><a><i class="fa fa-question-circle"></i> Bài test cambridge<span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                    <?php if ($this->permission->check_permission_backend(array('function' => 'add','class' => 'test_cambridge'))) { ?>
-                    <li><a href="<?php echo SITE_URL; ?>/test_cambridge/add">Thêm bài test cambridge</a>
+                    <?php if ($this->permission->check_permission_backend(array('function' => 'add','class' => 'testcambridge'))) { ?>
+                    <li><a href="<?php echo SITE_URL; ?>/testcambridge/add">Thêm bài test cambridge</a>
                     <?php } ?>
                     </li>
-                    <?php if ($this->permission->check_permission_backend(array('function' => 'index','class' => 'test_cambridge'))) { ?>
+                    <?php if ($this->permission->check_permission_backend(array('function' => 'index','class' => 'testcambridge'))) { ?>
                     <li>
-                        <a href="<?php echo SITE_URL; ?>/test_cambridge/index">Danh sách bài test cambridge</a>
+                        <a href="<?php echo SITE_URL; ?>/testcambridge/index">Danh sách bài test cambridge</a>
+                    </li>
+                    <?php } ?>
+                    <?php if ($this->permission->check_permission_backend(array('function' => 'cate_add','class' => 'testcambridge'))) { ?>
+                    <li>
+                        <a href="<?php echo SITE_URL; ?>/testcambridge/cate_add">Thêm nhóm test</a>
+                    </li>
+                    <?php } ?>
+                    <?php if ($this->permission->check_permission_backend(array('function' => 'cate_index','class' => 'testcambridge'))) { ?>
+                    <li>
+                        <a href="<?php echo SITE_URL; ?>/testcambridge/cate_index">Danh sách nhóm test</a>
                     </li>
                     <?php } ?>
                 </ul>

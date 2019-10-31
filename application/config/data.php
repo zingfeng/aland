@@ -10,6 +10,16 @@ $config['test_type'] = array(
 	//20 => array('name' => 'Bài tập viết'),
 	//30 => array('name' => 'Bài tập ghi âm'),
 );
+$config['cambridge_test_type'] = array(
+	1 => array('name' => 'Điền từ vào chỗ trống - Nối từ'),
+	2 => array('name' => 'Điền từ vào chỗ trống - Sắp xếp từ'),
+	3 => array('name' => '...........'),
+	4 => array('name' => '...........'),
+	5 => array('name' => '...........'),
+	6 => array('name' => '...........'),
+	7 => array('name' => '...........'),
+	8 => array('name' => '...........'),
+);
 $config['course_class_type'] = array(
 	1 => 'Bài học',
 	2 => 'Test kỹ năng',
