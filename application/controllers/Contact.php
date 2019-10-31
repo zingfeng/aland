@@ -121,16 +121,6 @@ class Contact extends CI_Controller {
                         $this->sendEmail_dangky($this->input->post('fullname'), $email);
                     }
 
-                    // Send Email - Flow 2: tư vấn
-//                    $email_tu_van = 'giang.nguyen@imap.edu.vn';
-//                    $body_this = 'Thông tin học viên mới: '. strip_tags($this->input->post('fullname')) ;
-//
-//                    $phone = strip_tags($this->input->post('phone'));
-//                    $email = strip_tags($this->input->post('email'));
-//                    $body_this .= '<br>Số điện thoại: '.$phone.'  <a href="tel:'.$phone.'" ><h2>Call</h2></a>' ;
-//                    $body_this .= '<br>Email: '.$email ;
-//                    $this->sendEmail_from_IMAP(array($email_tu_van),'Mshoatoeic - Email gửi tư vấn viên - Thông tin khách hàng mới',
-//                        $body_this );
 				}
                 //// ==============================
 
@@ -394,14 +384,14 @@ class Contact extends CI_Controller {
                 $arrBranchData = array();
                 $arrBranch = json_decode($arrSetting['branch'],TRUE);
                 foreach ($arrBranch as $key => $branch) {
-                    $arrBranchData[$branch['id']] = $branch['name'];
+                    $arrBranchData[$branch['id']] = $branch['label']." ".$branch['name'];
                 }
 
                 $arrOfflinePlaceData = array();
                 $arrOfflinePlace = json_decode($arrSetting['offline_place'], TRUE);
                 if ( (is_array($arrOfflinePlace) )&& count($arrOfflinePlace) > 0){
                     foreach ($arrOfflinePlace as $key => $offline_place) {
-                        $arrOfflinePlaceData[$offline_place['id']] = $offline_place['name'];
+                        $arrOfflinePlaceData[$offline_place['id']] = $offline_place['label']." ".$offline_place['name'];
                     }
                 }
 

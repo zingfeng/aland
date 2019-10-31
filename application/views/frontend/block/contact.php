@@ -34,7 +34,7 @@ $csrf = array(
 			<?php }?>
 		</select>
 	  </div>
-	  <input class="form_csrf" type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+	  <input class="form_csrf" type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" />
 	  <button id="contact_form_support" type="button" class="btn btn-default">Đăng ký tư vấn</button>
 	</form>
 <script type="text/javascript">
