@@ -1,0 +1,111 @@
+/*@include cubic-transition($delay: 0, $duration: 350ms, $property: (transform)); */
+/**Apply: "font-size: px_to_rem(16px)" or "font: 400 px_to_rem(16px) arial;" **/
+.result-fulltest .information {
+  line-height: 1.5; }
+  .result-fulltest .information__title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #232323; }
+  .result-fulltest .information__view {
+    font-size: 1rem;
+    color: #A4A4A4;
+    margin-top: 0.5rem; }
+
+.result-fulltest .result-main {
+  text-align: center; }
+  .result-fulltest .result-main__title {
+    color: #232323;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding-top: 0.5rem; }
+  .result-fulltest .result-main__subtitle {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    padding-bottom: 2.25rem; }
+    .result-fulltest .result-main__subtitle .result-main-link-detail {
+      color: #A4A4A4; }
+
+.result-fulltest .circle__your-time .c100 {
+  float: none;
+  margin: 0 auto 20px;
+  font-size: 150px; }
+  .result-fulltest .circle__your-time .c100 > span {
+    font-weight: bold;
+    font-size: 40px;
+    width: 150px;
+    line-height: 150px; }
+  .result-fulltest .circle__your-time .c100.time > span {
+    color: #3597eb; }
+  .result-fulltest .circle__your-time .c100.time .bar,
+  .result-fulltest .circle__your-time .c100.time .fill {
+    border: 0.08em solid #3597eb; }
+
+.result-fulltest .circle__title {
+  font-weight: bold;
+  font-size: 1.2rem; }
+
+.result-fulltest .list-skill-point .skill-point {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 18rem;
+  max-width: 18rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4rem;
+  padding: 0.4rem 1rem 0.4rem 0.5rem;
+  background-color: #E8E9EE; }
+  .result-fulltest .list-skill-point .skill-point__logo {
+    margin-right: 1rem;
+    border-radius: 50%;
+    background-color: white; }
+    .result-fulltest .list-skill-point .skill-point__logo.-custom-logo-1 {
+      padding: 0.7rem 0.8rem 0.7rem 0.8rem; }
+    .result-fulltest .list-skill-point .skill-point__logo.-custom-logo-2 {
+      padding: 0.7rem 0.865rem 0.7rem 0.865rem; }
+    .result-fulltest .list-skill-point .skill-point__logo.-custom-logo-3 {
+      padding: 0.7rem 1.06rem 0.7rem 1.06rem; }
+    .result-fulltest .list-skill-point .skill-point__logo .fa {
+      font-size: 1.8rem;
+      color: #E8E9EE; }
+  .result-fulltest .list-skill-point .skill-point__content {
+    font-size: 1.2rem; }
+    .result-fulltest .list-skill-point .skill-point__content .text-blue {
+      color: #1890FF;
+      font-weight: bold; }
+
+.result-fulltest .result-notification {
+  line-height: 1.5; }
+  .result-fulltest .result-notification__title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #232323; }
+  .result-fulltest .result-notification__sub-title {
+    font-size: 1rem;
+    color: #A4A4A4; }
+
+.result-fulltest .button-action {
+  display: inline-block;
+  padding: 5px 15px;
+  margin: 2.1rem 0 1.1rem 0; }
+  .result-fulltest .button-action__answer {
+    background-color: #3597eb;
+    border-color: #3597eb;
+    color: white; }
+  .result-fulltest .button-action__reset {
+    background-color: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    color: #A4A4A4; }
+
+.result-fulltest .warp_bg .table {
+  margin-bottom: 0 !important; }
+  .result-fulltest .warp_bg .table th,
+  .result-fulltest .warp_bg .table td {
+    text-align: center; }
+  .result-fulltest .warp_bg .table .text-true {
+    color: #1890FF; }
+  .result-fulltest .warp_bg .table .text-false {
+    color: #F24962; }

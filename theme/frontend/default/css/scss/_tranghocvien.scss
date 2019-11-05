@@ -1,0 +1,563 @@
+// PC - trang hoc vien
+.student-page{
+    *{
+        padding: 0;
+        margin: 0;
+    }
+}
+// common
+.img-cover {display: block;width: 100%;height: 100%}
+.img-cover img {display: block;width: 100%;height: 100%;object-fit: cover}
+.img-scaledown {display: block;width: 100%;height: 100%}
+.img-scaledown img {display: block;width: 100%;height: 100%;object-fit: scale-down}
+
+.mgb50{
+    margin-bottom: 50px;
+}
+.mgb30{
+    margin-bottom: 30px;
+}
+.mgb25{
+    margin-bottom: 25px;
+}
+.mgb20{
+    margin-bottom: 20px;
+}
+.mgb15{
+    margin-bottom: 15px;
+}
+.mgb10{
+    margin-bottom: 10px;
+}
+.pd20{
+    padding: 20px;
+}
+
+.btn-submit{
+    padding: 10px 20px;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 4px;
+
+    &.btn-1{
+
+        border: 1px solid #F24962;
+        background-color: #F24962;
+        color: #fff;
+
+        &:hover{
+            background-color: #fff;
+            color: #F24962;
+            -webkit-transition: all .25s ;
+            -moz-transition: all .25s ;
+            -ms-transition: all .25s ;
+            -o-transition: all .25s ;
+            transition: all .25s ;
+        }
+    }
+
+    &.btn-2{
+        font-size: 16px;
+        color: #F24962;
+        border: 1px solid #F24962;
+
+        &:hover{
+            background-color: #F24962;
+            color: #fff;
+        }
+    }
+}
+
+.readmore{
+    color: #466991;
+    font-size: 16px;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.item{
+    border-radius: 5px;
+    box-shadow: 1px  1px 10px 5px #ccc;
+
+    &:hover{
+        box-shadow: none;
+        box-shadow: 1px  1px 10px 5px #eca3ae;
+        -webkit-transition: all .25s ;
+        -moz-transition: all .25s ;
+        -ms-transition: all .25s ;
+        -o-transition: all .25s ;
+        transition: all .25s ;
+    }
+
+    .thumb{
+
+        .image{
+            height: 170px;
+            img{
+                border-radius: 5px 5px 0 0;
+            }
+        }
+    }
+
+    .info{
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 0 0 5px 5px;
+
+        .title{
+            font-size: 16px;
+            line-height: 1.25;
+            height: 40px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        table{
+            margin-bottom: 10px;
+        }
+
+        .text{
+            color: #888;
+
+            &.color-pink{
+                color: #F24962;
+            }
+        }
+
+        p.text{
+            margin-bottom: 10px;
+        }
+
+        .btn-submit{
+            width: 100%;
+        }
+    }
+}
+
+.student-page{
+    .owl-nav {
+        display: block !important;
+        position: absolute;
+        right: 0;
+        top: -60px;
+
+        >div {
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: 1px solid #F24962; 
+            opacity: 1;
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 0;
+            border-radius: 4px;
+
+            &:hover{
+                -webkit-transition: .25s ;
+                -moz-transition: .25s ;
+                -ms-transition: .25s ;
+                -o-transition: .25s ;
+                transition: .25s ;
+            }
+        }
+
+        .owl-next {
+            background: transparent url(../images/next.svg) no-repeat center center;
+            &:hover{
+                background: #F24962 url(../images/next-h.svg) no-repeat center center;
+
+            }
+
+        }
+        .owl-prev {
+            background: transparent url(../images/prev.svg) no-repeat center center;
+            &:hover{
+                background: #F24962 url(../images/prev-h.svg) no-repeat center center;
+
+            }
+        }
+    }
+}
+
+.panel-head-1{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+
+    .panel-left{
+        .heading{}
+    }
+
+    .panel-right{
+        text-align: right;
+
+
+    }
+}
+
+// end common
+
+.student-page{
+
+    .nav-breadcrumb{
+
+        .breadcrumb{
+            margin: 10px 0;
+            padding: 10px 0;
+        }
+    }
+
+    .content-page{
+        margin: 0 -10px;
+
+        .std-sec{
+            padding-right: 20px;
+
+            .std-sec-welcome{
+                background: #eee;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+
+                .panel-head{
+                    margin-bottom: 10px;
+
+                    .heading{
+                        margin-bottom: 10px;
+                    }
+
+                    .sub-heading{}
+                }
+
+                .panel-body{
+
+                    .sec-common-1{
+
+                        .thumb{
+                            float: left;
+                            height: 175px;
+                            width: 275px;
+
+                            .image{
+                                img{
+                                    border-radius: 5px
+                                }
+                            }
+                        }
+
+                        .info{
+                            float: right;
+                            padding-left: 25px;
+                            width: calc(100% - 275px);
+
+                            .title{
+                                line-height: 1.5;
+                                margin-bottom: 30px;
+                                font-size: 20px;
+                                font-weight: 600;
+                            }
+
+                            .progress{
+                                height: 12px;
+                                border-radius: 6px;
+                                background-color: #ccc;
+                                width: 75%;
+                                margin-bottom: 28px;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .std-sec-courses{
+
+                .panel-head{
+                    display: flex;
+                    align-items: center;
+
+                    .panel-left{
+                        .heading{}
+                    }
+
+                    .panel-right{
+                        text-align: right;
+
+                        .readmore{
+                            color: #466991;
+
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+                .panel-body{
+
+                    .row{
+                        margin: 0 -10px;
+
+                        >div{
+                            padding: 0 12.5px;
+                        }
+
+
+                    }
+                }
+            }
+
+            .std-sec-process{
+                position: relative;
+
+                .panel-head{
+
+                    .heading{
+
+                    }
+                }
+                .owl-stage-outer{
+                    margin: 0 -12.5px ;
+                }
+                .owl-item{
+                    margin: 12.5px !important;
+                }
+
+                .item{
+                    .title{
+                        height: 22px;
+                    }
+
+                    .desc{
+                        height: 38px;
+                        overflow: hidden;
+                        margin-bottom: 10px;
+                    }
+                }
+                .content{
+
+                }
+
+                .thumb{
+                    position: relative;
+
+                    .overlay{
+                        position: absolute;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        p{
+                            color: #fff;
+                            font-size: 35px;
+                            font-weight: 600;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+            .std-sec-document{
+                background-color: #fff;
+                box-shadow: 1px  1px 10px 5px #ccc;
+                border-radius: 5px;
+
+                .panel-body{
+                    padding: 15px;
+                    .item{
+                        box-shadow: none;
+                    }
+
+                    img, .info{
+                        border-radius: 0;
+                    }
+
+                    .info{
+                        padding: 0;
+                        .title{
+                            display: block;
+                            height: 22px;
+                            font-weight: 500;
+
+                            &:hover{
+                                color: #F24962;
+                                -webkit-transition: 0.25s;
+                                -moz-transition: 0.25s;
+                                -ms-transition: 0.25s;
+                                -o-transition: 0.25s;
+                                transition: 0.25s;
+                            }
+                        }
+                    }
+                }
+                .owl-nav {
+                    display: none!important ;
+
+                }
+
+            }
+        }
+
+        .std-aside{
+
+            .std-aside-class{
+                background-color: #fff;
+                box-shadow: 1px  1px 10px 5px #ccc;
+                margin-bottom: 25px;
+                border-radius: 5px;
+
+                h3.heading{
+                    font-size: 18px;
+                }
+
+                .panel-body{
+                    padding: 15px;
+
+                    p{
+                        margin-bottom: 10px;
+                    }
+
+                    .list-doc{
+                        li{
+                            padding-bottom: 10px;
+                            margin-bottom: 10px;
+                            border-bottom: 2px dashed #ccc;
+
+                            i{
+                                color: #CD191D;
+                                margin-right: 10px;
+                            }
+                            a{
+                                height: 22px;
+                                overflow: hidden;
+
+                                &:hover{
+                                    color: #CD191D;
+                                }
+                            }
+                        }
+                    }
+                    .readmore{
+                        text-align: center;
+                        display: block;
+                    }
+                }
+            }
+
+            .std-aside-rank{
+
+                background-color: #fff;
+                margin-bottom: 25px;
+                box-shadow: 1px  1px 10px 5px #ccc;
+                border-radius: 5px;
+
+                .heading{
+                    font-size: 18px;
+                }
+
+                table{
+                    tbody{
+                        tr{
+                            &:nth-child(2n){
+                                background-color: #efefef;
+                            }
+                            &:nth-child(2n + 1){
+                                background-color: #f6f6f6;
+                            }
+
+                            td{
+                                padding: 15px 15px;
+                                .rank{
+
+                                    &.top{
+                                        font-size: 20px;
+                                        font-weight: 600;
+                                        padding: 3px 9px;
+                                        border: 5px solid;
+                                        border-radius: 50%;
+                                    }
+
+                                    &.rank-1{
+                                        color: #FFC404;
+                                        border-color: #FFE500;
+                                        background-color: #FFFFAE;
+                                    }
+                                    &.rank-2{
+                                        color: #9AA9C0;
+                                        border-color: #BAC6D6;
+                                        background-color: #F8F8F8;
+                                    }
+                                    &.rank-3{
+                                        color: #B97341;
+                                        border-color: #CE8D4D;
+                                        background-color: #D7AA67;
+                                    }
+                                }
+
+                                &.col-md-2{
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .std-aside-video{
+                background-color: #fff;
+                margin-bottom: 25px;
+                box-shadow: 1px  1px 10px 5px #ccc;
+                border-radius: 5px;
+
+                .heading{
+                    font-size: 18px;
+                }
+
+                .panel-body{
+                    padding: 15px;
+                    .list-video{
+                        li{
+                            &:not(:last-child){
+                                border-bottom: 1px solid #eaeaea;
+                                padding-bottom: 15px;
+                                margin-bottom: 15px;
+                            }
+                            .video{
+                                display: flex;
+                                .thumb{
+                                    height: 100px;
+                                    width: 150px;
+                                }
+                                .info{
+                                    padding-left: 15px;
+                                    width: calc(100% - 150px);
+
+                                    .title{
+                                        max-height: 70px;
+                                        overflow: hidden;
+                                        display: block;
+                                        margin-bottom: 10px;
+                                        font-weight: 600;
+
+                                        &:hover{
+                                            color: #F24962;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// END PC - trang hoc vien
+
+// REPONSIVE  - trang hoc vien
+// END REPONSIVE - trang hoc vien

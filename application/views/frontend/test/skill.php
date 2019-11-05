@@ -2,7 +2,7 @@
     <nav aria-label="breadcrumb" class="nav-breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?php echo SITE_URL?>">Trang chủ</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Test</li>
+            <li class="breadcrumb-item active" aria-current="page" style="text-transform: capitalize;"><?php echo $type?></li>
         </ol>
     </nav>
     <div class="row content-page">
@@ -20,6 +20,7 @@
                     </p>
                     <!-- <a href="" title="" class="readmore">Xem thêm</a> -->
                 </div>
+                <?php if($rows) { ?>
                 <div class="panel-body">
                     <div class="tg-sec-testlist mgb15">
                         <div class="panel-head">
@@ -28,108 +29,25 @@
                         </div>
                         <div class="panel-body">
                             <div class="row">
+                                <?php foreach($rows as $row) { ?>
                                 <div class="col-lg-4 mgb15">
                                     <div class="item">
                                         <div class="content">
                                             <div class="thumb">
-                                                <a href="<?php echo SITE_URL . '/test/fulltest.html'?>" title="Fulltest" class="image img-cover">
-                                                <img src="<?php echo $this->config->item('img')?>photo-5.jpg" alt="">
+                                                <a href="<?php echo str_replace('/test/', '/test/'.$type.'/', $row['share_url']); ?>?skill=1" title="<?php echo $row['title']?>" class="image img-cover">
+                                                    <img src="<?php echo getimglink($share_url['images'])?>" alt="<?php echo $row['title']?>">
                                                 </a>
-                                                <a href="<?php echo SITE_URL . '/test/fulltest.html'?>" title="Fulltest" class="overlay">
+                                                <a href="<?php echo str_replace('/test/', '/test/'.$type.'/', $row['share_url']); ?>?skill=1" title="<?php echo $row['title']?>" class="overlay">
                                                     <div class="overlay-content">
                                                         <p>IELTS</p>
-                                                        <p>Full test</p>
+                                                        <p><?php echo $row['title']?></p>
                                                     </div>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 mgb15">
-                                    <div class="item">
-                                        <div class="content">
-                                            <div class="thumb">
-                                                <a href="" title="" class="image img-cover">
-                                                <img src="<?php echo $this->config->item('img')?>photo-5.jpg" alt="">
-                                                </a>
-                                                <a href="javascript:;" title="Test Topic" class="overlay">
-                                                    <div class="overlay-content">
-                                                        <p>IELTS</p>
-                                                        <p>Test Topic</p>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 mgb15">
-                                    <div class="item">
-                                        <div class="content">
-                                            <div class="thumb">
-                                                <a href="<?php echo SITE_URL . '/test/writing.html'?>" title="Writing" class="image img-cover">
-                                                <img src="<?php echo $this->config->item('img')?>photo-5.jpg" alt="">
-                                                </a>
-                                                <a href="<?php echo SITE_URL . '/test/writing.html'?>" title="Writing" class="overlay">
-                                                    <div class="overlay-content">
-                                                        <p>IELTS</p>
-                                                        <p>Writing</p>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 mgb15">
-                                    <div class="item">
-                                        <div class="content">
-                                            <div class="thumb">
-                                                <a href="" title="" class="image img-cover">
-                                                <img src="<?php echo $this->config->item('img')?>photo-5.jpg" alt="">
-                                                </a>
-                                                <a href="" title="" class="overlay">
-                                                    <div class="overlay-content">
-                                                        <p>IELTS</p>
-                                                        <p>Reading</p>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 mgb15">
-                                    <div class="item">
-                                        <div class="content">
-                                            <div class="thumb">
-                                                <a href="" title="" class="image img-cover">
-                                                <img src="<?php echo $this->config->item('img')?>photo-5.jpg" alt="">
-                                                </a>
-                                                <a href="" title="" class="overlay">
-                                                    <div class="overlay-content">
-                                                        <p>IELTS</p>
-                                                        <p>Listening</p>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 mgb15">
-                                    <div class="item">
-                                        <div class="content">
-                                            <div class="thumb">
-                                                <a href="" title="" class="image img-cover">
-                                                <img src="<?php echo $this->config->item('img')?>photo-5.jpg" alt="">
-                                                </a>
-                                                <a href="" title="" class="overlay">
-                                                    <div class="overlay-content">
-                                                        <p>IELTS</p>
-                                                        <p>Speaking</p>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -225,6 +143,7 @@
                     </div>
                     <?php } ?>
                 </div>
+                <?php } ?>
             </div>
         </div>
         <div id="sidebar_right" class="tg-aside col-md-4 col-sm-4 col-xs-4 col-tn-12 mb20">

@@ -71,7 +71,9 @@ class Test_model extends CI_Model {
         $params_default = array('limit' => 10, 'offset' => 0,'isclass' => 0);
         $params = array_merge($params_default,$params);
         $this->db->select("test_id,title,images,share_url,total_users,total_hit");
-        $this->db->where('original_cate',$params['cate_id']);
+        if($params['cate_id']){
+            $this->db->where('original_cate',$params['cate_id']);
+        }
         $this->db->where('isclass',$params['isclass']);
         $this->db->order_by('test_id','DESC');
         if ($params['excluse']) {
@@ -117,6 +119,24 @@ class Test_model extends CI_Model {
         }
 
         return  $arr_res     ;
+    }
+
+    public function get_test_by_type($params) {
+
+        $type = (int) $params['type'];
+
+        $params_default = array('limit' => 10, 'offset' => 0, 'type' => 0);
+        $params = array_merge($params_default,$params);
+        $this->db->select("c.test_id,c.title,c.images,c.share_url,c.total_users,c.total_hit");
+        $this->db->order_by('c.test_id','DESC');
+        if ($params['type']) {
+            $this->db->join("test_question as q","c.test_id = q.test_id");
+            $this->db->where("q.type",$params['type']);
+        }
+        $query = $this->db->get("test as c",$params['limit'],$params['offset']);
+        $arr_res =  $query->result_array();
+
+        return  $arr_res;
     }
 
 
