@@ -42,7 +42,7 @@ class Test extends CI_Controller{
                 $cate_news = 3499;
                 break;
         }
-        $data['rows'] = $this->test->get_test_by_type($params); 
+        $data['rows'] = $this->test->get_test_by_type($params);
         $data['type'] = $type;
         $data['arrNews'] = $this->news->lists_by_cate_rule1(array('category_id' => $cate_news, "limit" => 3));
 

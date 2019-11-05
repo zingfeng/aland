@@ -128,11 +128,11 @@ class Test_model extends CI_Model {
         $params_default = array('limit' => 10, 'offset' => 0, 'type' => 0);
         $params = array_merge($params_default,$params);
         $this->db->select("c.test_id,c.title,c.images,c.share_url,c.total_users,c.total_hit");
-        $this->db->order_by('c.test_id','DESC');
         if ($params['type']) {
             $this->db->join("test_question as q","c.test_id = q.test_id");
             $this->db->where("q.type",$params['type']);
         }
+        $this->db->order_by('c.test_id','DESC');
         $query = $this->db->get("test as c",$params['limit'],$params['offset']);
         $arr_res =  $query->result_array();
 

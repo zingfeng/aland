@@ -35,7 +35,7 @@
                                         <div class="content">
                                             <div class="thumb">
                                                 <a href="<?php echo str_replace('/test/', '/test/'.$type.'/', $row['share_url']); ?>?skill=1" title="<?php echo $row['title']?>" class="image img-cover">
-                                                    <img src="<?php echo getimglink($share_url['images'])?>" alt="<?php echo $row['title']?>">
+                                                    <img src="<?php echo getimglink($row['images'])?>" alt="<?php echo $row['title']?>">
                                                 </a>
                                                 <a href="<?php echo str_replace('/test/', '/test/'.$type.'/', $row['share_url']); ?>?skill=1" title="<?php echo $row['title']?>" class="overlay">
                                                     <div class="overlay-content">

@@ -83,10 +83,10 @@
                                     <div class="item">
                                         <div class="content">
                                             <div class="thumb">
-                                                <a href="" title="" class="image img-cover">
+                                                <a href="<?php echo SITE_URL . '/test/reading.html'?>" title="Reading" class="image img-cover">
                                                 <img src="<?php echo $this->config->item('img')?>photo-5.jpg" alt="">
                                                 </a>
-                                                <a href="" title="" class="overlay">
+                                                <a href="<?php echo SITE_URL . '/test/reading.html'?>" title="Reading" class="overlay">
                                                     <div class="overlay-content">
                                                         <p>IELTS</p>
                                                         <p>Reading</p>
@@ -100,10 +100,10 @@
                                     <div class="item">
                                         <div class="content">
                                             <div class="thumb">
-                                                <a href="" title="" class="image img-cover">
+                                                <a href="<?php echo SITE_URL . '/test/listening.html'?>" title="listening" class="image img-cover">
                                                 <img src="<?php echo $this->config->item('img')?>photo-5.jpg" alt="">
                                                 </a>
-                                                <a href="" title="" class="overlay">
+                                                <a href="<?php echo SITE_URL . '/test/listening.html'?>" title="listening" class="overlay">
                                                     <div class="overlay-content">
                                                         <p>IELTS</p>
                                                         <p>Listening</p>
@@ -117,10 +117,10 @@
                                     <div class="item">
                                         <div class="content">
                                             <div class="thumb">
-                                                <a href="" title="" class="image img-cover">
+                                                <a href="<?php echo SITE_URL . '/test/speaking.html'?>" title="Speaking" class="image img-cover">
                                                 <img src="<?php echo $this->config->item('img')?>photo-5.jpg" alt="">
                                                 </a>
-                                                <a href="" title="" class="overlay">
+                                                <a href="<?php echo SITE_URL . '/test/speaking.html'?>" title="Speaking" class="overlay">
                                                     <div class="overlay-content">
                                                         <p>IELTS</p>
                                                         <p>Speaking</p>
