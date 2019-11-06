@@ -138,6 +138,18 @@ class Testcambridge_model extends CI_Model {
         $query = $this->db->get("cambridge_question");
         return $query->row_array();
     }
+    /**
+    * @author: hoanguyen
+    * @todo: Delete question
+    */
+    public function question_delete($cid = array()){
+        /** xoa question **/
+        $this->db->where_in('question_id',$cid);
+        $this->db->delete('cambridge_question');
+        $affected_rows =  $this->db->affected_rows();
+        // check affected row
+        return $affected_rows;
+    }
     public function get_answer_by_question($params = array()) {
         $this->db->where("question_id",$params['question_id']);
         $this->db->order_by("ordering");

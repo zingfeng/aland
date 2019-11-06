@@ -113,7 +113,6 @@ class Test extends CI_Controller{
         $this->config->set_item("mod_access",array("name" => "test_list"));
         $this->config->set_item("menu_select",array('item_mod' => 'test_list', 'item_id' => $cateid,'item_type' => $cate['type']));
         // render view
-        
         $this->load->layout('test/lists',$data);
     }
     public function class_home(){

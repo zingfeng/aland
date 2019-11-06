@@ -187,7 +187,8 @@ class Testcambridge extends CI_Controller{
         }
         if ($this->input->post('delete'))
         {
-            return $this->_action('question_delete',array('test_id' => $test_id));
+            return $this->_action('
+                ',array('test_id' => $test_id));
         }
         $this->load->setArray(array("isLists" => 1));
         $data = $this->_question_index($test_id);
@@ -482,7 +483,7 @@ class Testcambridge extends CI_Controller{
                             $answer = $this->input->post('answer');
                             $this->test->answer_insert($result,$answer);
                             $item_id = $result;
-                            $redirect = SITE_URL.'/cambridgetest/question_index/'.$input['test_id'];
+                            $redirect = SITE_URL.'/testcambridge/question_index/'.$input['test_id'];
                         }
                     }
                     else {
@@ -508,6 +509,25 @@ class Testcambridge extends CI_Controller{
                     return $this->output->set_output(json_encode(array('status' => 'error','valid_rule' => $this->form_validation->error_array(), 'message' => $this->lang->line("common_update_validator_error"))));
                 }
             break;
+            case 'question_delete':
+                $arrId = $this->input->post('cid');
+                $arrId = (is_array($arrId)) ? array_map('intval', $arrId) : (int) $arrId;
+                if (!$arrId) {
+                    return $this->output->set_output(json_encode(array('status' => 'error', 'message' => $this->lang->line("common_delete_min_select"))));
+                }
+                if (!$this->permission->check_permission_backend('question_delete')){
+                    return $this->output->set_output(json_encode(array('status' => 'error', 'message' => $this->lang->line("common_access_denied"))));
+                }
+                $result = $this->test->question_delete($arrId);
+                
+                if ($result) {
+                    // log action
+                    $this->logs->insertAction(array('action' => $action,'module' => $this->module, 'item_id' => $arrId));
+                    // return result
+                    $html = $this->load->view('testcambridge/question_index', $this->_question_index($params['test_id'])); 
+                    return $this->output->set_output(json_encode(array('status' => 'success','html' => $html, 'result' => $result, 'message' => $this->lang->line("common_delete_success"))));
+                }
+                break;
             case 'log_delete':
                 $arrId = $this->input->post('cid');
                 $arrId = (is_array($arrId)) ? array_map('intval', $arrId) : (int) $arrId;
