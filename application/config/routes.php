@@ -65,6 +65,7 @@ $route['video/detail/(:any)-(:num).html'] = "news/detail/$2/$1";
 
 /** TEST **/
 $route['test.html'] = "test/index";
+$route['test/(:any).html'] = "test/skill/$1";
 $route['test/(:any)-c(:num).html'] = "test/lists/$2/$1";
 $route['test/(reading|listening|speaking|writing|fulltest)/(:any)-(:num).html'] = "test/detail/$3/$1";
 /** API **/

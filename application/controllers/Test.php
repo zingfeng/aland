@@ -5,7 +5,48 @@ class Test extends CI_Controller{
 		parent::__construct();
 	}
     public function index(){
+        $this->load->model('news_model','news');
+        $param = array(
+            "category_id" => 3499,
+            "limit" => 3,
+        );
+        $data['arrNews'] = $this->news->lists_by_cate_rule1($param);
+        $this->load->layout('test/index', $data);
+    }
 
+    public function skill($type) {
+        $this->load->model('test_model','test');
+        $this->load->model('news_model','news');
+        $page = (int)$this->input->get('page');
+        $params['limit'] = 12; $params['offset'] = 0;
+        // get test by cate
+        $params['isclass'] = 0;
+        switch ($type) {
+            case 'listening':
+                $params['type'] = 1;
+                $cate_news = 3511;
+                break;
+            case 'reading':
+                $params['type'] = 2;
+                $cate_news = 3515;
+                break;
+            case 'writing':
+                $params['type'] = 3;
+                $cate_news = 3516;
+                break;
+            case 'speaking':
+                $params['type'] = 4;
+                $cate_news = 3517;
+                break;
+            default:
+                $cate_news = 3499;
+                break;
+        }
+        $data['rows'] = $this->test->get_test_by_type($params);
+        $data['type'] = $type;
+        $data['arrNews'] = $this->news->lists_by_cate_rule1(array('category_id' => $cate_news, "limit" => 3));
+
+        $this->load->layout('test/skill', $data);
     }
 
     public function lists($cateid) { 
