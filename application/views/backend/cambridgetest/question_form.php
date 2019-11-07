@@ -48,7 +48,7 @@ $test_type = $this->config->item("cambridge_test_type");
 					</div>
                 </div>
                 <?php //} ?>
-                <?php //if (in_array($type, array(1,3,4,8))) { ?>
+                <?php if (in_array($type, range(10,15,1))) { ?>
                 <div class="form-group">
 					<label class="control-label col-sm-2 col-xs-12">Sound</label>
 					<div class="col-sm-10 col-xs-12 filemanager_media">
@@ -65,7 +65,7 @@ $test_type = $this->config->item("cambridge_test_type");
 						<input type="hidden" class="sound_input" name="sound" value="<?php echo $row['sound']; ?>" />
 					</div>
                 </div>
-                <?php //} ?>
+                <?php } ?>
 			</div>
 		</div>
 	</div>
@@ -74,10 +74,46 @@ $test_type = $this->config->item("cambridge_test_type");
 			<div class="x_content row">
 				<?php
 				switch ($type) {
+                    case 1:
+                    case 7:
+                    case 13:
+                        $form_no = 1;
+                        break;
+
+                    case 2:
+                    case 9:
+                        $form_no = 2;
+                        break;
+
                     case 3:
                     case 4:
                         $form_no = 3;
                         break;
+
+                    case 5:
+                    case 6:
+                    case 8:
+                    case 11:
+                    case 12:
+                    case 15:
+                        $form_no = 5;
+                        break;
+
+                    case 10:
+                    case 14:
+                        $form_no = 10;
+                        break;
+
+                    case 16:
+                    case 17:
+                    case 18:
+                    case 19:
+                    case 20:
+                    case 21:
+                    case 22:
+                        $form_no = 0;
+                        break;
+
 					/*case 1:
 						$layout = 'question_form_1';
 						break;
@@ -97,7 +133,7 @@ $test_type = $this->config->item("cambridge_test_type");
 						$layout = 'question_form_8';
 						break;*/
 					default:
-                        $form_no = 0;
+                        $form_no = $type;
 						break;
 				}
                 $layout = 'question_form_' . $form_no;
