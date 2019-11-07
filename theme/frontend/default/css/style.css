@@ -3644,11 +3644,11 @@ section#road-map {
   .readmore:hover {
     text-decoration: underline; }
 
-.item {
+.student-page .item {
   border-radius: 5px;
   -webkit-box-shadow: 1px  1px 10px 5px #ccc;
   box-shadow: 1px  1px 10px 5px #ccc; }
-  .item:hover {
+  .student-page .item:hover {
     -webkit-box-shadow: none;
     box-shadow: none;
     -webkit-box-shadow: 1px  1px 10px 5px #eca3ae;
@@ -3658,29 +3658,29 @@ section#road-map {
     -ms-transition: all .25s;
     -o-transition: all .25s;
     transition: all .25s; }
-  .item .thumb .image {
+  .student-page .item .thumb .image {
     height: 170px; }
-    .item .thumb .image img {
+    .student-page .item .thumb .image img {
       border-radius: 5px 5px 0 0; }
-  .item .info {
+  .student-page .item .info {
     background-color: #fff;
     padding: 15px;
     border-radius: 0 0 5px 5px; }
-    .item .info .title {
+    .student-page .item .info .title {
       font-size: 16px;
       line-height: 1.25;
       height: 40px;
       overflow: hidden;
       margin-bottom: 10px; }
-    .item .info table {
+    .student-page .item .info table {
       margin-bottom: 10px; }
-    .item .info .text {
+    .student-page .item .info .text {
       color: #888; }
-      .item .info .text.color-pink {
+      .student-page .item .info .text.color-pink {
         color: #F24962; }
-    .item .info p.text {
+    .student-page .item .info p.text {
       margin-bottom: 10px; }
-    .item .info .btn-submit {
+    .student-page .item .info .btn-submit {
       width: 100%; }
 
 .student-page .owl-nav {
