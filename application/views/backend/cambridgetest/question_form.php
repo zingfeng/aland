@@ -103,6 +103,7 @@ $test_type = $this->config->item("cambridge_test_type");
                         $form_no = 10;
                         break;
 
+                    case 9:
                     case 16:
                     case 17:
                     case 18:
