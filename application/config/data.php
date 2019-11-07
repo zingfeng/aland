@@ -28,7 +28,7 @@ $config['cambridge_test_type'] = array(
 	12 => array('name' => '[Listening] Điền từ để hoàn thành câu'),
 	13 => array('name' => '[Listening] Nghe và chọn hình ảnh đúng'),
 	14 => array('name' => '[Listening] Nghe - Ghép từng người được nói tới với hình ảnh/đối tượng tương ứng'),
-	15 => array('name' => '[Listening] Nghe và tô màu, viết vào tranh theo chỉ dẫn:'),
+	15 => array('name' => '[Listening] Nghe và tô màu, viết vào tranh theo chỉ dẫn'),
 
 	//Speaking
 	16 => array('name' => '[Speaking] Hỏi và trả lời về 1 tấm ảnh'),

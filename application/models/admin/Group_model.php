@@ -67,7 +67,7 @@ class Group_model extends CI_Model {
     public function get_group_by_test($id){
         $this->db->select('test_to_class.*,class.name');
         $this->db->where("test_to_class.test_id",$id);
-        $this->db->join("class","class.id = test_to_class.class_id");
+        $this->db->join("class","class.class_id = test_to_class.class_id");
         $query = $this->db->get("test_to_class");
         return $query->result_array();
     }

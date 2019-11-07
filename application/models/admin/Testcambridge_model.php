@@ -95,7 +95,6 @@ class Testcambridge_model extends CI_Model {
         //$this->db->where_in('test_id',$cid);
         //$this->db->delete('test_to_tags');
 
-        
         /** xoa image relate **/
         //$this->db->where_in('test_id',$cid);
         //$this->db->delete('test_images');
@@ -107,6 +106,14 @@ class Testcambridge_model extends CI_Model {
         $this->db->where_in('test_id',$cid);
         $this->db->delete('cambridge_question');
         // check affected row
+        return $affected_rows;
+    }
+
+    public function delete_question($cid){
+        $cid = (is_array($cid)) ? $cid : (int) $cid;
+        $this->db->where_in('question_id',$cid);
+        $this->db->delete('cambridge_question');
+        $affected_rows =  $this->db->affected_rows();
         return $affected_rows;
     }
     
@@ -163,7 +170,7 @@ class Testcambridge_model extends CI_Model {
         $this->db->delete('cambridge_question_answer');
         // insert new answer
         foreach($input as $key => $answer){
-            if($answer['label']){
+            if(/*$answer['images']*/1){
                 $correct = (int)$answer['correct'];
                 $parent = (int) $answer['parent'];
                 switch ($questionDetail['type']) {
@@ -173,7 +180,8 @@ class Testcambridge_model extends CI_Model {
                 }
                 if ($parent == 1) {$correct = 0;}
                 $input_answer[] = array(
-                    'content' => $answer['label'],
+                    'content' => $answer['content'],
+                    'images' => $answer['images'],
                     'question_id' => $question_id,
                     'correct' => $correct,
                     'parent' => $parent,

@@ -9,10 +9,13 @@
     <label class="control-label col-sm-2 col-xs-12"></label>
     <div class="col-sm-10 col-xs-12">
         <div class="col-sm-3 col-xs-3">
-            <b>Nội dung đáp án bằng chữ</b>
+            <b>Nội dung hỏi bằng chữ</b>
         </div>
         <div class="col-sm-3 col-xs-3">
-            <b>Nội dung đáp án bằng ảnh</b>
+            <b>Nội dung hỏi bằng ảnh</b>
+        </div>
+        <div class="col-sm-3 col-xs-3">
+            <b>Đáp án</b>
         </div>
         <div class="col-sm-1 col-xs-3">
             <b>Correct</b>
@@ -33,6 +36,9 @@
                     <i class="fa fa-remove image_delete"></i>
                     <input type="hidden" name="answer[<?php echo $i;?>][images]" value="<?php echo $answer[$i]['images'];?>" />
                 </div>
+            </div>
+            <div class="col-sm-3 col-xs-3">
+                <input type="text" name="answer[<?php echo $i;?>][object]" value="<?php echo $answer[$i]['object']; ?>" placeholder="" class="form-control">
             </div>
             <div class="col-sm-1 col-xs-3">
                 <div class="checkbox">

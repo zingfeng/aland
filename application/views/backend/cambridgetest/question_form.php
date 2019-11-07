@@ -1,5 +1,4 @@
-
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed'); 
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 $this->load->config('data');
 $test_type = $this->config->item("cambridge_test_type");
 ?>
@@ -39,7 +38,7 @@ $test_type = $this->config->item("cambridge_test_type");
 						</div>
 					</div>
                 </div>
-                <?php if (in_array($type, array(1,8))) { ?>
+                <?php //if (in_array($type, array(1,8))) { ?>
                 <div class="form-group">
 					<label class="control-label col-sm-2 col-xs-12">Ảnh</label>
 					<div class="col-sm-10 col-xs-12 filemanager_media">
@@ -48,8 +47,8 @@ $test_type = $this->config->item("cambridge_test_type");
 						<input type="hidden" name="images" value="<?php echo $row['images']; ?>" />
 					</div>
                 </div>
-                <?php } ?>
-                <?php if (in_array($type, array(1,3,4,8))) { ?>
+                <?php //} ?>
+                <?php //if (in_array($type, array(1,3,4,8))) { ?>
                 <div class="form-group">
 					<label class="control-label col-sm-2 col-xs-12">Sound</label>
 					<div class="col-sm-10 col-xs-12 filemanager_media">
@@ -66,7 +65,7 @@ $test_type = $this->config->item("cambridge_test_type");
 						<input type="hidden" class="sound_input" name="sound" value="<?php echo $row['sound']; ?>" />
 					</div>
                 </div>
-                <?php } ?>
+                <?php //} ?>
 			</div>
 		</div>
 	</div>
@@ -75,7 +74,11 @@ $test_type = $this->config->item("cambridge_test_type");
 			<div class="x_content row">
 				<?php
 				switch ($type) {
-					case 1:
+                    case 3:
+                    case 4:
+                        $form_no = 3;
+                        break;
+					/*case 1:
 						$layout = 'question_form_1';
 						break;
 					case 2:
@@ -92,12 +95,13 @@ $test_type = $this->config->item("cambridge_test_type");
 						break;
 					case 8:
 						$layout = 'question_form_8';
-						break;
+						break;*/
 					default:
-						$layout = 'question_form_'. $type;
+                        $form_no = 0;
 						break;
 				}
-		        $this->load->view('cambridgetest/'.$layout,array('row' => $row,'answer' => $answer),FALSE);
+                $layout = 'question_form_' . $form_no;
+                $this->load->view('cambridgetest/'.$layout,array('row' => $row,'answer' => $answer),FALSE);
 		        ?>
 			</div>
 	</div>

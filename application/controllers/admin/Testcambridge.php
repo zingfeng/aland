@@ -187,8 +187,7 @@ class Testcambridge extends CI_Controller{
         }
         if ($this->input->post('delete'))
         {
-            return $this->_action('
-                ',array('test_id' => $test_id));
+            return $this->_action('delete_question',array('test_id' => $test_id));
         }
         $this->load->setArray(array("isLists" => 1));
         $data = $this->_question_index($test_id);
@@ -380,6 +379,27 @@ class Testcambridge extends CI_Controller{
                     return $this->output->set_output(json_encode(array('status' => 'success','html' => $html, 'result' => $result, 'message' => $this->lang->line("common_delete_success"))));
                 }
             break;
+
+            case 'delete_question':
+                $arrId = $this->input->post('cid');
+                $arrId = (is_array($arrId)) ? array_map('intval', $arrId) : (int) $arrId;
+                if (!$arrId) {
+                    return $this->output->set_output(json_encode(array('status' => 'error', 'message' => $this->lang->line("common_delete_min_select"))));
+                }
+                if (!$this->permission->check_permission_backend('delete')){
+                    return $this->output->set_output(json_encode(array('status' => 'error', 'message' => $this->lang->line("common_access_denied"))));
+                }
+                $result = $this->test->delete_question($arrId);
+
+                if ($result) {
+                    // log action
+                    $this->logs->insertAction(array('action' => $action,'module' => $this->module, 'item_id' => $arrId));
+                    // return result
+                    $html = $this->load->view('cambridgetest/list',$this->_index());
+                    return $this->output->set_output(json_encode(array('status' => 'success','html' => $html, 'result' => $result, 'message' => $this->lang->line("common_delete_success"))));
+                }
+                break;
+
             case 'cate_add':
             case 'cate_edit':
                 $this->load->library('form_validation');
@@ -491,7 +511,7 @@ class Testcambridge extends CI_Controller{
                             $result = $this->test->question_update($params['question_id'],$input);
                             //insert answer
                             $answer = $this->input->post('answer');
-                            $this->test->answer_insert($params['question_id'],$answer); 
+                            $this->test->answer_insert($params['question_id'],$answer);
                         }
                         if($result){
                             $item_id = $params['question_id'];
@@ -589,7 +609,7 @@ class Testcambridge extends CI_Controller{
             if (is_numeric($order)) {
                 $this->db->where('question_id',$row['question_id']);
                 $this->db->set('ordering',$order);
-                $this->db->update('question');
+                $this->db->update('cambridge_question');
             }
         }
         return $this->output->set_output(json_encode(array('status' => 'success', 'message' => 'Đã cập nhật thông tin')));
