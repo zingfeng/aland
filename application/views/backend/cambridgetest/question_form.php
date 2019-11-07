@@ -81,7 +81,6 @@ $test_type = $this->config->item("cambridge_test_type");
                         break;
 
                     case 2:
-                    case 9:
                         $form_no = 2;
                         break;
 
