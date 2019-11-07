@@ -83,7 +83,6 @@ class Testcambridge extends CI_Controller{
     }
     private function _edit($id) {
         $this->load->model('admin/testcambridge_model','test');
-        $this->load->model('admin/group_model','group');
         // row detail
         $userLevel = $this->permission->get_level_user();
         if ($userLevel == 1) {
@@ -97,11 +96,9 @@ class Testcambridge extends CI_Controller{
         // get category recursive
         $arrCate = $this->test->get_category();
         $arrCate = $this->test->recursiveCate($arrCate);
-        //get news to class
-        $arrClass = $this->group->get_group_by_test($id);
+
         return  array(
             'arrCate' => $arrCate,
-            'arrClass' => $arrClass,
             'row' => $row
         );
     }

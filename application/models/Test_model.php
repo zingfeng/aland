@@ -122,15 +122,18 @@ class Test_model extends CI_Model {
     }
 
     public function get_test_by_type($params) {
-
         $type = (int) $params['type'];
-
         $params_default = array('limit' => 10, 'offset' => 0, 'type' => 0);
         $params = array_merge($params_default,$params);
         $this->db->select("c.test_id,c.title,c.images,c.share_url,c.total_users,c.total_hit");
-        if ($params['type']) {
+        if ($params['type']) {      //Trường hợp test kĩ năng
             $this->db->join("test_question as q","c.test_id = q.test_id");
             $this->db->where("q.type",$params['type']);
+        }else{                      //Trường hợp fulltest thì phải có đủ 4 kĩ năng
+            $this->db->join("test_question as q","c.test_id = q.test_id");
+            $this->db->where("q.parent_id", 0);
+            $this->db->group_by(array("c.test_id", "q.type"));
+            $this->db->having("count(c.test_id) >= 4");
         }
         $this->db->order_by('c.test_id','DESC');
         $query = $this->db->get("test as c",$params['limit'],$params['offset']);

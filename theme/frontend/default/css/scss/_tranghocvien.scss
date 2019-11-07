@@ -79,66 +79,126 @@
     }
 }
 
-.item{
-    border-radius: 5px;
-    box-shadow: 1px  1px 10px 5px #ccc;
+// .item{
+//     border-radius: 5px;
+//     box-shadow: 1px  1px 10px 5px #ccc;
 
-    &:hover{
-        box-shadow: none;
-        box-shadow: 1px  1px 10px 5px #eca3ae;
-        -webkit-transition: all .25s ;
-        -moz-transition: all .25s ;
-        -ms-transition: all .25s ;
-        -o-transition: all .25s ;
-        transition: all .25s ;
-    }
+//     &:hover{
+//         box-shadow: none;
+//         box-shadow: 1px  1px 10px 5px #eca3ae;
+//         -webkit-transition: all .25s ;
+//         -moz-transition: all .25s ;
+//         -ms-transition: all .25s ;
+//         -o-transition: all .25s ;
+//         transition: all .25s ;
+//     }
 
-    .thumb{
+//     .thumb{
 
-        .image{
-            height: 170px;
-            img{
-                border-radius: 5px 5px 0 0;
-            }
-        }
-    }
+//         .image{
+//             height: 170px;
+//             img{
+//                 border-radius: 5px 5px 0 0;
+//             }
+//         }
+//     }
 
-    .info{
-        background-color: #fff;
-        padding: 15px;
-        border-radius: 0 0 5px 5px;
+//     .info{
+//         background-color: #fff;
+//         padding: 15px;
+//         border-radius: 0 0 5px 5px;
 
-        .title{
-            font-size: 16px;
-            line-height: 1.25;
-            height: 40px;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
+//         .title{
+//             font-size: 16px;
+//             line-height: 1.25;
+//             height: 40px;
+//             overflow: hidden;
+//             margin-bottom: 10px;
+//         }
 
-        table{
-            margin-bottom: 10px;
-        }
+//         table{
+//             margin-bottom: 10px;
+//         }
 
-        .text{
-            color: #888;
+//         .text{
+//             color: #888;
 
-            &.color-pink{
-                color: #F24962;
-            }
-        }
+//             &.color-pink{
+//                 color: #F24962;
+//             }
+//         }
 
-        p.text{
-            margin-bottom: 10px;
-        }
+//         p.text{
+//             margin-bottom: 10px;
+//         }
 
-        .btn-submit{
-            width: 100%;
-        }
-    }
-}
+//         .btn-submit{
+//             width: 100%;
+//         }
+//     }
+// }
 
 .student-page{
+    
+    .item{
+        border-radius: 5px;
+        box-shadow: 1px  1px 10px 5px #ccc;
+
+        &:hover{
+            box-shadow: none;
+            box-shadow: 1px  1px 10px 5px #eca3ae;
+            -webkit-transition: all .25s ;
+            -moz-transition: all .25s ;
+            -ms-transition: all .25s ;
+            -o-transition: all .25s ;
+            transition: all .25s ;
+        }
+
+        .thumb{
+
+            .image{
+                height: 170px;
+                img{
+                    border-radius: 5px 5px 0 0;
+                }
+            }
+        }
+
+        .info{
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 0 0 5px 5px;
+
+            .title{
+                font-size: 16px;
+                line-height: 1.25;
+                height: 40px;
+                overflow: hidden;
+                margin-bottom: 10px;
+            }
+
+            table{
+                margin-bottom: 10px;
+            }
+
+            .text{
+                color: #888;
+
+                &.color-pink{
+                    color: #F24962;
+                }
+            }
+
+            p.text{
+                margin-bottom: 10px;
+            }
+
+            .btn-submit{
+                width: 100%;
+            }
+        }
+    }
+
     .owl-nav {
         display: block !important;
         position: absolute;
@@ -195,8 +255,6 @@
 
     .panel-right{
         text-align: right;
-
-
     }
 }
 
