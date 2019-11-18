@@ -1,0 +1,105 @@
+.aland-cambridge{
+	.feedback {
+		margin-bottom: 100px;
+		.owl-carousel-2{
+			padding: 60px 50px 10px 50px;
+			background-color: #f4f5f7;
+			position: relative;
+
+			.item{
+				margin-bottom: 10px;
+				.row{
+					display: flex;
+					align-items: center;
+					.thumb{
+						.image{
+							display: flex;
+							justify-content: center;
+							img{
+								width: 125px;
+								height: 125px;
+								border-radius: 50%;
+
+							}
+						}
+					}
+					.info{
+						.name{
+							font-size: 20px;
+							font-family: $font-bold;
+							color: $color-hover;
+						}
+						.job{
+							font-size: 18px;
+							color: #262626;
+							margin: 10px 0 15px 0;
+						}
+						.desc{
+							color: #757575;
+							line-height: 1.5;
+							text-align: justify;
+							padding-right: 50px;
+						}
+					}
+				}
+			}
+
+			.owl-dots{
+				display: block !important;
+				.owl-dot.active span{
+					background-color: $color-hover;
+				}
+			}
+		}
+
+		@include respond (max-1024) {
+			&{
+				margin-bottom: 50px;
+			}
+		}
+
+		@include respond (max-768) {
+			&{
+				.owl-carousel-2.owl-carousel{
+					.item{
+						.row{
+							.info{
+								.desc{
+									padding-right: 10px;
+								}
+							}
+						}
+					}
+
+					.owl-nav{
+						button.owl-prev {
+							left: 0px;
+						} 
+
+						button.owl-next {
+							right: 0px;
+						}
+					} 
+				}
+			}
+		}
+
+		@include respond (max-414) {
+			&{
+				.owl-carousel{
+					padding-top: 30px;
+					.item{
+						.thumb{
+							margin-bottom: 25px;
+						}
+						.info{
+							.name, .job{
+								text-align: center;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

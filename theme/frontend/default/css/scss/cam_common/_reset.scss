@@ -1,0 +1,120 @@
+@font-face {
+	font-family: 'UTMAurora-Regular';
+	src: 
+	url('../fonts/UTM Aurora.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto-Regular';
+	src: 
+	url('../fonts/Roboto-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto-Bold';
+	src: 
+	url('../fonts/Roboto-Bold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'UTMAurora-Regular';
+	src: 
+	url('../font/UTM Aurora.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face{
+	font-family: 'fas';
+	src: url('../fonts/fontawesome-5.11.2/webfonts/fa-brands-400.ttf') format('truetype');
+	src: url('../fonts/fontawesome-5.11.2/webfonts/fa-regular-400.ttf') format('truetype');
+	src: url('../fonts/fontawesome-5.11.2/webfonts/fa-solid-900.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 400;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+.aland-cambridge{
+	*{
+		// padding: 0;
+		// margin: 0;
+		font-family: 'Roboto-Regular';
+	}
+	.container-fluid-30 {
+		width: 100%;
+		padding-right: 30px;
+		padding-left: 30px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	h1, 
+	h2, 
+	h3, 
+	h4,
+	h5, 
+	h6,
+	p{
+		padding: 0;
+		margin: 0;
+		line-height: 1;
+	}
+	ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	button,
+	span{
+		outline: none !important;
+	}
+
+	a{
+		text-decoration: none !important;
+		&:hover{
+			color: $color-hover !important;
+		}
+	}
+
+	.mb5{
+		margin-bottom: 5px;
+	}
+
+	.mb10{
+		margin-bottom: 10px;
+	}
+
+	.mb15{
+		margin-bottom: 15px;
+	}
+
+	.mb20{
+		margin-bottom: 20px;
+	}
+
+	.mb25{
+		margin-bottom: 52px;
+	}
+
+	.mb30{
+		margin-bottom: 30px;
+	}
+
+	.img-cover {display: block;width: 100%;height: 100%}
+	.img-cover img {display: block;width: 100%;height: 100%;object-fit: cover}
+	.img-scaledown {display: block;width: 100%;height: 100%}
+	.img-scaledown img {display: block;width: 100%;height: 100%;object-fit: scale-down}
+	.img-fill {display: block;width: 100%;height: 100%}
+	.img-fill img {display: block;width: 100%;height: 100%;object-fit: fill}
+	.img-contain {display: block;width: 100%;height: 100%}
+	.img-contain img {display: block;width: 100%;height: 100%;object-fit: contain}
+	.img-none {display: block;width: 100%;height: 100%}
+	.img-none img {display: block;width: 100%;height: 100%;object-fit: none}
+}

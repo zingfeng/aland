@@ -1,0 +1,189 @@
+#to_top {
+	display: none;
+	border: medium none;
+	bottom: 20px;
+	cursor: pointer;
+	text-align: center;
+	height: 30px;
+	line-height: 32px;
+	outline: medium none;
+	padding: 0;
+	position: fixed;
+	right: 20px;
+	width: 30px;
+	z-index: 89;
+	background: #f45b69;
+	svg{
+
+		color: #fff;
+	}
+}
+.aland-cambridge{
+
+
+	.active-pc{
+		display: block;
+	}
+
+	.active-mb{
+		display: none;
+	}
+
+	h2.heading{
+		font-size: 30px;
+		color: #262626;
+		font-family: $font-bold;
+	}
+
+	h3.sub-heading{
+		font-size: 18px;
+		color: #757575;
+	}
+
+	*{
+		&:hover{
+			-webkit-transition: all .25s ;
+			-moz-transition: all .25s ;
+			-ms-transition: all .25s ;
+			-o-transition: all .25s ;
+			transition: all .25s ;
+		}
+	}
+
+	.btn{
+		&:hover{
+			background-color: red;
+		}
+	}
+
+	.readmore{
+		color: $color-hover;
+		&:hover{
+			text-decoration: underline;
+			color: red;
+		}
+	}
+
+	.owl-carousel-2{
+		&.owl-carousel{
+			position: relative;
+
+			.owl-nav{
+				display: block !important;
+
+				button{
+					position: absolute;
+					top: 40%;
+					display: inline-block;
+					width: 50px;
+					height: 50px;
+					z-index: 9;
+
+					&:hover{
+						background-color: transparent !important;
+					}
+
+					&.owl-prev{
+						left: 15px;
+
+					}
+					&.owl-next{
+						right: 20px;
+					}
+
+					span{
+						display: inline-block;
+						font-size: 50px;
+						height: 50px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						margin: -5px 0 0 2px;
+						color: $color-hover !important;
+
+						&:hover{
+							color: red !important;
+						}
+					}
+				} 
+			}
+		}
+	}
+
+	.video-popup{
+		.modal.show{
+			padding: 0 !important;
+		}
+		.modal-lg{
+			top: 10%;
+			max-width: 1000px;
+			margin: auto;
+			.modal-content{
+				iframe{
+					width: 1000px;
+					height: 520px;
+				}
+			}
+		}
+	}
+
+	@include respond (max-768) {
+		.video-popup{
+			.modal-lg{
+				max-width: 750px;
+				.modal-content{
+					iframe{
+						width: 750px;
+						height: 390px;
+					}
+				}
+			}
+		}
+	}
+
+	@include respond (max-414) {
+		.active-pc{
+			display: none;
+		}
+
+		.active-mb{
+			display: block;
+		}
+
+		.video-popup{
+			.modal-lg{
+				max-width: 100%;
+				.modal-content{
+					iframe{
+						width: 100%;
+						height: 210px;
+					}
+				}
+			}
+		}
+	}
+
+	@include respond (max-375) {
+		.video-popup{
+			.modal-lg{
+				.modal-content{
+					iframe{
+						height: 185px;
+					}
+				}
+			}
+		}
+	}
+
+	@include respond (max-320) {
+		.video-popup{
+			.modal-lg{
+				.modal-content{
+					iframe{
+						height: 150px;
+					}
+				}
+			}
+		}
+	}
+}

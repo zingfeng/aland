@@ -1,0 +1,31 @@
+.aland-cambridge{
+	.partner {
+		margin-bottom: 100px;
+		.panel-head{
+			margin-bottom: 20px;
+			text-align: center;
+			.heading{
+				text-transform: uppercase;
+			}
+		}
+		.panel-body{
+			.owl-nav{
+				display: none !important;
+			}
+		}
+
+		@include respond (max-1024) {
+			&{
+				margin-bottom: 50px;
+			}
+		}
+
+		@include respond (max-414) {
+			.panel-head{
+				h2.heading{
+					font-size: 22px;
+				}
+			}
+		}
+	}
+}

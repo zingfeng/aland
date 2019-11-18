@@ -1,0 +1,89 @@
+.aland-cambridge{
+	.course-online {
+		margin-bottom: 100px;
+		.panel-head{
+			text-align: center;
+			margin-bottom: 30px;
+			.heading{
+				color: #262626;
+				text-transform: uppercase;
+				margin-bottom: 15px;
+			}
+			.sub-heading{
+				color: #757575;
+				margin-bottom: 25px;
+			}
+			.under-line{
+				width: 200px;
+				height: 5px;
+				border-radius: 3px;
+				background-color: $color-hover;
+				margin: 0 auto;
+			}
+		}
+		.panel-body{
+			.owl-carousel{
+				.owl-stage-outer{
+					.owl-item{
+						.item{
+							box-shadow: 0px 0px 10px #00000033;
+
+							&:hover{
+								box-shadow: 0px 0px 10px #f24962;
+
+							}
+							.thumb{
+								.image{
+									img{
+									}
+								}
+							}
+
+							.info{
+								.title{
+								}
+								.desc{
+									.text{
+									}
+								}
+								.btn{
+
+									&:hover{
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+		}
+
+		@include respond (max-1024) {
+			&{
+				margin-bottom: 50px;
+			}
+		}
+
+		@include respond (max-414) {
+			&{
+				.panel-head{
+					.heading {
+						font-size: 22px;
+						line-height: 1.5;
+					} 
+					.sub-heading{
+						font-size: 14px;
+						line-height: 1.5;
+					}
+				}
+				.panel-body{
+					.readmore{
+						text-align: center;
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+	}
+}

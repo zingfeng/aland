@@ -1,0 +1,31 @@
+// aland cambridge
+// common
+@import "cam_common/_var.scss";
+@import "cam_common/_reset.scss";
+@import "cam_common/_mixin.scss";
+
+@import "cam_common/_header.scss";
+@import "cam_common/_footer.scss";
+
+@import "cam_common/_cm-owlcarousel-1.scss";
+@import "cam_common/_common.scss";
+// end common
+
+// pages
+
+// home-page
+@import "cam_pages/home-page/_hp-slider-top.scss";
+@import "cam_pages/home-page/_hp-intro.scss";
+@import "cam_pages/home-page/_hp-course-online.scss";
+@import "cam_pages/home-page/_hp-banner.scss";
+@import "cam_pages/home-page/_hp-slider.scss";
+@import "cam_pages/home-page/_hp-feedback.scss";
+@import "cam_pages/home-page/_hp-partner.scss";
+@import "cam_pages/home-page/_hp-recommended.scss";
+@import "cam_pages/home-page/_hp-route-training.scss";
+// @import "pages/home-page/_section-2.scss";
+// end home-page
+
+// end pages
+
+// end aland cambridge

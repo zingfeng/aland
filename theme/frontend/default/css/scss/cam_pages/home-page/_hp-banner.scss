@@ -1,0 +1,48 @@
+.aland-cambridge{
+	.banner{
+		background-image: url("../images/bg-banner.jpg");
+		text-align: center;
+		padding: 80px 0;
+		margin-bottom: 100px;
+
+		.heading{}
+
+		.sub-heading{
+			line-height: 1.5;
+			margin: 15px 0 25px 0;
+		}
+
+		.btn{
+			background-color: $color-hover;
+			display: inline-block;
+			width: 200px;
+			&:hover{
+				background-color: red;
+			}
+		}
+
+		&.banner-2{
+			.sub-heading{
+				max-width: 450px;
+				margin: 15px auto 25px auto;
+			}
+		}
+
+		@include respond (max-1024) {
+			&{
+				padding: 50px 0;
+				margin-bottom: 50px;
+			}
+		}
+
+		@include respond (max-414) {
+			h2.heading{
+				line-height: 1.5;
+				font-size: 22px;
+			}
+			h3.sub-heading {
+				font-size: 16px;
+			}
+		}
+	}
+}

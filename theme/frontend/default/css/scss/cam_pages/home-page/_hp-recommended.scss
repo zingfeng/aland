@@ -1,0 +1,139 @@
+.aland-cambridge{
+	.recommended {
+		margin-bottom: 100px;
+		.panel-head{
+			text-align: center;
+			margin-bottom: 30px;
+			.heading{
+				text-transform: uppercase;
+				margin-bottom: 15px;
+			}
+			.sub-heading{
+				max-width: 600px;
+				margin: 0 auto;
+				line-height: 1.5;
+			}
+		}
+
+		.panel-body{
+			> .row{
+				h4.title{
+					margin-bottom: 20px;
+					svg{
+						color: $color-hover;
+						margin-right: 10px;
+					}
+				}
+				.panel-left{
+					.row{
+						> div{
+							padding-right: 10px;
+							padding-left: 10px; 
+							.content{
+								.thumb{
+									margin-bottom: 15px;
+									.image{
+										height: 210px;
+									}
+								}
+								.info{
+									.title-child{
+										max-height: 39px;
+										overflow: hidden;
+										a{
+											font-size: 16px;
+											font-family: $font-bold;
+											line-height: 1.25;
+											color: #262626;
+
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				.panel-right{
+					.list-doc{
+						li{
+							max-height: 22px;
+							overflow: hidden;
+
+							a{
+								color: #757575;
+							}
+							
+							&:not(:last-child){
+								margin-bottom: 10px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		@include respond (max-1024) {
+			&{
+				margin-bottom: 50px;
+				.panel-body{
+					> .row{
+						.panel-left{
+							.row{
+								> div {
+									.content{
+										.thumb{
+											.image {
+												height: 175px;
+											} 
+										} 
+									}
+								} 
+							}
+						} 
+					} 
+				}
+			}
+		}
+
+		@include respond (max-768) {
+			&{
+				.panel-body{
+					> .row{
+						display: unset;
+						.panel-left{
+							max-width: 100%;
+							margin-bottom: 25px;
+						}
+						.panel-right{
+							max-width: 100%;
+
+						}
+					}
+				}
+			}
+		}
+
+		@include respond (max-414) {
+			.panel-head{
+				h2.heading{
+					font-size: 22px;
+				}
+				h3.sub-heading{
+					font-size: 16px;
+				}
+			}
+			.panel-body{
+				h4.title{
+					font-size: 18px;
+				}
+				.panel-left{
+					> .row{
+						>div{
+							margin-bottom: 25px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

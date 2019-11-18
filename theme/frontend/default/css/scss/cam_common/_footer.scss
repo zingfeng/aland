@@ -1,0 +1,105 @@
+.aland-cambridge{
+	.footer {
+		background-color: #EEEFF2;
+		.panel-body{
+			padding: 50px 0 30px 0;
+			.row{
+				.heading{
+					font-size: 20px;
+					margin-bottom: 20px;
+					font-weight: 600;
+				}
+
+				.ft-contact{
+					.logo{
+						margin-bottom: 20px;
+						.image{
+							height: 50px;
+						}
+					}
+					.contact{
+						margin-bottom: 10px;
+					}
+					.list-social{
+						margin-top: 20px;
+						display: flex;
+						li{
+							margin-right: 10px;
+							.social{
+								display: block;;
+								width: 34px;
+								height: 34px;
+								border: 1px solid $color-hover;
+								border-radius: 5px;
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								svg{
+									font-size: 18px;
+									color: $color-hover;
+
+									&:hover{
+										color: red;
+									}
+								}
+							}
+						}
+					}
+				}
+				.ft-menu{
+					.list-ft-menu{
+						li{
+							margin-bottom: 10px;
+							.title-menu{
+								font-size: 14px;
+								color: #757575;
+
+								&:hover{
+									color: $color-hover;
+								}
+							}
+						}
+					}
+				}
+				.ft-fanpge{}
+			}
+		}
+
+		.copy-right{
+			text-align: center;
+			background-color: #D1D2D8;
+			p{
+				padding: 15px 0;
+				font-size: 14px;
+			}
+		}
+
+		@include respond (max-1024) {
+			&{
+				.panel-body{
+					.row{
+						.ft-contact{
+							.contact {
+								line-height: 1.25;
+							} 
+						} 
+					} 
+				}
+			}
+		}
+
+		@include respond (max-414) {
+			.panel-body{
+				.ft-contact{
+					text-align: center;
+					.list-social{
+						justify-content: center;
+					}
+				}
+			}
+			.copy-right p {
+				font-size: 11px;
+			}
+		}
+	}	
+}

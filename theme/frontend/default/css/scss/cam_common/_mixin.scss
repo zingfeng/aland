@@ -1,0 +1,100 @@
+@mixin respond($breakpoint) {
+
+	// Full HD 1920 * 1080
+	@if $breakpoint==max-1920 {
+		@media (max-width: 1920px) {
+			@content
+		}
+		;
+	}
+
+	// ---------- laptop ----------
+	// HD+ 1600 * 900	
+	@if $breakpoint==max-1600 {
+		@media (max-width: 1600px) {
+			@content
+		}
+		;
+	}
+
+	// HD+ 1440 * 720
+	@if $breakpoint==max-1440 {
+		@media (max-width: 1440px) {
+			@content
+		}
+		;
+	}
+
+	// HD 1366 * 768 
+	@if $breakpoint==max-1366 {
+		@media (max-width: 1366px) {
+			@content
+		}
+		;
+	}
+
+	@if $breakpoint==laptop {
+		@media (max-width: 1600px) and (min-width: 1025px){
+			@content
+		}
+		;
+	}
+	// ---------- laptop ----------
+
+	// xga 1024 * 768 - ipad-pro doc, ipad-mini ngang
+	@if $breakpoint==max-1024 {
+		@media (max-width: 1024px) {
+			@content
+		}
+		;
+	}
+
+	// wvga 800 * 480 (5:3), svga 800 * 600 (4:3) - table - ngang
+	@if $breakpoint==max-800 {
+		@media (max-width: 800px) {
+			@content
+		}
+		;
+	}
+
+	// wvga 768 * 480 - ipad-mini - doc
+	@if $breakpoint==max-768 {
+		@media (max-width: 768px) {
+			@content
+		}
+		;
+	}
+
+	// 600   table - doc
+	@if $breakpoint==max-600 {
+		@media (max-width: 600px) {
+			@content
+		}
+		;
+	}
+
+	// mb 414 
+	@if $breakpoint==max-414 {
+		@media (max-width: 414px) {
+			@content
+		}
+		;
+	}
+
+	// mb 375 
+	@if $breakpoint==max-375 {
+		@media (max-width: 375px) {
+			@content
+		}
+		;
+	}
+	
+	// mb 320  
+	@if $breakpoint==max-320 {
+		@media (max-width: 320) {
+			@content
+		}
+		;
+	}
+
+}

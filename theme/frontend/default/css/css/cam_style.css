@@ -1,0 +1,1346 @@
+@font-face {
+  font-family: 'UTMAurora-Regular';
+  src: url("../fonts/UTM Aurora.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'UTMAurora-Regular';
+  src: url("../font/UTM Aurora.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'fas';
+  src: url("../fonts/fontawesome-5.11.2/webfonts/fa-brands-400.ttf") format("truetype");
+  src: url("../fonts/fontawesome-5.11.2/webfonts/fa-regular-400.ttf") format("truetype");
+  src: url("../fonts/fontawesome-5.11.2/webfonts/fa-solid-900.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400; }
+
+.aland-cambridge * {
+  font-family: 'Roboto-Regular'; }
+
+.aland-cambridge .container-fluid-30 {
+  width: 100%;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto; }
+
+.aland-cambridge h1,
+.aland-cambridge h2,
+.aland-cambridge h3,
+.aland-cambridge h4,
+.aland-cambridge h5,
+.aland-cambridge h6,
+.aland-cambridge p {
+  padding: 0;
+  margin: 0;
+  line-height: 1; }
+
+.aland-cambridge ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+.aland-cambridge button,
+.aland-cambridge span {
+  outline: none !important; }
+
+.aland-cambridge a {
+  text-decoration: none !important; }
+  .aland-cambridge a:hover {
+    color: #F24962 !important; }
+
+.aland-cambridge .mb5 {
+  margin-bottom: 5px; }
+
+.aland-cambridge .mb10 {
+  margin-bottom: 10px; }
+
+.aland-cambridge .mb15 {
+  margin-bottom: 15px; }
+
+.aland-cambridge .mb20 {
+  margin-bottom: 20px; }
+
+.aland-cambridge .mb25 {
+  margin-bottom: 52px; }
+
+.aland-cambridge .mb30 {
+  margin-bottom: 30px; }
+
+.aland-cambridge .img-cover {
+  display: block;
+  width: 100%;
+  height: 100%; }
+
+.aland-cambridge .img-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover; }
+
+.aland-cambridge .img-scaledown {
+  display: block;
+  width: 100%;
+  height: 100%; }
+
+.aland-cambridge .img-scaledown img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: scale-down;
+  object-fit: scale-down; }
+
+.aland-cambridge .img-fill {
+  display: block;
+  width: 100%;
+  height: 100%; }
+
+.aland-cambridge .img-fill img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+  object-fit: fill; }
+
+.aland-cambridge .img-contain {
+  display: block;
+  width: 100%;
+  height: 100%; }
+
+.aland-cambridge .img-contain img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain; }
+
+.aland-cambridge .img-none {
+  display: block;
+  width: 100%;
+  height: 100%; }
+
+.aland-cambridge .img-none img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: none;
+  object-fit: none; }
+
+.aland-cambridge .header {
+  background-color: #fff;
+  -webkit-box-shadow: 1px 1px 10px 1px #ccc;
+  box-shadow: 1px 1px 10px 1px #ccc;
+  height: auto; }
+  .aland-cambridge .header .panel-head {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .aland-cambridge .header .panel-head .logo .image {
+      width: 100px;
+      height: 50px; }
+    .aland-cambridge .header .panel-head .main-menu-1 {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .aland-cambridge .header .panel-head .main-menu-1 > li .title-menu {
+        display: inline-block;
+        position: relative;
+        padding: 30px;
+        text-decoration: none;
+        color: #707070;
+        font-size: 18px;
+        font-family: "Roboto-Bold"; }
+        .aland-cambridge .header .panel-head .main-menu-1 > li .title-menu:before {
+          position: absolute;
+          content: "";
+          left: 0;
+          bottom: 0;
+          width: 0%;
+          height: 3px;
+          border-radius: 2px;
+          background: transparent; }
+        .aland-cambridge .header .panel-head .main-menu-1 > li .title-menu:hover {
+          color: #F24962; }
+          .aland-cambridge .header .panel-head .main-menu-1 > li .title-menu:hover:before {
+            background: #F24962;
+            width: 100%;
+            -webkit-transition: width 0.5s;
+            -o-transition: width 0.5s;
+            transition: width 0.5s; }
+      .aland-cambridge .header .panel-head .main-menu-1 > li.sub-menu {
+        position: relative; }
+        .aland-cambridge .header .panel-head .main-menu-1 > li.sub-menu .dropdown-menu {
+          margin-top: 0;
+          padding: 0;
+          -webkit-box-shadow: 2px 2px 5px #bbb;
+          box-shadow: 2px 2px 5px #bbb;
+          min-width: 12rem; }
+          .aland-cambridge .header .panel-head .main-menu-1 > li.sub-menu .dropdown-menu .main-menu-2 li {
+            position: relative; }
+            .aland-cambridge .header .panel-head .main-menu-1 > li.sub-menu .dropdown-menu .main-menu-2 li .menu-child {
+              display: inline-block;
+              color: #000;
+              text-decoration: none;
+              color: #707070;
+              font-size: 16px;
+              padding: 7.5px 10px;
+              width: 100%; }
+            .aland-cambridge .header .panel-head .main-menu-1 > li.sub-menu .dropdown-menu .main-menu-2 li:after {
+              position: absolute;
+              content: "";
+              left: 0;
+              top: 0;
+              width: 3px;
+              height: 0%;
+              background: transparent; }
+            .aland-cambridge .header .panel-head .main-menu-1 > li.sub-menu .dropdown-menu .main-menu-2 li:hover .menu-child {
+              color: #F24962; }
+            .aland-cambridge .header .panel-head .main-menu-1 > li.sub-menu .dropdown-menu .main-menu-2 li:hover:after {
+              background: #F24962;
+              height: 100%;
+              -webkit-transition: height 0.5s;
+              -o-transition: height 0.5s;
+              transition: height 0.5s; }
+            .aland-cambridge .header .panel-head .main-menu-1 > li.sub-menu .dropdown-menu .main-menu-2 li:not(:last-child) {
+              border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+        .aland-cambridge .header .panel-head .main-menu-1 > li.sub-menu:hover .dropdown-menu {
+          display: block; }
+    .aland-cambridge .header .panel-head .login .btn {
+      color: #F24962;
+      background-color: #fff; }
+      .aland-cambridge .header .panel-head .login .btn:hover {
+        color: #fff;
+        background-color: red; }
+  @media (max-width: 1024px) {
+    .aland-cambridge .header .panel-head .main-menu-1 > li .title-menu {
+      padding: 30px 15px;
+      font-size: 16px; } }
+  @media (max-width: 800px) {
+    .aland-cambridge .header .panel-head .main-menu-1 > li .title-menu {
+      padding: 30px 10px;
+      font-size: 15px; }
+    .aland-cambridge .header .panel-head .login .btn {
+      font-size: 15px; } }
+  @media (max-width: 768px) {
+    .aland-cambridge .header .panel-head .main-menu-1 > li .title-menu {
+      padding: 30px 10px;
+      font-size: 15px; }
+    .aland-cambridge .header .panel-head .login .btn {
+      font-size: 15px; } }
+  @media (max-width: 600px) {
+    .aland-cambridge .header .panel-head .main-menu-1 > li .title-menu {
+      padding: 30px 7.5px;
+      font-size: 12px; }
+    .aland-cambridge .header .panel-head .login .btn {
+      font-size: 12px; } }
+  @media (max-width: 414px) {
+    .aland-cambridge .header {
+      display: none; } }
+
+.aland-cambridge .header-mb #menu-container .panel-head-mb {
+  padding: 15px 15px 15px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .aland-cambridge .header-mb #menu-container .panel-head-mb #menu-wrapper {
+    overflow: hidden;
+    max-width: 100%;
+    cursor: pointer; }
+    .aland-cambridge .header-mb #menu-container .panel-head-mb #menu-wrapper #hamburger-menu {
+      position: relative;
+      width: 25px;
+      height: 20px; }
+      .aland-cambridge .header-mb #menu-container .panel-head-mb #menu-wrapper #hamburger-menu span {
+        opacity: 1;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 2px;
+        border-radius: 10px;
+        color: black;
+        background-color: black;
+        position: absolute;
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .4s ease-in-out;
+        -o-transition: .4s ease-in-out;
+        transition: .4s ease-in-out; }
+        .aland-cambridge .header-mb #menu-container .panel-head-mb #menu-wrapper #hamburger-menu span:nth-child(1) {
+          top: 0; }
+        .aland-cambridge .header-mb #menu-container .panel-head-mb #menu-wrapper #hamburger-menu span:nth-child(2) {
+          top: 9px; }
+        .aland-cambridge .header-mb #menu-container .panel-head-mb #menu-wrapper #hamburger-menu span:nth-child(3) {
+          top: 18px; }
+      .aland-cambridge .header-mb #menu-container .panel-head-mb #menu-wrapper #hamburger-menu.open span:nth-child(1) {
+        -webkit-transform: translateY(9px) rotate(135deg);
+        -ms-transform: translateY(9px) rotate(135deg);
+        transform: translateY(9px) rotate(135deg); }
+      .aland-cambridge .header-mb #menu-container .panel-head-mb #menu-wrapper #hamburger-menu.open span:nth-child(2) {
+        opacity: 0;
+        -webkit-transform: translateX(-60px);
+        -ms-transform: translateX(-60px);
+        transform: translateX(-60px); }
+      .aland-cambridge .header-mb #menu-container .panel-head-mb #menu-wrapper #hamburger-menu.open span:nth-child(3) {
+        -webkit-transform: translateY(-9px) rotate(-135deg);
+        -ms-transform: translateY(-9px) rotate(-135deg);
+        transform: translateY(-9px) rotate(-135deg); }
+  .aland-cambridge .header-mb #menu-container .panel-head-mb .logo-mb {
+    margin-left: 35px; }
+  .aland-cambridge .header-mb #menu-container .panel-head-mb .btn {
+    padding: 0; }
+    .aland-cambridge .header-mb #menu-container .panel-head-mb .btn:hover {
+      outline: none;
+      background-color: transparent; }
+
+.aland-cambridge .header-mb #menu-container .panel-body-mb .menu-list {
+  padding-left: 0;
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  max-width: 450px;
+  background: white;
+  z-index: 999;
+  overflow-y: auto;
+  overflow-x: hidden;
+  left: -100%; }
+  .aland-cambridge .header-mb #menu-container .panel-body-mb .menu-list li.search-mb {
+    position: relative;
+    padding: 0px 15px 15px 15px;
+    border-bottom: 1px solid #dbdcd2; }
+    .aland-cambridge .header-mb #menu-container .panel-body-mb .menu-list li.search-mb svg {
+      position: absolute;
+      top: 9px;
+      left: 25px; }
+    .aland-cambridge .header-mb #menu-container .panel-body-mb .menu-list li.search-mb .input-search {
+      width: 100%;
+      padding: 7.5px 10px 7.5px 40px;
+      border-radius: 5px;
+      border: 1px solid #dbdbdb; }
+  .aland-cambridge .header-mb #menu-container .panel-body-mb .menu-list li.toggle {
+    font-size: 16px;
+    margin: 0 15px;
+    padding: 15px 0;
+    text-transform: uppercase;
+    border-bottom: 1px solid #dbdcd2; }
+    .aland-cambridge .header-mb #menu-container .panel-body-mb .menu-list li.toggle .menu-link {
+      color: #000; }
+    .aland-cambridge .header-mb #menu-container .panel-body-mb .menu-list li.toggle.accordion-toggle {
+      cursor: pointer;
+      font-size: 16px;
+      position: relative;
+      letter-spacing: 1px; }
+      .aland-cambridge .header-mb #menu-container .panel-body-mb .menu-list li.toggle.accordion-toggle.active-tab {
+        background: white;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease; }
+      .aland-cambridge .header-mb #menu-container .panel-body-mb .menu-list li.toggle.accordion-toggle a:before, .aland-cambridge .header-mb #menu-container .panel-body-mb .menu-list li.toggle.accordion-toggle a:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        width: 15px;
+        height: 2px;
+        margin-top: -1px;
+        background-color: #5a5858;
+        -webkit-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out; }
+      .aland-cambridge .header-mb #menu-container .panel-body-mb .menu-list li.toggle.accordion-toggle a:before {
+        -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        opacity: 1;
+        z-index: 2; }
+      .aland-cambridge .header-mb #menu-container .panel-body-mb .menu-list li.toggle.accordion-toggle a.active:before {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+        background: #5a5858 !important; }
+      .aland-cambridge .header-mb #menu-container .panel-body-mb .menu-list li.toggle.accordion-toggle a.active:after {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+        background: #5a5858 !important;
+        opacity: 0; }
+  .aland-cambridge .header-mb #menu-container .panel-body-mb .menu-list .menu-submenu {
+    margin: 0 40px; }
+    .aland-cambridge .header-mb #menu-container .panel-body-mb .menu-list .menu-submenu.accordion-content {
+      display: none; }
+    .aland-cambridge .header-mb #menu-container .panel-body-mb .menu-list .menu-submenu li {
+      padding: 10px;
+      border-bottom: 1px solid #dbdcd2; }
+      .aland-cambridge .header-mb #menu-container .panel-body-mb .menu-list .menu-submenu li .head {
+        color: #000; }
+
+.aland-cambridge .footer {
+  background-color: #EEEFF2; }
+  .aland-cambridge .footer .panel-body {
+    padding: 50px 0 30px 0; }
+    .aland-cambridge .footer .panel-body .row .heading {
+      font-size: 20px;
+      margin-bottom: 20px;
+      font-weight: 600; }
+    .aland-cambridge .footer .panel-body .row .ft-contact .logo {
+      margin-bottom: 20px; }
+      .aland-cambridge .footer .panel-body .row .ft-contact .logo .image {
+        height: 50px; }
+    .aland-cambridge .footer .panel-body .row .ft-contact .contact {
+      margin-bottom: 10px; }
+    .aland-cambridge .footer .panel-body .row .ft-contact .list-social {
+      margin-top: 20px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .aland-cambridge .footer .panel-body .row .ft-contact .list-social li {
+        margin-right: 10px; }
+        .aland-cambridge .footer .panel-body .row .ft-contact .list-social li .social {
+          display: block;
+          width: 34px;
+          height: 34px;
+          border: 1px solid #F24962;
+          border-radius: 5px;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center; }
+          .aland-cambridge .footer .panel-body .row .ft-contact .list-social li .social svg {
+            font-size: 18px;
+            color: #F24962; }
+            .aland-cambridge .footer .panel-body .row .ft-contact .list-social li .social svg:hover {
+              color: red; }
+    .aland-cambridge .footer .panel-body .row .ft-menu .list-ft-menu li {
+      margin-bottom: 10px; }
+      .aland-cambridge .footer .panel-body .row .ft-menu .list-ft-menu li .title-menu {
+        font-size: 14px;
+        color: #757575; }
+        .aland-cambridge .footer .panel-body .row .ft-menu .list-ft-menu li .title-menu:hover {
+          color: #F24962; }
+  .aland-cambridge .footer .copy-right {
+    text-align: center;
+    background-color: #D1D2D8; }
+    .aland-cambridge .footer .copy-right p {
+      padding: 15px 0 !important;
+      font-size: 14px; }
+  @media (max-width: 1024px) {
+    .aland-cambridge .footer .panel-body .row .ft-contact .contact {
+      line-height: 1.25; } }
+  @media (max-width: 414px) {
+    .aland-cambridge .footer .panel-body .ft-contact {
+      text-align: center; }
+      .aland-cambridge .footer .panel-body .ft-contact .list-social {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center; }
+    .aland-cambridge .footer .copy-right p {
+      font-size: 11px; } }
+
+.aland-cambridge .owl-carousel.owl-carousel-1 {
+  position: relative; }
+  .aland-cambridge .owl-carousel.owl-carousel-1 .owl-stage-outer {
+    margin: 0 -10px; }
+    .aland-cambridge .owl-carousel.owl-carousel-1 .owl-stage-outer .owl-item {
+      margin: 10px !important; }
+      .aland-cambridge .owl-carousel.owl-carousel-1 .owl-stage-outer .owl-item .item {
+        z-index: 1; }
+        .aland-cambridge .owl-carousel.owl-carousel-1 .owl-stage-outer .owl-item .item .thumb .image {
+          height: 175px; }
+          .aland-cambridge .owl-carousel.owl-carousel-1 .owl-stage-outer .owl-item .item .thumb .image img {
+            border-radius: 3px; }
+        .aland-cambridge .owl-carousel.owl-carousel-1 .owl-stage-outer .owl-item .item .info {
+          padding: 15px; }
+          .aland-cambridge .owl-carousel.owl-carousel-1 .owl-stage-outer .owl-item .item .info .title {
+            margin-bottom: 10px;
+            height: 44px;
+            overflow: hidden; }
+            .aland-cambridge .owl-carousel.owl-carousel-1 .owl-stage-outer .owl-item .item .info .title a {
+              font-family: "Roboto-Bold";
+              color: #212121;
+              font-size: 18px;
+              line-height: 1.25;
+              text-decoration: none; }
+              .aland-cambridge .owl-carousel.owl-carousel-1 .owl-stage-outer .owl-item .item .info .title a:hover {
+                color: #F24962; }
+          .aland-cambridge .owl-carousel.owl-carousel-1 .owl-stage-outer .owl-item .item .info .desc {
+            margin-bottom: 10px; }
+            .aland-cambridge .owl-carousel.owl-carousel-1 .owl-stage-outer .owl-item .item .info .desc .text {
+              color: #757575;
+              font-size: 16px;
+              margin-bottom: 5px;
+              line-height: 1.3; }
+          .aland-cambridge .owl-carousel.owl-carousel-1 .owl-stage-outer .owl-item .item .info .btn {
+            display: block;
+            width: 100%;
+            background-color: #F24962; }
+            .aland-cambridge .owl-carousel.owl-carousel-1 .owl-stage-outer .owl-item .item .info .btn:hover {
+              background-color: red; }
+  .aland-cambridge .owl-carousel.owl-carousel-1 .owl-nav {
+    display: block !important; }
+    .aland-cambridge .owl-carousel.owl-carousel-1 .owl-nav button {
+      position: absolute;
+      top: 16%;
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 30px;
+      border-radius: 50%;
+      background-color: #fff !important;
+      -webkit-box-shadow: 0px 3px 6px #00000029;
+      box-shadow: 0px 3px 6px #00000029;
+      z-index: 9; }
+      .aland-cambridge .owl-carousel.owl-carousel-1 .owl-nav button:hover {
+        background-color: #F24962 !important; }
+      .aland-cambridge .owl-carousel.owl-carousel-1 .owl-nav button.owl-prev {
+        left: -35px; }
+      .aland-cambridge .owl-carousel.owl-carousel-1 .owl-nav button.owl-next {
+        right: -35px; }
+      .aland-cambridge .owl-carousel.owl-carousel-1 .owl-nav button span {
+        display: inline-block;
+        font-size: 50px;
+        height: 50px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin: -5px 0 0 2px;
+        color: #F24962 !important; }
+        .aland-cambridge .owl-carousel.owl-carousel-1 .owl-nav button span:hover {
+          color: #fff !important; }
+  .aland-cambridge .owl-carousel.owl-carousel-1 .owl-dots {
+    display: none; }
+  @media (max-width: 414px) {
+    .aland-cambridge .owl-carousel.owl-carousel-1 .owl-nav button {
+      background-color: transparent !important;
+      -webkit-box-shadow: none;
+      box-shadow: none; }
+      .aland-cambridge .owl-carousel.owl-carousel-1 .owl-nav button:hover {
+        background-color: transparent !important; }
+      .aland-cambridge .owl-carousel.owl-carousel-1 .owl-nav button.owl-prev {
+        left: 0px; }
+      .aland-cambridge .owl-carousel.owl-carousel-1 .owl-nav button.owl-next {
+        right: 0px; } }
+
+body.cam_aland-cambridge {
+  background: #fff;
+  line-height: 1.5; }
+
+.aland-cambridge .active-pc {
+  display: block; }
+
+.aland-cambridge .active-mb {
+  display: none; }
+
+.aland-cambridge h2.heading {
+  font-size: 30px;
+  color: #262626;
+  font-family: "Roboto-Bold"; }
+
+.aland-cambridge h3.sub-heading {
+  font-size: 18px;
+  color: #757575; }
+
+.aland-cambridge *:hover {
+  -webkit-transition: all .25s;
+  -moz-transition: all .25s;
+  -ms-transition: all .25s;
+  -o-transition: all .25s;
+  transition: all .25s; }
+
+.aland-cambridge .btn {
+  line-height: 1.5;
+  padding: .5rem 1rem;
+  border: 1px solid #F24962;
+  color: #fff;
+  background-color: #F24962;
+  border-radius: .25rem;
+  font-size: 16px; }
+  .aland-cambridge .btn:hover {
+    background-color: red; }
+
+.aland-cambridge .readmore {
+  color: #F24962; }
+  .aland-cambridge .readmore:hover {
+    text-decoration: underline;
+    color: red; }
+
+.aland-cambridge .owl-carousel-2.owl-carousel {
+  position: relative; }
+  .aland-cambridge .owl-carousel-2.owl-carousel .owl-nav {
+    display: block !important; }
+    .aland-cambridge .owl-carousel-2.owl-carousel .owl-nav button {
+      position: absolute;
+      top: 40%;
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      z-index: 9; }
+      .aland-cambridge .owl-carousel-2.owl-carousel .owl-nav button:hover {
+        background-color: transparent !important; }
+      .aland-cambridge .owl-carousel-2.owl-carousel .owl-nav button.owl-prev {
+        left: 15px; }
+      .aland-cambridge .owl-carousel-2.owl-carousel .owl-nav button.owl-next {
+        right: 20px; }
+      .aland-cambridge .owl-carousel-2.owl-carousel .owl-nav button span {
+        display: inline-block;
+        font-size: 50px;
+        height: 50px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin: -5px 0 0 2px;
+        color: #F24962 !important; }
+        .aland-cambridge .owl-carousel-2.owl-carousel .owl-nav button span:hover {
+          color: red !important; }
+
+.aland-cambridge .video-popup .modal.show {
+  padding: 0 !important; }
+
+.aland-cambridge .video-popup .modal-lg {
+  top: 10%;
+  max-width: 1000px;
+  margin: auto; }
+  .aland-cambridge .video-popup .modal-lg .modal-content iframe {
+    width: 1000px;
+    height: 520px; }
+
+@media (max-width: 768px) {
+  .aland-cambridge .container {
+    padding: 0 15px;
+    max-width: 100%; }
+  .aland-cambridge .video-popup .modal-lg {
+    max-width: 750px; }
+    .aland-cambridge .video-popup .modal-lg .modal-content iframe {
+      width: 750px;
+      height: 390px; } }
+
+@media (max-width: 414px) {
+  .aland-cambridge .active-pc {
+    display: none; }
+  .aland-cambridge .active-mb {
+    display: block; }
+  .aland-cambridge .video-popup .modal-lg {
+    max-width: 100%; }
+    .aland-cambridge .video-popup .modal-lg .modal-content iframe {
+      width: 100%;
+      height: 210px; } }
+
+@media (max-width: 375px) {
+  .aland-cambridge .video-popup .modal-lg .modal-content iframe {
+    height: 185px; } }
+
+@media (max-width: 320) {
+  .aland-cambridge .video-popup .modal-lg .modal-content iframe {
+    height: 150px; } }
+
+.aland-cambridge .slider-top {
+  margin-bottom: 100px;
+  margin-top: 80px; }
+  .aland-cambridge .slider-top .owl-carousel {
+    position: relative; }
+    .aland-cambridge .slider-top .owl-carousel .item {
+      position: relative; }
+      .aland-cambridge .slider-top .owl-carousel .item .overlay {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.25;
+        z-index: 1; }
+      .aland-cambridge .slider-top .owl-carousel .item .thumb .image {
+        height: 600px; }
+      .aland-cambridge .slider-top .owl-carousel .item .info {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        z-index: 9; }
+        .aland-cambridge .slider-top .owl-carousel .item .info .container .heading {
+          color: #fff;
+          font-size: 40px;
+          text-transform: uppercase;
+          margin-bottom: 15px; }
+        .aland-cambridge .slider-top .owl-carousel .item .info .container .sub-heading {
+          color: #fff;
+          width: 50%;
+          line-height: 1.5; }
+        .aland-cambridge .slider-top .owl-carousel .item .info .container .btn {
+          margin-top: 15px;
+          width: 160px; }
+    .aland-cambridge .slider-top .owl-carousel .owl-nav {
+      display: block !important; }
+      .aland-cambridge .slider-top .owl-carousel .owl-nav button {
+        position: absolute;
+        top: 43%;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        z-index: 99; }
+        .aland-cambridge .slider-top .owl-carousel .owl-nav button:hover {
+          background-color: transparent !important; }
+        .aland-cambridge .slider-top .owl-carousel .owl-nav button.owl-prev {
+          left: 50px; }
+        .aland-cambridge .slider-top .owl-carousel .owl-nav button.owl-next {
+          right: 50px; }
+        .aland-cambridge .slider-top .owl-carousel .owl-nav button span {
+          display: inline-block;
+          font-size: 50px;
+          height: 50px;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          margin: -5px 0 0 2px;
+          color: #fff !important; }
+          .aland-cambridge .slider-top .owl-carousel .owl-nav button span:hover {
+            color: #F24962 !important; }
+    .aland-cambridge .slider-top .owl-carousel .owl-dots {
+      display: block !important;
+      position: absolute;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      left: 50%;
+      bottom: 10px; }
+      .aland-cambridge .slider-top .owl-carousel .owl-dots .owl-dot.active span {
+        background-color: #fff;
+        height: 5px; }
+      .aland-cambridge .slider-top .owl-carousel .owl-dots .owl-dot span {
+        background-color: #ccc;
+        width: 50px;
+        height: 3px; }
+  @media (max-width: 1600px) {
+    .aland-cambridge .slider-top .owl-carousel .item .thumb .image {
+      height: 500px; } }
+  @media (max-width: 1440px) {
+    .aland-cambridge .slider-top .owl-carousel .item .thumb .image {
+      height: 450px; } }
+  @media (max-width: 1366px) {
+    .aland-cambridge .slider-top .owl-carousel .item .thumb .image {
+      height: 425px; } }
+  @media (max-width: 1024px) {
+    .aland-cambridge .slider-top {
+      margin-bottom: 35px; }
+      .aland-cambridge .slider-top .owl-carousel .item .thumb .image {
+        height: 330px; }
+      .aland-cambridge .slider-top .owl-carousel .item .info {
+        text-align: center; }
+        .aland-cambridge .slider-top .owl-carousel .item .info .sub-heading {
+          margin: 0 auto;
+          width: 70% !important;
+          text-align: center; } }
+  @media (max-width: 768px) {
+    .aland-cambridge .slider-top {
+      margin-bottom: 35px; }
+      .aland-cambridge .slider-top .owl-carousel .item .thumb .image {
+        height: 300px; }
+      .aland-cambridge .slider-top .owl-carousel .item .info {
+        text-align: center; }
+        .aland-cambridge .slider-top .owl-carousel .item .info .container .heading {
+          font-size: 26px; }
+        .aland-cambridge .slider-top .owl-carousel .item .info .container .sub-heading {
+          font-size: 16px;
+          margin: 0 auto;
+          width: 70% !important;
+          text-align: center; } }
+  @media (max-width: 414px) {
+    .aland-cambridge .slider-top {
+      margin-top: 0; }
+      .aland-cambridge .slider-top .owl-carousel .item .thumb .image {
+        height: 175px; }
+      .aland-cambridge .slider-top .owl-carousel .item .info {
+        display: none; }
+      .aland-cambridge .slider-top .owl-carousel .owl-nav, .aland-cambridge .slider-top .owl-carousel .owl-dots {
+        display: none !important; } }
+
+.aland-cambridge .intro {
+  margin-bottom: 200px; }
+  .aland-cambridge .intro .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .aland-cambridge .intro .row .panel-left {
+      position: relative; }
+      .aland-cambridge .intro .row .panel-left .background-image {
+        position: absolute;
+        background-color: #D8E0E9;
+        width: 70%;
+        height: 85%;
+        top: 15px;
+        left: 15px;
+        z-index: 1; }
+      .aland-cambridge .intro .row .panel-left .thumb {
+        position: relative;
+        z-index: 9;
+        top: 100px;
+        left: 85px;
+        width: 100%;
+        height: 100%; }
+        .aland-cambridge .intro .row .panel-left .thumb .image {
+          width: 400px;
+          height: 525px; }
+    .aland-cambridge .intro .row .panel-right .panel-head {
+      margin-bottom: 35px; }
+      .aland-cambridge .intro .row .panel-right .panel-head .sub-heading {
+        font-size: 120px;
+        font-family: 'UTMAurora-Regular';
+        color: #E4E8EC; }
+      .aland-cambridge .intro .row .panel-right .panel-head .heading {
+        color: #262626;
+        text-transform: uppercase;
+        margin: -30px 0 0 90px; }
+    .aland-cambridge .intro .row .panel-right .panel-body {
+      float: right;
+      width: 65%; }
+      .aland-cambridge .intro .row .panel-right .panel-body .desc {
+        font-size: 20px;
+        margin-bottom: 35px;
+        text-align: justify; }
+      .aland-cambridge .intro .row .panel-right .panel-body .readmore {
+        font-family: "Roboto-Bold";
+        text-transform: uppercase;
+        color: #262626;
+        display: block;
+        letter-spacing: 4.8px;
+        position: relative; }
+        .aland-cambridge .intro .row .panel-right .panel-body .readmore:before {
+          position: absolute;
+          content: '';
+          top: 10px;
+          left: -90px;
+          width: 75px;
+          height: 2px;
+          background-color: #262626; }
+        .aland-cambridge .intro .row .panel-right .panel-body .readmore:hover {
+          color: #F24962; }
+  @media (max-width: 1024px) {
+    .aland-cambridge .intro {
+      margin-bottom: 150px; }
+      .aland-cambridge .intro .row .panel-left .thumb {
+        top: 70px;
+        left: 50px; }
+        .aland-cambridge .intro .row .panel-left .thumb .image {
+          width: 350px;
+          height: 450px; } }
+  @media (max-width: 768px) {
+    .aland-cambridge .intro .row .panel-left .thumb .image {
+      width: 275px;
+      height: 360px; }
+    .aland-cambridge .intro .row .panel-right .panel-head h2.heading {
+      font-size: 23px;
+      text-align: center;
+      margin: 15px auto; }
+    .aland-cambridge .intro .row .panel-right .panel-head .sub-heading {
+      text-align: center;
+      font-size: 85px; }
+    .aland-cambridge .intro .row .panel-right .panel-body {
+      float: none;
+      width: 100%; }
+      .aland-cambridge .intro .row .panel-right .panel-body .desc {
+        font-size: 16px; }
+      .aland-cambridge .intro .row .panel-right .panel-body .readmore {
+        text-align: center; }
+        .aland-cambridge .intro .row .panel-right .panel-body .readmore:before {
+          display: none; } }
+  @media (max-width: 414px) {
+    .aland-cambridge .intro {
+      margin-bottom: 75px; }
+      .aland-cambridge .intro .row .panel-left {
+        display: none; }
+      .aland-cambridge .intro .row .panel-right .panel-head h2.heading {
+        font-size: 22px;
+        margin: -15px auto; }
+      .aland-cambridge .intro .row .panel-right .panel-head .sub-heading {
+        font-size: 75px; }
+      .aland-cambridge .intro .row .panel-right .panel-body .desc {
+        text-align: center; } }
+
+.aland-cambridge .course-online {
+  margin-bottom: 100px; }
+  .aland-cambridge .course-online .panel-head {
+    text-align: center;
+    margin-bottom: 30px; }
+    .aland-cambridge .course-online .panel-head .heading {
+      color: #262626;
+      text-transform: uppercase;
+      margin-bottom: 15px; }
+    .aland-cambridge .course-online .panel-head .sub-heading {
+      color: #757575;
+      margin-bottom: 25px; }
+    .aland-cambridge .course-online .panel-head .under-line {
+      width: 200px;
+      height: 5px;
+      border-radius: 3px;
+      background-color: #F24962;
+      margin: 0 auto; }
+  .aland-cambridge .course-online .panel-body .owl-carousel .owl-stage-outer .owl-item .item {
+    -webkit-box-shadow: 0px 0px 10px #00000033;
+    box-shadow: 0px 0px 10px #00000033; }
+    .aland-cambridge .course-online .panel-body .owl-carousel .owl-stage-outer .owl-item .item:hover {
+      -webkit-box-shadow: 0px 0px 10px #f24962;
+      box-shadow: 0px 0px 10px #f24962; }
+  @media (max-width: 1024px) {
+    .aland-cambridge .course-online {
+      margin-bottom: 50px; } }
+  @media (max-width: 414px) {
+    .aland-cambridge .course-online .panel-head .heading {
+      font-size: 22px;
+      line-height: 1.5; }
+    .aland-cambridge .course-online .panel-head .sub-heading {
+      font-size: 14px;
+      line-height: 1.5; }
+    .aland-cambridge .course-online .panel-body .readmore {
+      text-align: center;
+      margin-top: 20px; } }
+
+.aland-cambridge .banner {
+  background-image: url("../images/bg-banner.jpg");
+  text-align: center;
+  padding: 80px 0;
+  margin-bottom: 100px; }
+  .aland-cambridge .banner .sub-heading {
+    line-height: 1.5;
+    margin: 15px 0 25px 0; }
+  .aland-cambridge .banner .btn {
+    background-color: #F24962;
+    display: inline-block;
+    width: 200px; }
+    .aland-cambridge .banner .btn:hover {
+      background-color: red; }
+  .aland-cambridge .banner.banner-2 .sub-heading {
+    max-width: 450px;
+    margin: 15px auto 25px auto; }
+  @media (max-width: 1024px) {
+    .aland-cambridge .banner {
+      padding: 50px 0;
+      margin-bottom: 50px; } }
+  @media (max-width: 414px) {
+    .aland-cambridge .banner h2.heading {
+      line-height: 1.5;
+      font-size: 22px; }
+    .aland-cambridge .banner h3.sub-heading {
+      font-size: 16px; } }
+
+.aland-cambridge .slider {
+  margin-bottom: 100px; }
+  .aland-cambridge .slider.change {
+    margin-bottom: 50px; }
+  .aland-cambridge .slider .panel-head {
+    text-align: center;
+    margin-bottom: 30px; }
+    .aland-cambridge .slider .panel-head .heading {
+      text-transform: uppercase;
+      margin-bottom: 15px; }
+    .aland-cambridge .slider .panel-head .sub-heading {
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5; }
+  .aland-cambridge .slider .panel-body .owl-carousel .owl-stage-outer .owl-item .item:hover {
+    background-color: #f9f9f9;
+    border-radius: 3px; }
+  .aland-cambridge .slider .panel-body .owl-carousel .owl-stage-outer .owl-item .item .thumb {
+    margin-bottom: 15px;
+    position: relative; }
+    .aland-cambridge .slider .panel-body .owl-carousel .owl-stage-outer .owl-item .item .thumb .overlay {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .aland-cambridge .slider .panel-body .owl-carousel .owl-stage-outer .owl-item .item .thumb .overlay svg {
+        color: #ffffffad;
+        font-size: 50px; }
+    .aland-cambridge .slider .panel-body .owl-carousel .owl-stage-outer .owl-item .item .thumb:hover .overlay {
+      background-color: #0005; }
+      .aland-cambridge .slider .panel-body .owl-carousel .owl-stage-outer .owl-item .item .thumb:hover .overlay svg {
+        color: #fff; }
+  .aland-cambridge .slider .panel-body .owl-carousel .owl-stage-outer .owl-item .item .info {
+    padding: 0; }
+    .aland-cambridge .slider .panel-body .owl-carousel .owl-stage-outer .owl-item .item .info .title {
+      height: 24px; }
+  .aland-cambridge .slider .panel-body .owl-carousel .owl-nav button {
+    top: 18%; }
+  .aland-cambridge .slider.change .panel-body .owl-carousel .owl-stage-outer .owl-item .item .thumb .image {
+    height: 150px; }
+  .aland-cambridge .slider.change .panel-body .owl-carousel .owl-nav button {
+    top: 18%; }
+  .aland-cambridge .slider.teacher .panel-body .owl-carousel .owl-stage-outer .owl-item .item .thumb .image {
+    height: 260px; }
+  .aland-cambridge .slider.teacher .panel-body .owl-carousel .owl-nav button {
+    top: 28%; }
+  @media (max-width: 1024px) {
+    .aland-cambridge .slider {
+      margin-bottom: 50px; }
+      .aland-cambridge .slider .panel-body .owl-carousel .owl-stage-outer .owl-item .item .thumb .image {
+        height: 200px; }
+      .aland-cambridge .slider .panel-body .owl-carousel .owl-nav button {
+        top: 22.5%; } }
+  @media (max-width: 414px) {
+    .aland-cambridge .slider {
+      margin-bottom: 30px; }
+      .aland-cambridge .slider .panel-head h2.heading {
+        font-size: 22px; }
+      .aland-cambridge .slider .panel-head h3.sub-heading {
+        font-size: 16px; }
+      .aland-cambridge .slider .panel-body .readmore {
+        text-align: center; }
+      .aland-cambridge .slider.change {
+        margin-bottom: 30px; } }
+
+.aland-cambridge .feedback {
+  margin-bottom: 100px; }
+  .aland-cambridge .feedback .owl-carousel-2 {
+    padding: 60px 50px 10px 50px;
+    background-color: #f4f5f7;
+    position: relative; }
+    .aland-cambridge .feedback .owl-carousel-2 .item {
+      margin-bottom: 10px; }
+      .aland-cambridge .feedback .owl-carousel-2 .item .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        .aland-cambridge .feedback .owl-carousel-2 .item .row .thumb .image {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center; }
+          .aland-cambridge .feedback .owl-carousel-2 .item .row .thumb .image img {
+            width: 125px;
+            height: 125px;
+            border-radius: 50%; }
+        .aland-cambridge .feedback .owl-carousel-2 .item .row .info .name {
+          font-size: 20px;
+          font-family: "Roboto-Bold";
+          color: #F24962; }
+        .aland-cambridge .feedback .owl-carousel-2 .item .row .info .job {
+          font-size: 18px;
+          color: #262626;
+          margin: 10px 0 15px 0; }
+        .aland-cambridge .feedback .owl-carousel-2 .item .row .info .desc {
+          color: #757575;
+          line-height: 1.5;
+          text-align: justify;
+          padding-right: 50px; }
+    .aland-cambridge .feedback .owl-carousel-2 .owl-dots {
+      display: block !important; }
+      .aland-cambridge .feedback .owl-carousel-2 .owl-dots .owl-dot.active span {
+        background-color: #F24962; }
+  @media (max-width: 1024px) {
+    .aland-cambridge .feedback {
+      margin-bottom: 50px; } }
+  @media (max-width: 768px) {
+    .aland-cambridge .feedback .owl-carousel-2.owl-carousel .item .row .info .desc {
+      padding-right: 10px; }
+    .aland-cambridge .feedback .owl-carousel-2.owl-carousel .owl-nav button.owl-prev {
+      left: 0px; }
+    .aland-cambridge .feedback .owl-carousel-2.owl-carousel .owl-nav button.owl-next {
+      right: 0px; } }
+  @media (max-width: 414px) {
+    .aland-cambridge .feedback .owl-carousel {
+      padding-top: 30px; }
+      .aland-cambridge .feedback .owl-carousel .item .thumb {
+        margin-bottom: 25px; }
+      .aland-cambridge .feedback .owl-carousel .item .info .name, .aland-cambridge .feedback .owl-carousel .item .info .job {
+        text-align: center; } }
+
+.aland-cambridge .partner {
+  margin-bottom: 100px; }
+  .aland-cambridge .partner .panel-head {
+    margin-bottom: 20px;
+    text-align: center; }
+    .aland-cambridge .partner .panel-head .heading {
+      text-transform: uppercase; }
+  .aland-cambridge .partner .panel-body .owl-nav {
+    display: none !important; }
+  @media (max-width: 1024px) {
+    .aland-cambridge .partner {
+      margin-bottom: 50px; } }
+  @media (max-width: 414px) {
+    .aland-cambridge .partner .panel-head h2.heading {
+      font-size: 22px; } }
+
+.aland-cambridge .recommended {
+  margin-bottom: 100px; }
+  .aland-cambridge .recommended .panel-head {
+    text-align: center;
+    margin-bottom: 30px; }
+    .aland-cambridge .recommended .panel-head .heading {
+      text-transform: uppercase;
+      margin-bottom: 15px; }
+    .aland-cambridge .recommended .panel-head .sub-heading {
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5; }
+  .aland-cambridge .recommended .panel-body > .row h4.title {
+    margin-bottom: 20px; }
+    .aland-cambridge .recommended .panel-body > .row h4.title svg {
+      color: #F24962;
+      margin-right: 10px; }
+  .aland-cambridge .recommended .panel-body > .row .panel-left .row > div {
+    padding-right: 10px;
+    padding-left: 10px; }
+    .aland-cambridge .recommended .panel-body > .row .panel-left .row > div .content .thumb {
+      margin-bottom: 15px; }
+      .aland-cambridge .recommended .panel-body > .row .panel-left .row > div .content .thumb .image {
+        height: 210px; }
+    .aland-cambridge .recommended .panel-body > .row .panel-left .row > div .content .info .title-child {
+      max-height: 39px;
+      overflow: hidden; }
+      .aland-cambridge .recommended .panel-body > .row .panel-left .row > div .content .info .title-child a {
+        font-size: 16px;
+        font-family: "Roboto-Bold";
+        line-height: 1.25;
+        color: #262626; }
+  .aland-cambridge .recommended .panel-body > .row .panel-right .list-doc li {
+    max-height: 22px;
+    overflow: hidden; }
+    .aland-cambridge .recommended .panel-body > .row .panel-right .list-doc li a {
+      color: #757575; }
+    .aland-cambridge .recommended .panel-body > .row .panel-right .list-doc li:not(:last-child) {
+      margin-bottom: 10px; }
+  @media (max-width: 1024px) {
+    .aland-cambridge .recommended {
+      margin-bottom: 50px; }
+      .aland-cambridge .recommended .panel-body > .row .panel-left .row > div .content .thumb .image {
+        height: 175px; } }
+  @media (max-width: 768px) {
+    .aland-cambridge .recommended .panel-body > .row {
+      display: unset; }
+      .aland-cambridge .recommended .panel-body > .row .panel-left {
+        max-width: 100%;
+        margin-bottom: 25px; }
+      .aland-cambridge .recommended .panel-body > .row .panel-right {
+        max-width: 100%; } }
+  @media (max-width: 414px) {
+    .aland-cambridge .recommended .panel-head h2.heading {
+      font-size: 22px; }
+    .aland-cambridge .recommended .panel-head h3.sub-heading {
+      font-size: 16px; }
+    .aland-cambridge .recommended .panel-body h4.title {
+      font-size: 18px; }
+    .aland-cambridge .recommended .panel-body .panel-left > .row > div {
+      margin-bottom: 25px; } }
+
+.aland-cambridge .route-training {
+  margin-bottom: 100px; }
+  .aland-cambridge .route-training .panel-head {
+    text-align: center;
+    margin-bottom: 50px; }
+    .aland-cambridge .route-training .panel-head .heading {
+      text-transform: uppercase;
+      margin-bottom: 15px; }
+  .aland-cambridge .route-training .panel-body .dom-pc .list-level > div .content {
+    cursor: pointer;
+    position: relative;
+    z-index: 2; }
+    .aland-cambridge .route-training .panel-body .dom-pc .list-level > div .content .title {
+      font-size: 38px;
+      font-family: "Roboto-Bold";
+      margin-bottom: 10px; }
+    .aland-cambridge .route-training .panel-body .dom-pc .list-level > div .content .text {
+      margin-bottom: 10px;
+      color: #262626; }
+  .aland-cambridge .route-training .panel-body .dom-pc .list-level > div .number {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 150px;
+    line-height: 1;
+    font-family: 'UTMAurora-Regular';
+    color: #E4E8EC;
+    z-index: -1; }
+  .aland-cambridge .route-training .panel-body .dom-pc .process-bar {
+    margin: 125px auto 75px auto; }
+    .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div {
+      padding: 0; }
+      .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div.list-icon {
+        position: relative; }
+        .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div.list-icon:after {
+          position: absolute;
+          content: "";
+          top: 0;
+          right: 0;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          background-color: #fff;
+          border: 2px solid #F24962; }
+        .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div.list-icon.dot-pink:after {
+          background-color: #F24962; }
+        .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div.list-icon.under-line:before {
+          position: absolute;
+          content: "";
+          top: 9px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: #f0f0f0; }
+        .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div.list-icon.under-line.line-pink:before {
+          background-color: #F24962;
+          height: 5px;
+          top: 7px; }
+        .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div.list-icon .icon {
+          position: absolute;
+          content: "";
+          background-position: center; }
+          .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div.list-icon .icon.icon-1 {
+            top: -60px;
+            right: -35px;
+            width: 68px;
+            height: 50px;
+            background-image: url("../images/level-1.png"); }
+          .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div.list-icon .icon.icon-2 {
+            top: -65px;
+            right: -35px;
+            width: 64px;
+            height: 59px;
+            background-image: url("../images/level-2.png"); }
+          .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div.list-icon .icon.icon-3 {
+            top: -75px;
+            right: -15px;
+            width: 47px;
+            height: 69px;
+            background-image: url("../images/level-3.png"); }
+          .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div.list-icon .icon.icon-4 {
+            top: -75px;
+            right: -15px;
+            width: 39px;
+            height: 70px;
+            background-image: url("../images/level-4.png"); }
+          .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div.list-icon .icon.icon-5 {
+            top: -75px;
+            right: -15px;
+            width: 45px;
+            height: 66px;
+            background-image: url("../images/level-5.png"); }
+          .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div.list-icon .icon.icon-6 {
+            top: -75px;
+            right: -15px;
+            width: 62px;
+            height: 72px;
+            background-image: url("../images/level-6.png"); }
+        .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div.list-icon.icon-pink .icon.icon-1 {
+          background-image: url("../images/level-1-hover.png"); }
+        .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div.list-icon.icon-pink .icon.icon-2 {
+          background-image: url("../images/level-2-hover.png"); }
+        .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div.list-icon.icon-pink .icon.icon-3 {
+          background-image: url("../images/level-3-hover.png"); }
+        .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div.list-icon.icon-pink .icon.icon-4 {
+          background-image: url("../images/level-4-hover.png"); }
+        .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div.list-icon.icon-pink .icon.icon-5 {
+          background-image: url("../images/level-5-hover.png"); }
+        .aland-cambridge .route-training .panel-body .dom-pc .process-bar > div.list-icon.icon-pink .icon.icon-6 {
+          background-image: url("../images/level-6-hover.png"); }
+  @media (max-width: 1366px) {
+    .aland-cambridge .route-training .panel-head .heading {
+      font-size: 22px; }
+    .aland-cambridge .route-training .panel-head .sub-heading {
+      line-height: 1.25;
+      font-size: 16px; }
+    .aland-cambridge .route-training .panel-body .dom-pc .list-level > div .content .text {
+      font-size: 14px; } }
+  @media (max-width: 768px) {
+    .aland-cambridge .route-training .panel-body .list-level > div .content .text {
+      font-size: 12px; } }
+  @media (max-width: 414px) {
+    .aland-cambridge .route-training .panel-body .dom-mb .content-mb {
+      margin-bottom: 20px;
+      text-align: center; }
+      .aland-cambridge .route-training .panel-body .dom-mb .content-mb .number {
+        font-size: 150px;
+        line-height: 1;
+        color: #E4E8EC;
+        font-family: 'UTMAurora-Regular';
+        margin-bottom: -35px; }
+      .aland-cambridge .route-training .panel-body .dom-mb .content-mb .title {
+        font-size: 38px;
+        font-family: "Roboto-Bold";
+        margin-bottom: 10px; }
+      .aland-cambridge .route-training .panel-body .dom-mb .content-mb .text {
+        margin-bottom: 10px;
+        color: #262626; } }
